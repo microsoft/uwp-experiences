@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="Presidents.CompareView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Presidents"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="mainGrid">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <local:IsTenFootTrigger />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!-- demo 5: account for overscan -->
+                        <Setter Target="mainGrid.Margin" Value="0,27,48,27"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <GridView x:Name="gv" ItemTemplate="{StaticResource ItemPresident}" Grid.Row="0" IsFocusEngagementEnabled="True"/> 
+        <Button Content="Done" Grid.Row="1" HorizontalAlignment="Center"/>
+    </Grid>
+</Page>

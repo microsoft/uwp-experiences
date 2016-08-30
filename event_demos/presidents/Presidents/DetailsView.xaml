@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="Presidents.DetailsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Presidents"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" 
+    >
+    <!--Width="960" Height="540"
+    Width="864" Height="486"
+    -->
+
+    <Border Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="mainBorder" >
+
+        <Grid Margin="24" x:Name="mainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical" >
+                <TextBlock x:Name="textBlock" FontSize="28" TextWrapping="Wrap" Text="{Binding FullName}" Style="{StaticResource HeaderTextBlockStyle}" Margin="0" d:LayoutOverrides="Width" HorizontalAlignment="Left"/>
+                <TextBlock x:Name="textBlock5" FontSize="20" TextWrapping="Wrap" Text="{Binding NickName}" Style="{StaticResource SubheaderTextBlockStyle}" />
+
+                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Margin="0,20,0,0" FontSize="12" HorizontalAlignment="Left">
+                    <Run Text="{Binding PresidentNumber}"/>
+                    <Run Text=", "/>
+                    <Run Text="{Binding YearsInOffice}"/>
+                </TextBlock>
+
+                <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="12" >
+                    <Run Text="{Binding Party}"/>
+                    <Run Text=", "/>
+        			<Run Text="{Binding State}"/>
+                </TextBlock>
+
+                <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="12" >
+        			<Run Text="VP: "/>
+        			<Run Text="{Binding VP}"/>
+                </TextBlock>
+
+                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="12" Margin="0,20,0,0"
+                           Text="{Binding Summary}"/>
+            </StackPanel>
+
+            <ContentControl x:Name="inkCanvasHolder" TabIndex="2" IsFocusEngagementEnabled="True" RequiresPointer="WhenEngaged" Grid.Column="1" Grid.RowSpan="2" Margin="24, 0, 0, 0" UseSystemFocusVisuals="True" >
+                <Grid>
+                    <Image Source="{Binding ImageSource}" Stretch="Uniform" VerticalAlignment="Center"  
+                       AutomationProperties.Name="{Binding AutomationImageName}"/>
+                    <InkCanvas x:Name="inkCanvas"/>
+                </Grid>
+            </ContentControl>
+            
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Button x:Name="previousButton" TabIndex="0" Content="Previous" Width="90" Click="previousButton_Click" />
+                <Button x:Name="nextButton" TabIndex="1" Content="Next" Width="90" Margin="4,0,0,0" Click="nextButton_Click" />
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Page>

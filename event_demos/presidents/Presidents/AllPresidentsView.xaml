@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="Presidents.AllPresidentsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Presidents"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" >
+
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <local:IsTenFootTrigger />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!-- // TODO:  1.4 Add a template for when IsTenFootTrigger fires -->
+                        <!--<Setter Target="gridView.Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="GridView">
+                                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                                        <ScrollViewer x:Name="ScrollViewer" AutomationProperties.AccessibilityView="Raw" BringIntoViewOnFocusChange="{TemplateBinding ScrollViewer.BringIntoViewOnFocusChange}" HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" IsHorizontalRailEnabled="{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}" IsHorizontalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsHorizontalScrollChainingEnabled}" IsVerticalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsVerticalScrollChainingEnabled}" IsVerticalRailEnabled="{TemplateBinding ScrollViewer.IsVerticalRailEnabled}" IsDeferredScrollingEnabled="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}" TabNavigation="{TemplateBinding TabNavigation}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}" VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}" ZoomMode="{TemplateBinding ScrollViewer.ZoomMode}">
+                                            <ItemsPresenter
+                                                Margin="0,0,0,27"
+                                                FooterTransitions="{TemplateBinding FooterTransitions}" FooterTemplate="{TemplateBinding FooterTemplate}" Footer="{TemplateBinding Footer}" HeaderTemplate="{TemplateBinding HeaderTemplate}" Header="{TemplateBinding Header}" HeaderTransitions="{TemplateBinding HeaderTransitions}" Padding="{TemplateBinding Padding}"/>
+                                        </ScrollViewer>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>-->
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+
+        <ScrollViewer x:Name="scrollViewer" HorizontalScrollMode="Disabled">
+            <StackPanel>
+                <Grid  x:Name="Banner" HorizontalAlignment="Left" Height="145">
+
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="assets/The_Peacemakers_1868_cropped.jpg" Stretch="Uniform" HorizontalAlignment="Left"/>
+                        <Image Source="assets/george_washington_deleware.jpg" Stretch="Uniform" HorizontalAlignment="Left"/>
+                        <Image Source="assets/emancipation.jpg" Margin="-1,0,0,0" Stretch="Uniform" HorizontalAlignment="Left"/>
+                        <Image Source="assets/declaration_of_independence.jpg" Stretch="Uniform" HorizontalAlignment="Left"/>
+                        <Image Source="assets/signing_constitution.jpg" Stretch="Uniform" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <TextBlock Text="Presidents of the United States" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20, 0, 0, 10" FontFamily="Segoe UI" FontWeight="SemiLight" Foreground="White" />
+                </Grid>
+                <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,14,48,14">
+                    <Button VerticalAlignment="Center">Filter</Button>
+                    <Slider VerticalAlignment="Center" Width="250" Value="250" Minimum="100" Maximum="400" Header="Size" x:Name="slider" Margin="10,0"/>
+                    <Button VerticalAlignment="Center">Apply</Button>
+                </StackPanel>-->
+                <GridView x:Name="gridView" ItemTemplate="{StaticResource ItemPresident}" SelectionMode="None" Margin="10,10,0,0" >
+                </GridView>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

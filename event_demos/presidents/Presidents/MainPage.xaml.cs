@@ -101,7 +101,7 @@ namespace Presidents
 
             // TODO: 3.3 - Cleanup these controls so they are not visible in the visual tree and won't become tab stops
             //SettingsButton.Visibility = Visibility.Collapsed;
-            //TvModeToggle.Visibility = Visibility.Collapsed;
+            //TenFootModeToggle.Visibility = Visibility.Collapsed;
             //FeedbackButton.Visibility = Visibility.Collapsed;
         }
 
@@ -111,7 +111,7 @@ namespace Presidents
 
             // TODO: 3.3 - Make sure they are added back so the controls DO work when the pane is expanded
             //SettingsButton.Visibility = Visibility.Visible;
-            //TvModeToggle.Visibility = Visibility.Visible;
+            //TenFootModeToggle.Visibility = Visibility.Visible;
             //FeedbackButton.Visibility = Visibility.Visible;
         }
 

@@ -75,7 +75,7 @@
                         <Setter Target="NavMenuList.ItemContainerStyle" Value="{StaticResource NavMenuItemContainerXboxStyle}"/>
                         <Setter Target="FeedbackButton.Style" Value="{StaticResource SplitViewPaneButtonXboxStyle}"/>
                         <Setter Target="SettingsButton.Style" Value="{StaticResource SplitViewPaneButtonXboxStyle}"/>
-                        <Setter Target="TvModeToggle.Style" Value="{StaticResource SplitViewPaneButtonXboxStyle}"/>
+                        <Setter Target="TenFootModeToggle.Style" Value="{StaticResource SplitViewPaneButtonXboxStyle}"/>
                         <Setter Target="TogglePaneButton.Style" Value="{StaticResource SplitViewTogglePaneButtonXboxStyle}"/>
                         <Setter Target="TogglePaneButton.Margin" Value="48, 27, 0, 0"/>
                         <Setter Target="TogglePaneButton.IsChecked" Value="false"/>

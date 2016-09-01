@@ -117,7 +117,7 @@ namespace Presidents
         /// If you connect your machine to a large TV and want the same XBOX type experience in the app, this 
         /// is one way to achieve this.
         /// </summary>
-        public static bool IsTenFootPC { get; private set; } = false;
+        public static bool IsTenFootPC { get; private set; } = IsTenFoot;
 
         public static bool IsTenFoot
         {

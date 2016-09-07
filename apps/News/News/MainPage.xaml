@@ -1,0 +1,153 @@
+﻿<Page
+    x:Class="News.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:News"
+    xmlns:c="using:News.Controls"
+    xmlns:h="using:News.Helpers"
+    xmlns:composition="using:News.Helpers.Composition"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Page.Resources>
+        <h:StoryTemplateSelector x:Key="StoryTemplateSelector">
+            <h:StoryTemplateSelector.HeroStory>
+                <DataTemplate xmlns:data="using:News.Data" x:DataType="data:NewsItem">
+                    <Grid Background="Transparent">
+
+                        <StackPanel  Margin="0,136,0,50" >
+                            <Grid Loaded="Grid_Loaded" VerticalAlignment="Center" HorizontalAlignment="Center" Height="68" Width="68">
+                                <Ellipse StrokeThickness="1" Stroke="#97FFFFFF" Height="68" Width="68"/>
+                                <composition:CompositionShadow Color="Black" OffsetX="0" OffsetY="0" ShadowOpacity="0.5" BlurRadius="30">
+                                    <composition:CompositionImage Source="{x:Bind HeroImage}" Height="55" Width="55" Stretch="UniformToFill"></composition:CompositionImage>
+                                </composition:CompositionShadow>
+                            </Grid>
+                            <TextBlock HorizontalAlignment="Center" FontSize="24" Margin="0,28,0,5">AUG 10</TextBlock>
+                            <TextBlock HorizontalAlignment="Center" FontSize="15">10:08 AM</TextBlock>
+
+                            <TextBlock Name="TitleLine"  Text="{x:Bind Title}" TextAlignment="Center" Margin="0,36,0,15" FontSize="18"></TextBlock>
+                            <TextBlock Name="SummaryLine" Text="{x:Bind Summary}" MaxWidth="430" TextWrapping="WrapWholeWords" TextAlignment="Center" FontSize="15" MaxLines="4" TextLineBounds="TrimToBaseline" ></TextBlock>
+                            <StackPanel Name="LikesStack" Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" VerticalAlignment="Center" ></TextBlock>
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" VerticalAlignment="Center" Margin="10,0,4,0"></TextBlock>
+                                <TextBlock FontSize="12" VerticalAlignment="Center" Margin="0,7,0,0" Text="{x:Bind Likes}"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </h:StoryTemplateSelector.HeroStory>
+            <h:StoryTemplateSelector.Story>
+                <DataTemplate xmlns:data="using:News.Data" x:DataType="data:NewsItem">
+                    <Grid Height="120" Background="#33000000" SizeChanged="Template_SizeChanged" Loaded="Template_Loaded">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <composition:CompositionShadow Color="Black" ShadowOpacity="1" BlurRadius="30" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                            <Border Height="3" Background="Transparent"></Border>
+                        </composition:CompositionShadow>
+                        
+                        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="25,0,0,0">11:00AM</TextBlock>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Loaded="Grid_Loaded" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="68" Width="68" Margin="20,0">
+                                <Ellipse StrokeThickness="1" Stroke="#97FFFFFF" Height="68" Width="68"/>
+                                <composition:CompositionShadow Color="Black" OffsetX="0" OffsetY="0" ShadowOpacity="0.5" BlurRadius="30">
+                                    <composition:CompositionImage Source="{x:Bind HeroImage}" Height="55" Width="55" Stretch="UniformToFill"></composition:CompositionImage>
+                                </composition:CompositionShadow>
+                            </Grid>
+
+                            <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                <TextBlock Name="TitleLine" Text="{x:Bind Title}" TextTrimming="CharacterEllipsis"></TextBlock>
+                                <TextBlock Name="SummaryLine" Text="{x:Bind Summary}" TextTrimming="WordEllipsis" TextWrapping="WrapWholeWords" MaxLines="2" FontSize="11"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Name="CommentStack" Grid.Column="2" Orientation="Horizontal" Margin="60,40,60,0">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Margin="0,4,25,0"></TextBlock>
+                                <TextBlock Text="{x:Bind Summary}" MaxWidth="180" TextWrapping="WrapWholeWords" TextTrimming="WordEllipsis" FontSize="11" MaxLines="2"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Name="LikeStack" Grid.Column="3" Orientation="Horizontal" Margin="0,40,60,0">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Margin="0,4,25,0"></TextBlock>
+                                <TextBlock Text="{x:Bind Summary}" MaxWidth="180" TextWrapping="WrapWholeWords" TextTrimming="WordEllipsis" FontSize="11" MaxLines="2"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Name="LikesStack" Grid.Column="4" Orientation="Horizontal" Margin="25,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" VerticalAlignment="Center" ></TextBlock>
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" VerticalAlignment="Center" Margin="10,0,4,0"></TextBlock>
+                                <TextBlock FontSize="12" VerticalAlignment="Center" Margin="0,7,0,0" Text="{x:Bind Likes}"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </h:StoryTemplateSelector.Story>
+        </h:StoryTemplateSelector>
+    </Page.Resources>
+
+    <Grid x:Name="RootElement">
+        <SplitView Name="Splitter" IsPaneOpen="False" DisplayMode="Overlay">
+            <SplitView.Pane>
+                <Grid>
+                    <ListView Name="SectionList"
+                              Margin="60,110, 0, 0" SelectionMode="Single" 
+                              ItemsSource="{x:Bind Topics}" 
+                              ItemContainerStyle="{StaticResource NavListStyle}"
+                              SelectionChanged="ListView_SelectionChanged">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="x:String">
+                                <TextBlock Text="{x:Bind}" FontSize="18" FontWeight="Light"></TextBlock>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Border HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,110" BorderBrush="White" BorderThickness="0,0,1,0" Opacity="0.1"></Border>
+                </Grid>
+            </SplitView.Pane>
+
+            <ListView x:Name="ItemListView" ItemsSource="{x:Bind Items}" 
+                      VerticalAlignment="Stretch" SelectionMode="None" 
+                      IsItemClickEnabled="True" ItemClick="ListView_ItemClick" 
+                      ItemTemplateSelector="{StaticResource StoryTemplateSelector}">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Margin" Value="0"></Setter>
+                        <Setter Property="Padding" Value="0"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </SplitView>
+
+        <Button Name="HamburgerButton" Padding="0" Width="60" Margin="0,30" Height="40" BorderThickness="0" VerticalAlignment="Top" Background="Transparent" Click="HamburgerButton_Click">
+            <FontIcon HorizontalAlignment="Right" Margin="0,0,10,0" FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;" ></FontIcon>
+        </Button>
+
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60,30" Orientation="Horizontal">
+            <Image Source="Assets/logo.png" Height="40" Width="40" Margin="0,0,10,0"></Image>
+            <TextBlock Name="SectionTitle" Text="LATEST" FontSize="18" VerticalAlignment="Center" FontWeight="Light"></TextBlock>
+        </StackPanel>
+
+        <Grid Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,30,40,0" Height="35" Width="35">
+            <Ellipse Fill="#19FFFFFF"></Ellipse>
+            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#A3FFFFFF"></TextBlock>
+        </Grid>
+
+        <!--<Grid Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="60,30">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Name="WeatherIcon" Opacity="0.4" FontFamily="Segoe MDL2 Assets" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#A3FFFFFF"></TextBlock>
+                <TextBlock Name="CornerClock" FontSize="15" Margin="10,0,0,0" Foreground="#CCFFFFFF">10:09 AM</TextBlock>
+            </StackPanel>
+        </Grid>-->
+
+    </Grid>
+</Page>

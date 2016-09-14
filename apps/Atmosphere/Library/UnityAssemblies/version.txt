@@ -1,0 +1,9 @@
+5.4.0f3:2.3.0.0
+WSAPlayer
+D:\Program Files\Unity5\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.dll
+D:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
+D:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
+D:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.dll
+D:/Program Files/Unity5/Editor/Data\Managed/Mono.Cecil.dll
+D:/Program Files/Unity5/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll
+D:/Program Files/Unity5/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll

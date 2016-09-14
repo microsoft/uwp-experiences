@@ -1,0 +1,125 @@
+# Apply native OS line-endings on checkout of these files...
+*.boo              text
+*.c                text
+*.cginc            text
+*.config           text
+*.contentproj      text
+*.cpp              text
+*.cs               text
+*.css              text
+*.dae              text
+*.DAE              text
+*.dtd              text
+*.fx               text
+*.glsl             text
+*.h                text
+*.htm              text
+*.html             text
+*.inc              text
+*.ini              text
+*.js               text
+*.JSFL             text
+*.jsfl             text
+*.json             text
+*.log              text
+*.md               text
+*.mel              text
+*.php              text
+*.shader           text
+*.txt              text
+*.TXT              text
+*.xaml             text
+*.xml              text
+*.xsd              text
+.gitattributes     text
+.gitignore         text
+COPYING            text
+INSTALL*           text
+KEYS*              text
+LICENSE*           text
+NEWS*              text
+NOTICE*            text
+README*            text
+TODO*              text
+WHATSNEW*          text
+
+# Apply Unix-style LF line-endings on checkout of these files...
+*.meta             text eol=lf
+*.sh               text eol=lf
+*.vspscc           text eol=lf
+.htaccess          text eol=lf
+
+# Apply Windows/DOS-style CR-LF line-endings on checkout of these files...
+*.bat              text eol=crlf
+*.cmd              text eol=crlf
+*.csproj           text eol=crlf
+*.sln              text eol=crlf
+*.user             text eol=crlf
+*.vcproj           text eol=crlf
+
+# No end-of-line conversions are applied (i.e., "-text -diff") to these files...
+*.7z               binary
+*.ai               binary
+*.anim             binary
+*.apk              binary
+*.asset            binary
+*.bin              binary
+*.bmp              binary
+*.BMP              binary
+*.com              binary
+*.COM              binary
+*.controller       binary
+*.cubemap          binary
+*.dex              binary
+*.dll              binary
+*.DLL              binary
+*.dylib            binary
+*.eps              binary
+*.exe              binary
+*.EXE              binary
+*.exr              binary
+*.fbx              binary
+*.FBX              binary
+*.fla              binary
+*.flare            binary
+*.flv              binary
+*.gif              binary
+*.guiskin          binary
+*.gz               binary
+*.ht               binary
+*.ico              binary
+*.jpeg             binary
+*.jpg              binary
+*.keystore         binary
+*.mask             binary
+*.mat              binary
+*.mb               binary
+*.mp3              binary
+*.mp4              binary
+*.mpg              binary
+*.ogg              binary
+*.PCX              binary
+*.pcx              binary
+*.pdb              binary
+*.pdf              binary
+*.physicMaterial   binary
+*.physicmaterial   binary
+*.png              binary
+*.prefab           binary
+*.ps               binary
+*.psd              binary
+*.qt               binary
+*.so               binary
+*.swf              binary
+*.tga              binary
+*.tif              binary
+*.tiff             binary
+*.ttf              binary
+*.TTF              binary
+*.unity            binary
+*.unitypackage     binary
+*.unityPackage     binary
+*.wav              binary
+*.wmv              binary
+*.zip              binary
+*.ZIP              binary

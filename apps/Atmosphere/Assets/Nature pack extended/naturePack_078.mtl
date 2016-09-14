@@ -1,0 +1,14 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Light_Wood
+Ka 0.000000 0.000000 0.000000
+Kd 0.937255 0.764706 0.501961
+Ks 0.330000 0.330000 0.330000
+
+newmtl Wood
+Ka 0.000000 0.000000 0.000000
+Kd 0.666667 0.545098 0.356863
+Ks 0.330000 0.330000 0.330000
+

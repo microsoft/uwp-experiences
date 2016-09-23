@@ -6,7 +6,7 @@ Backdrop is a sample music application that lets a group of friends collaborate 
 
 The application has been written for the Universal Windows Platform (UWP) and tvOS by using Xamarin to share the majority of business logic, view models, playlist management, cloud and device communication. The UI, in turn, is written using the native controls and affordances of each platform. Using the shared project, additional platforms such as Android and iOS can easily be added.
 
-Read the full blog post or visit the [App Dev on Xbox landing page](http://aka.ms/xboxappdev) for more videos and blogs.
+Read the [full blog post](https://blogs.windows.com/buildingapps/2016/09/23/background-audio-and-cross-platform-development-with-xamarin-app-dev-on-xbox-series) or visit the [App Dev on Xbox landing page](http://aka.ms/xboxappdev) for more videos and blogs.
 
 ### [Get the latest build of the app here](https://1drv.ms/f/s!AjZLNGpIZBbgruphmcOvpZogOprcdQ)
 

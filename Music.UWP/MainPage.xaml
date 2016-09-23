@@ -1,0 +1,247 @@
+﻿<Page
+    x:Class="Music.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Music"
+    xmlns:data="using:Music.PCL.Models"
+    xmlns:c="using:Controls"
+    xmlns:composition="using:News.Helpers.Composition"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Padding="48, 27">
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <local:TenFootTrigger></local:TenFootTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ProgressSlider.Margin" Value="0,12"></Setter>
+                        <Setter Target="ProgressSlider.Width" Value="200"></Setter>
+                        <Setter Target="MetadataPanel.Margin" Value="5,0,5,10"></Setter>
+                        <Setter Target="MetadataPanel.Width" Value="200"></Setter>
+                        <Setter Target="MetadataPanel.HorizontalAlignment" Value="Center"></Setter>
+                        <Setter Target="ControlsBorder.Background" Value="Transparent"></Setter>
+                        <Setter Target="ControlsBorder.Margin" Value="0"></Setter>
+                        <Setter Target="ControlsBorder.Height" Value="Auto"></Setter>
+                        <Setter Target="TimeGrid.Visibility" Value="Collapsed"></Setter>
+                        <Setter Target="HostControls.Margin" Value="0"></Setter>
+                        <Setter Target="SongName.FontSize" Value="12"></Setter>
+                        <Setter Target="ArtistName.FontSize" Value="12"></Setter>
+                        <Setter Target="PreviousButton.Height" Value="32"></Setter>
+                        <Setter Target="PreviousButton.Width" Value="32"></Setter>
+                        <Setter Target="PlayPause.Height" Value="32"></Setter>
+                        <Setter Target="PlayPause.Width" Value="32"></Setter>
+                        <Setter Target="NextButton.Height" Value="32"></Setter>
+                        <Setter Target="NextButton.Width" Value="32"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MetadataPanel.Margin" Value="-36,0"></Setter>
+                        <Setter Target="ControlsBorder.Background" Value="Transparent"></Setter>
+                        <Setter Target="ProgressSlider.Margin" Value="0"></Setter>
+                        <Setter Target="TimeGrid.Margin" Value="0,-12,0,0"></Setter>
+                        <Setter Target="ControlsBorder.Margin" Value="0"></Setter>
+                        <Setter Target="ControlsBorder.Height" Value="Auto"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="750"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid Name="BackgroundContainer" Margin="-48, -27">
+            <Image Stretch="UniformToFill" HorizontalAlignment="Center"></Image>
+            <Image Stretch="UniformToFill" HorizontalAlignment="Center"></Image>
+            <Border Background="#7FFFFFFF" ></Border>
+        </Grid>
+
+        <Grid x:Name="TopGrid" Height="96" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="-48,-27,-48,0">
+            <Border x:Name="TopBackground" Background="#FF0D0F1E" Visibility="Collapsed"></Border>
+
+            <Border Visibility="{x:Bind ObjectToVisibility(_dataService.PartyCode), Mode=OneWay}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="40,0,0,26">
+                <TextBlock FontSize="12">
+                <Run FontWeight="SemiLight">The code is&#160;</Run>
+                <Run Text="{x:Bind _dataService.PartyCode, Mode=OneWay}" FontWeight="SemiBold"></Run>
+                </TextBlock>
+            </Border>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="48" Margin="0,0,40,16" Visibility="{x:Bind _isClient}">
+                <Button x:Name="ToggleViewButton" Width="48" Height="48" Style="{StaticResource TransportControllButton}" 
+                        Click="ToggleViewButton_Click">
+                    <Grid>
+                        <SymbolIcon x:Name="ToggleViewSymbol" Symbol="List"></SymbolIcon>
+                        <Image x:Name="ToggleViewImage" Source="Assets/albumArt.png" Height="24" Visibility="Collapsed"></Image>
+                    </Grid>
+                    
+                </Button>
+            </StackPanel>
+
+            <!-- profile images -->
+            <ItemsControl Visibility="{x:Bind _isHost}" HorizontalAlignment="Right" VerticalAlignment="Bottom" ItemsSource="{x:Bind _dataService.Users}" Margin="0,0,40,16">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="data:User">
+                        <Grid Margin="8,0,0,0" >
+                            <Ellipse Height="15" Width="15" Fill="White"></Ellipse>
+                            <Ellipse Height="14" Width="14" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="{x:Bind ProfileImage}" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center"></ImageBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+
+
+        <Grid x:Name="MiddleGrid" Margin="-48, 0, -48, 60">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="ArtColumn" Width="*"></ColumnDefinition>
+                <ColumnDefinition x:Name="DetailsColumn" Width="0"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="NowPlayingRow" Height="0"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="NowPlayingGrid" Grid.Column="1">
+                <Border>
+                    <StackPanel>
+                        <Grid Height="115" Padding="40,20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Height="72" Width="72" Source="{x:Bind _viewModel.CurrentItem.AlbumArt, Mode=OneWay}"></Image>
+
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="20,0">
+                                <TextBlock Text="{x:Bind _viewModel.CurrentItem.Title, Mode=OneWay}" FontSize="14" FontWeight="SemiBold"></TextBlock>
+                                <TextBlock Text="{x:Bind _viewModel.CurrentItem.Artist, Mode=OneWay}" FontSize="14" FontWeight="SemiLight"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center" Orientation="Horizontal">
+
+                                <RadioButton Height="64" Width="64" Style="{StaticResource DislikedRadioButton}" GroupName="MiniPlayer"></RadioButton>
+                                <RadioButton Height="64" Width="64" Style="{StaticResource LikedRadioButton}" GroupName="MiniPlayer"></RadioButton>
+
+                                <Button Click="AddButton_Click" Width="62" Height="62" FontSize="20"  Style="{StaticResource TransportControllButton}">
+                                    <SymbolIcon x:Name="MiniAddSymbol" Symbol="Add"></SymbolIcon>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                        <ProgressBar IsIndeterminate="False" 
+                                     Value="{x:Bind _viewModel.Position, Mode=OneWay}" 
+                                     Maximum="{x:Bind _viewModel.Duration, Mode=OneWay}"
+                                     Height="5"
+                                     Foreground="White" Background="#33FFFFFF"
+                                     
+                                     ></ProgressBar>
+                    </StackPanel>
+                    
+                </Border>
+            </Grid>
+            
+            <c:Timeline x:Name="SongTimeline" 
+                    ItemsSource="{x:Bind _viewModel.SongCollection, Mode=OneWay}" 
+                    CurrentItemIndex="{x:Bind _viewModel.CurrentItemIndex, Mode=OneWay}"
+                    Orientation="Horizontal"
+                    IsHitTestVisible="{x:Bind _isHost}"
+                        Grid.Row="1"
+                    >
+                <c:Timeline.ItemTemplate>
+                    <DataTemplate x:DataType="data:Song">
+                        <c:TimelineItem ItemGotFocus="TimelineItem_ItemGotFocus" AnimateFocus="{Binding DataContext._isClient, ElementName=SongTimeline}">
+                            <Grid Height="200" Width="200">
+                                <composition:CompositionShadow Color="Black" OffsetX="0" OffsetY="0" ShadowOpacity="0.5" BlurRadius="30">
+                                    <Image Source="{x:Bind AlbumArtMedium}" Stretch="UniformToFill"></Image>
+                                </composition:CompositionShadow>
+                            </Grid>
+                        </c:TimelineItem>
+                    </DataTemplate>
+                </c:Timeline.ItemTemplate>
+            </c:Timeline>
+
+            <Grid x:Name="SongList" Background="#FF0D0F1E" Grid.Column="1" Margin="0,0,0,0" Grid.Row="1" >
+                <local:SongList x:Name="CurrentPlaylistList" ListType="LikeSongs" ItemsSource="{x:Bind _viewModel.SongCollection, Mode=OneWay}" AddClicked="SongList_AddClicked"></local:SongList>
+                <local:SongList x:Name="UserSongCollection" ListType="AddSongs" AddClicked="SongList_AddClicked" Visibility="Collapsed"></local:SongList>
+            </Grid>
+
+        </Grid>
+        
+        <StackPanel x:Name="MetadataPanel" VerticalAlignment="Bottom">
+
+            <Grid x:Name="TitleGrid">
+                <StackPanel>
+                    <TextBlock x:Name="SongName" Text="{x:Bind _viewModel.CurrentItem.Title, Mode=OneWay}" FontWeight="SemiBold" TextAlignment="Center" FontSize="15" Foreground="#FF5B394E"></TextBlock>
+                    <TextBlock x:Name="ArtistName" Text="{x:Bind _viewModel.CurrentItem.Artist, Mode=OneWay}" FontWeight="SemiLight" TextAlignment="Center" FontSize="15" Foreground="#FF5B394E"/>
+                </StackPanel>
+            </Grid>
+            
+            
+            <Border x:Name="ControlsBorder" Background="#FF0D0F1E" Margin="-48,60,-48,-27" Height="100">
+                <StackPanel>
+                    <Slider x:Name="ProgressSlider"
+                            IsHitTestVisible="False"
+                            Margin="0,-20,0,12"
+                            Style="{StaticResource ProgressSlider}"
+                            Value="{x:Bind _viewModel.Position, Mode=OneWay}" 
+                            Maximum="{x:Bind _viewModel.Duration, Mode=OneWay}"></Slider>
+
+                    <Grid Margin="15, -30, 15, 0" x:Name="TimeGrid">
+                        <TextBlock HorizontalAlignment="Left" Text="{x:Bind GetPassedTime(_viewModel.Position), Mode=OneWay}" FontSize="12" Opacity="0.6" FontWeight="SemiLight"></TextBlock>
+                        <TextBlock HorizontalAlignment="Right" Text="{x:Bind GetRemainingTime(_viewModel.Position), Mode=OneWay}" FontSize="12" Opacity="0.6" FontWeight="SemiLight"></TextBlock>
+                    </Grid>
+
+                    <StackPanel x:Name="HostControls" Orientation="Horizontal" HorizontalAlignment="Center" Visibility="{x:Bind _isHost}" Margin="0,-16,0,0">
+                        <Button x:Name="PreviousButton" XYFocusLeft="{x:Bind PreviousButton}" Width="62" Height="62" Style="{StaticResource TransportControllButton}" 
+                        IsEnabled="{x:Bind _playerService.CanGoBack, Mode=OneWay}"
+                        Click="PreviousClicked">
+                            <SymbolIcon Symbol="Previous"></SymbolIcon>
+                        </Button>
+                        <Button Name="PlayPause" Click="PlayPause_Click" Width="62" Height="62" Style="{StaticResource TransportControllButton}">
+                            <SymbolIcon Name="PlaySymbol" Symbol="{x:Bind StateToSymbol(_viewModel.PlayerState), Mode=OneWay}"></SymbolIcon>
+                        </Button>
+                        <Button x:Name="NextButton" XYFocusRight="{x:Bind NextButton}" Width="62" Height="62" Style="{StaticResource TransportControllButton}" 
+                        IsEnabled="{x:Bind _playerService.CanGoForward, Mode=OneWay}"
+                        Click="NextClicked">
+                            <SymbolIcon Symbol="Next"></SymbolIcon>
+                        </Button>
+                    </StackPanel>
+
+                    <StackPanel x:Name="ClientControls" Orientation="Horizontal" HorizontalAlignment="Center"  Visibility="{x:Bind _isClient}" Margin="0,-16,0,0">
+                        <RadioButton Height="64" Width="64" Style="{StaticResource DislikedRadioButton}" GroupName="Player"></RadioButton>
+                        <RadioButton Height="64" Width="64" Style="{StaticResource LikedRadioButton}" GroupName="Player"></RadioButton>
+                        <Button Name="AddButton" Click="AddButton_Click" Width="62" Height="62" FontSize="20"  Style="{StaticResource TransportControllButton}">
+                            <SymbolIcon x:Name="MainAddSymbol" Symbol="Add"></SymbolIcon>
+                        </Button>
+                        
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            
+
+            
+        </StackPanel>
+    </Grid>
+</Page>

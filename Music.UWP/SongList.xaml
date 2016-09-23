@@ -1,0 +1,75 @@
+﻿<UserControl
+    x:Class="Music.SongList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Music"
+    xmlns:models="using:Music.PCL.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="AddSongTemplate" x:DataType="models:Song">
+            <Border BorderThickness="0,0,0,1" BorderBrush="#4CFFFFFF">
+                <Grid Height="100">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Height="72" Width="72" Source="{x:Bind AlbumArt}"></Image>
+
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="20,0">
+                        <TextBlock Text="{x:Bind Title}" FontSize="14" FontWeight="SemiBold"></TextBlock>
+                        <TextBlock Text="{x:Bind Artist}" FontSize="14" FontWeight="SemiLight"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                        <Button Height="64" Width="64" Style="{StaticResource TransportControllButton}" Click="Button_Click">
+                            <SymbolIcon Symbol="Add"></SymbolIcon>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="LikeSongTemplate" x:DataType="models:Song">
+            <Border BorderThickness="0,0,0,1" BorderBrush="#4CFFFFFF">
+                <Grid Height="100">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Height="72" Width="72" Source="{x:Bind AlbumArt}"></Image>
+
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="20,0">
+                        <TextBlock Text="{x:Bind Title}" FontSize="14" FontWeight="SemiBold"></TextBlock>
+                        <TextBlock Text="{x:Bind Artist}" FontSize="14" FontWeight="SemiLight"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" VerticalAlignment="Center" Orientation="Horizontal">
+
+
+                        <RadioButton Height="64" Width="64" Style="{StaticResource DislikedRadioButton}" Margin="0,0,12,0" GroupName="{x:Bind Title}" Checked="DislikeChecked" Unchecked="DislikeUnchecked"></RadioButton>
+                        <RadioButton Height="64" Width="64" Style="{StaticResource LikedRadioButton}" GroupName="{x:Bind Title}" Checked="LikeChecked" Unchecked="LikeUnchecked"></RadioButton>
+                        
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid x:Name="Root">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" HorizontalScrollMode="Disabled"
+                      VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+            <Grid Padding="40">
+                <ItemsControl x:Name="items"></ItemsControl>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

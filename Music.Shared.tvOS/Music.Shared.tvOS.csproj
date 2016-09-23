@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{06FA79CB-D6CD-4721-BB4B-1BD202089C55};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{468A2146-57EF-4362-8A79-71057FD60129}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Music.Shared.tvOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>MusicSharedtvOS</AssemblyName>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.2.1\lib\portable-net45+sl50+win+wpa81+wp80\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.TVOS" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="..\Music.PCL\ClientViewModel.cs">
+      <Link>ClientViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\IDispatcher.cs">
+      <Link>IDispatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\Keys.cs">
+      <Link>Keys.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\MainViewModel.cs">
+      <Link>MainViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\Models\ChatMessage.cs">
+      <Link>Models\ChatMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\Models\PartyJoinResult.cs">
+      <Link>Models\PartyJoinResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\Models\PartyStatus.cs">
+      <Link>Models\PartyStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\Models\Song.cs">
+      <Link>Models\Song.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\Models\User.cs">
+      <Link>Models\User.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\MTObservableCollection.cs">
+      <Link>MTObservableCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\SC\API.cs">
+      <Link>SC\API.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\SC\Models\Categories.cs">
+      <Link>SC\Models\Categories.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\SC\Models\Comment.cs">
+      <Link>SC\Models\Comment.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\SC\Models\DesignTimeClass.cs">
+      <Link>SC\Models\DesignTimeClass.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\SC\Models\Playlist.cs">
+      <Link>SC\Models\Playlist.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\SC\Models\SCUser.cs">
+      <Link>SC\Models\SCUser.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\SC\Models\StreamSource.cs">
+      <Link>SC\Models\StreamSource.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\SC\Models\Track.cs">
+      <Link>SC\Models\Track.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\SC\StreamObjects.cs">
+      <Link>SC\StreamObjects.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\Services\CloudService.cs">
+      <Link>Services\CloudService.cs</Link>
+    </Compile>
+    <Compile Include="..\Music.PCL\Services\DataService.cs">
+      <Link>Services\DataService.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\TVOS\Xamarin.TVOS.CSharp.targets" />
+</Project>

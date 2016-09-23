@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="179">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="178">
+            <objects>
+                <navigationController id="179" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="181">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="1249" destination="1007" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="182" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8" y="-1479"/>
+        </scene>
+        <scene sceneID="1006">
+            <objects>
+                <viewController id="1007" sceneMemberID="viewController" customClass="PlaybackViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1004"/>
+                        <viewControllerLayoutGuide type="bottom" id="1005"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1008">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1261" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" alpha="0.0">
+                                <rect key="frame" x="0.0" y="38" width="1920" height="1082"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="1124" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" customClass="SongCollectionView">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1135" scrollDirection="horizontal">
+                                    <size key="itemSize" width="550" height="550"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="1125" reuseIdentifier="SongCell" customClass="SongCollectionViewCellNew">
+                                        <rect key="frame" x="0.0" y="265" width="550" height="550"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="265" width="550" height="550"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <subviews/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1136" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="685" y="836" width="550" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27" weight="semibold"/>
+                                <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.0" id="1137" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="685" y="950" width="550" height="10"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1138" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="925" y="981" width="70" height="70"/>
+                                <state key="normal">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1146" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Connecting...">
+                                <rect key="frame" x="92" y="68" width="344" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                <nil key="highlightedColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
+                                <color key="shadowColor" colorSpace="calibratedRGB" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1263" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="685" y="870" width="550" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25" weight="light"/>
+                                <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1264" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="1020" y="981" width="70" height="70"/>
+                                <state key="normal">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1265" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="830" y="981" width="70" height="70"/>
+                                <state key="normal">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                </state>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="SongsView" destination="1124" id="name-outlet-1124"/>
+                        <outlet property="SongNameLabel" destination="1136" id="name-outlet-1136"/>
+                        <outlet property="SongProgressView" destination="1137" id="name-outlet-1137"/>
+                        <outlet property="PartyCodeLabel" destination="1146" id="name-outlet-1146"/>
+                        <outlet property="BackgroundImage" destination="1261" id="name-outlet-1261"/>
+                        <outlet property="ArtistName" destination="1263" id="name-outlet-1263"/>
+                        <outlet property="PlayButton" destination="1138" id="name-outlet-1138"/>
+                        <outlet property="PreviousButton" destination="1265" id="name-outlet-1265"/>
+                        <outlet property="NextButton" destination="1264" id="name-outlet-1264"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1009" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2231" y="-1437"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="images/play.png" width="140" height="140"/>
+        <image name="images/play_black.png" width="140" height="140"/>
+        <image name="images/next.png" width="140" height="140"/>
+        <image name="images/next_black.png" width="140" height="140"/>
+        <image name="images/pause.png" width="140" height="140"/>
+        <image name="images/pause_black.png" width="140" height="140"/>
+        <image name="images/previous_black.png" width="140" height="140"/>
+        <image name="images/previous.png" width="140" height="140"/>
+    </resources>
+</document>

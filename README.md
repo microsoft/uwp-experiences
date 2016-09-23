@@ -1,6 +1,6 @@
 # Backdrop (music app)
 
-![Imgur](http://imgur.com/CPWPlHE.png)
+[![Backdrop](http://imgur.com/CPWPlHE.png)](https://www.youtube.com/watch?v=Gj8IWdeYunQ)
 
 Backdrop is a sample music application that lets a group of friends collaborate on the music selection process and share their experience and music choices. A device is first chosen to be the host device where the music will be played. Then anyone is able to add and vote on tracks on their own device. Each friend can see the current playlist in real time and the progress of the current track on their own device. Each can vote on different tracks to set the order in which they will be played as well as suggest other tracks to be played. 
 

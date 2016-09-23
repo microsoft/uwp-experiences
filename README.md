@@ -17,7 +17,7 @@ To run the app yourself, you will need to populate the Music.PCL/Keys.cs file fo
 
 ### 1. Azure App Service
 
-The backend for Backdrop runs as a free App Service on Azure. If you don't have an Azure account, you can create a free acount [here](https://azure.microsoft.com/free/).
+The backend for Backdrop runs as a free App Service on Azure. If you don't have an Azure account, you can create a free account [here](https://azure.microsoft.com/free/).
 To publish the App Service to your Azure account, right click on the **music_appService** project in Visual Studio and click on **Publish**. Follow the steps to create a new App Service or publish the project to an existing App Service. Use the url of the App Service as the **SERVICE_URL** in Keys.cs
 
 ### 2. Twitter
@@ -26,4 +26,4 @@ Twitter is used to authenticate a user to the Backdrop service and use their pro
 
 ### 3. Soundcloud
 
-Backdrop uses Soundcloud for it's music service and the API requires a client id, client secret, and redirect url. [Register a new SoundCloud app](http://soundcloud.com/you/apps/new) and paste the required informatin in Keys.cs
+Backdrop uses Soundcloud for it's music service and the API requires a client id, client secret, and redirect url. [Register a new SoundCloud app](http://soundcloud.com/you/apps/new) and paste the required information in Keys.cs

@@ -90,24 +90,38 @@ namespace Music
         {
             _isInBackgroundMode = false;
 
-            // Reastore view content if it was previously unloaded.
-            if (Window.Current.Content == null)
+            // Restore view content if it was previously unloaded.
+            if (Window.Current != null && Window.Current.Content == null)
             {
                 CreateRootFrame(ApplicationExecutionState.Running, string.Empty);
             }
+
             Debug.WriteLine("Leaving Background");
         }
 
         private void App_EnteredBackground(object sender, EnteredBackgroundEventArgs e)
         {
-            _isInBackgroundMode = true;
             Debug.WriteLine("Entered Background");
-            ReduceMemoryUsage(0);
+            var deferral = e.GetDeferral();
+            try
+            {
+                _isInBackgroundMode = true;
+#if DEBUG
+                //If we are in debug mode free memory here because the memory limits are turned off
+                //In release builds defer the actual reduction of memory to the limit changing event so we don't 
+                //unnecessarily throw away the UI
+                ReduceMemoryUsage(0);
+#endif
+            }
+            finally
+            {
+                deferral.Complete();
+            }
         }
 
         public void ReduceMemoryUsage(ulong limit)
         {
-            if (_isInBackgroundMode && Window.Current.Content != null)
+            if (_isInBackgroundMode && Window.Current != null && Window.Current.Content != null)
             {
                 ApplicationData.Current.LocalSettings.Values["navState"] = (Window.Current.Content as Frame).GetNavigationState();
 

@@ -1,0 +1,177 @@
+<!--
+#      The MIT License (MIT)
+#
+#      Copyright (c) 2016 Microsoft. All rights reserved.
+#
+#      Permission is hereby granted, free of charge, to any person obtaining a copy
+#      of this software and associated documentation files (the "Software"), to deal
+#      in the Software without restriction, including without limitation the rights
+#      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#      copies of the Software, and to permit persons to whom the Software is
+#      furnished to do so, subject to the following conditions:
+#
+#      The above copyright notice and this permission notice shall be included in
+#      all copies or substantial portions of the Software.
+#
+#      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+#      THE SOFTWARE.    
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scroll into view</title>
+    <script src="directionalnavigation-1.0.0.0.js"></script>
+
+    <style>
+
+        body {
+            background-color: rgb(16, 16, 16);
+            color: rgb(235, 235, 235);
+            font-family: "Segoe UI";
+            font-size: 18pt;
+        }
+        button {
+            background-color: rgba(235, 235, 235, 0.1);
+            border: 4px solid rgb(16, 16, 16);
+            color: rgb(235, 235, 235);
+            outline: none;
+            padding: 16px;
+            height: 364px;
+            width: 208px;
+            font-size: 18pt;
+        }
+        button:focus {
+            background-color: rgb(16, 124, 16);
+            border-color: rgba(235, 235, 235, 1);
+        }
+        .scrolling-list {
+            overflow-x: scroll;
+            height: 400px;
+        }
+        .viewport {
+            width: 7000px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Scroll into view</h1>
+    <div id="scrolling-list" class="scrolling-list">
+        <div id="viewport" class="viewport">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>10</button>
+            <button>11</button>
+            <button>12</button>
+            <button>13</button>
+            <button>14</button>
+            <button>15</button>
+            <button>16</button>
+            <button>17</button>
+            <button>18</button>
+            <button>19</button>
+            <button>20</button>
+            <button>21</button>
+            <button>22</button>
+            <button>23</button>
+            <button>24</button>
+            <button>25</button>
+            <button>26</button>
+            <button>27</button>
+            <button>28</button>
+            <button>29</button>
+            <button>30</button>
+        </div>
+    </div>
+
+    <script>
+
+        // This sample demonstrates how to use the focuschanging event to scroll elements into view so that
+        // the currently focused element is never on the edge of the screen.
+
+        // We set up two boundaries. This means that if the focused element is not at least 200 pixels from
+        // the edge of the screen, then we will scroll the viewport so that it is.
+        var leftBoundaryToTriggerScrollIntoView = 200;
+        var rightBoundaryToTriggerScrollIntoView = document.body.offsetWidth - 200;
+        var scrollableList = document.getElementById("scrolling-list");
+
+        // Adjust the left and right boundaries if the window is resized.
+        function handleWindowResize() {
+            leftBoundaryToTriggerScrollIntoView = 200;
+            rightBoundaryToTriggerScrollIntoView = document.body.offsetWidth - 200;
+        };
+        window.addEventListener("resize", handleWindowResize, false);
+
+        // This function handles the core logic for scrolling content into view.
+        function handleFocusChanging(ev) {
+                var keyCode = ev.detail.keyCode;
+                var nextFocusElement = ev.detail.nextFocusElement;
+                if (nextFocusElement) {
+                    var nextFocusElementRect = nextFocusElement.getBoundingClientRect();
+                    var newScrollLeft = -1;
+                    switch (keyCode) {
+                        case 37: // Left arrow
+                        case 205: // Gamepad DPad left
+                        case 214: // Gamepad left thumbstick left:
+                            // Figure out if focus is about to move past the left boundary and we
+                            // need to scroll the next element into view.
+                            if (nextFocusElementRect.left < leftBoundaryToTriggerScrollIntoView) {
+                                // If yes, figure out how much to move scroll the viewport.
+                                var xScrollAmount = -2 * (leftBoundaryToTriggerScrollIntoView - nextFocusElementRect.left);
+                                newScrollLeft = Math.max(0, scrollableList.scrollLeft + xScrollAmount);
+                            }
+                            break;
+                        case 39: // Right arrow
+                        case 206: // Gamepad DPad right
+                        case 213: // Gamepad left thumbstick right
+                            // Figure out if focus is about to move past the right boundary and we
+                            // need to scroll the next element into view.
+                            if (nextFocusElementRect.right > rightBoundaryToTriggerScrollIntoView) {
+                                // If yes, figure out how much to move scroll the viewport.
+                                var xScrollAmount = nextFocusElementRect.right - rightBoundaryToTriggerScrollIntoView;
+                                var xScrollPos = Math.max(0, scrollableList.scrollLeft + xScrollAmount);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    if (newScrollLeft) {
+                        // Note: If running on Edge or Internet Explorer 11 or higher, we could use the msZoomTo API
+                        // to do an animated scroll. For other browsers, you can use CSS transitions.
+                        scrollableList.scrollLeft = xScrollPos;
+                        ev.preventDefault();
+                        // Focus is an expensive operation so it's good to let any processing from scrolling into
+                        // view finish first.
+                        requestAnimationFrame(function () {
+                            setTimeout(function () {
+                                if (nextFocusElement) {
+                                    nextFocusElement.focus();
+                                }
+                            });
+                        });
+                    }
+                }
+        };
+        // Listen to the focuschanging event. This event will fire right before focus is about to change
+        // allowing us to scroll content into view if needed.
+        TVJS.DirectionalNavigation.addEventListener("focuschanging", handleFocusChanging, false);
+
+        var initialFocus = document.querySelector("button");
+        initialFocus.focus();
+
+    </script>
+</body>
+</html>

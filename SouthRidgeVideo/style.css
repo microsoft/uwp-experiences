@@ -1,0 +1,257 @@
+div#videoContainer{
+	xwidth: 100%;
+	background:#000;
+	margin:0px;
+	position: relative;
+	bottom: 0%;
+	left: 0%;
+	right: 0%;
+}
+
+div#myVideo {
+	z-index: 1;
+	position: absolute;
+}
+
+video.scale2{
+  -moz-transform:scale(1.5);
+  -webkit-transform:scale(1.5);
+  -o-transform:scale(1.5);
+  -ms-transform:scale(1.5);
+  transform:scale(1.5);
+}
+
+@font-face {
+    font-family: 'SegoeMDL2';
+    src: url("segmdl2.ttf") format("truetype");
+}
+
+#videoContainer .controls {
+	background: #000;
+	position: absolute;
+	width: inherit;
+	height: 40%;
+	bottom: 0%;
+	z-index: 2147483647; /*fix this*/
+}
+
+.left-controls {
+	text-align: left;
+	color: white;
+	float: left;
+	margin-top: 0;
+	margin-left: 2%;
+}
+
+.center-controls {
+	text-align: center;
+	margin-bottom: 30px;
+	margin: 3%;
+}
+.center-controls button{
+	height: auto;
+	width: auto;
+	
+}
+
+.right-controls {
+	text-align: right;
+	color: white;
+	float: right;
+	margin-top: 0;
+	margin-right: 2%;
+}
+
+.iconfont {
+	font-family: 'SegoeMDL2';
+	font-size: 25px;
+	background: none;
+	color: white;
+	border: none;
+}
+
+.center-content {
+	text-align: center;
+	margin: auto;
+}
+
+input#seekSlider {
+	text-align: center;
+	width: 97%;
+	margin: 2% 1%;
+}
+
+input#volumeSlider {
+	width: 100px;
+}
+
+button.iconfont {
+	background: black;
+	padding: 8px;
+}
+
+button.iconfont:hover {
+	background: #95a5a6;
+}
+
+button.iconfont:active {
+	background: #7f8c8d;
+}
+
+button.iconfont:focus {
+	outline: none;
+}
+
+div#volumeModal {
+	display: none;
+	padding: 5px;
+	z-index: 2147483700;
+	width: initial;
+	background: #000;
+	border-style: solid;
+	border-color:  #BDC3C7;
+	border-width: 2px;
+}
+
+/*This removes on Chrome only. How do I get rid of it on Edge?*/
+video::-webkit-media-controls-enclosure {
+  display:none !important;
+}
+
+/*======================= Range Slider*/
+
+/*Chrome*/
+
+	input[type=range] {
+	  -webkit-appearance: none;
+	  margin: 10px 0;
+	  width: 100%;
+	}
+
+	input[type=range]:focus {
+	  outline: none;
+	}
+
+	input[type=range]::-webkit-slider-runnable-track {
+	  width: 100%;
+	  height: 11px;
+	  cursor: pointer;
+	  background: #BDC3C7;
+	  border-radius: 20px;
+	  border: 0px solid #010101;
+	}
+
+	input[type=range]::-webkit-slider-thumb {
+	  border: 2px solid #3498DB;
+	  height: 26px;
+	  width: 26px;
+	  border-radius: 15px;
+	  background: #FFFFFF;
+	  cursor: pointer;
+	  -webkit-appearance: none;
+	  margin-top: -8.5px;
+	}
+
+	input[type=range]:hover::-webkit-slider-thumb {
+	  background: #3498db;
+	}
+
+	input[type=range]:active::-webkit-slider-thumb {
+	  background: #2980b9;
+	}
+
+	input[type=range]:focus::-webkit-slider-runnable-track {
+	  background: #BDC3C7;
+	}
+
+/*FireFox*/
+	input[type=range]::-moz-range-track {
+	  width: 100%;
+	  height: 11px;
+	  cursor: pointer;
+	  background: #BDC3C7;
+	  border-radius: 20px;
+	  border: 0px solid #010101;
+	}
+
+	input[type=range]::-moz-range-thumb {
+	  box-shadow: 0px 0px 0px #000031;
+	  border: 2px solid #3498DB;
+	  height: 26px;
+	  width: 26px;
+	  border-radius: 15px;
+	  background: #FFFFFF;
+	  cursor: pointer;
+	}
+
+/*MS*/
+
+	input[type=range]::-ms-track {
+	  width: 100%;
+	  height: 3px;
+	  padding: 5px; 
+	  cursor: pointer;
+	  background: transparent;
+	  border-color: transparent;
+	  color: transparent;
+	}
+
+	input[type=range]::-ms-fill-lower {
+	  background: #16a085;
+	  border-radius: 40px;
+	}
+
+	input[type=range]::-ms-fill-upper {
+	  background: #BDC3C7;
+	  border-radius: 40px;
+	}
+
+	input[type=range]::-ms-thumb {
+	  border: 2px solid #16a085;
+	  height: 20px;
+	  width: 20px;
+	  border-radius: 15px;
+	  background: #000;
+	  cursor: pointer;
+	  margin-top: 0px;
+	}
+
+	input[type=range]:hover::-ms-thumb {
+	  background: #bdc3c7;
+	}
+
+	input[type=range]:active::-ms-thumb {
+	  background: #16a085;
+	}
+
+/*========================*/
+
+/* fullscreen */
+html:-ms-fullscreen {
+	width:100%;
+}
+:-webkit-full-screen {
+	background-color:transparent;
+}
+/* hide controls on fullscreen with WebKit */
+div[datafullscreen=true] video::-webkit-media-controls {
+	display:none !important;
+}
+div[datafullscreen=true] {
+	max-width:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+div[datafullscreen=true] video {
+	height:auto;
+}
+div[datafullscreen=true] .controls {
+	width:100%;
+	position:absolute;
+	bottom:0%;
+	left:0%;
+	right:0%;
+	height:inherit;
+	z-index:2147483647;
+}

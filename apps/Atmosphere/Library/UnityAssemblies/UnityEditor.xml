@@ -17382,6 +17382,12 @@ Note: calling this function will implicitly call Application.SetStackTraceLogTyp
         <para>Tizen specific player settings.</para>
       </summary>
     </member>
+    <member name="P:UnityEditor.PlayerSettings.Tizen.minOSVersion">
+      <summary>
+        <para>Minimum Tizen OS version that this application is compatible with. 
+        IMPORTANT: For example: if you choose Tizen 2.4 your application will only run on devices with Tizen 2.4 or later.</para>
+      </summary>
+    </member>
     <member name="P:UnityEditor.PlayerSettings.Tizen.productDescription">
       <summary>
         <para>Description of your project to be displayed in the Tizen Store.</para>
@@ -17892,197 +17898,6 @@ For more information - https:msdn.microsoft.comlibrarywindowsappshh779671https:m
     <member name="F:UnityEditor.PlayerSettings.WSASupportedFileType.fileType">
       <summary>
         <para>File type extension. For ex., .myUnityGame</para>
-      </summary>
-    </member>
-    <member name="T:UnityEditor.PlayerSettings.XboxOne">
-      <summary>
-        <para>Xbox One Specific Player Settings.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.monoLoggingLevel">
-      <summary>
-        <para>This option controls the mono trace log in XboxOne builds. This is a very verbose and expensive tool that can be used to help with debugging a potential mono issue.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEditor.PlayerSettings.XboxOne.AddAllowedProductId(System.String)">
-      <summary>
-        <para>Add a ProductId to the list of products that can load the content package created from your project.  This setting is only available for content packages.</para>
-      </summary>
-      <param name="id"></param>
-      <returns>
-        <para>Returns false if the product Id was already in the allowed list.</para>
-      </returns>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.AllowedProductIds">
-      <summary>
-        <para>Get the list of projects that can load this content package.  This setting is only available for content packages.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.AppManifestOverridePath">
-      <summary>
-        <para>Xbox One optional parameter that lets you use a specified Manifest file rather than generated for you.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.ContentId">
-      <summary>
-        <para>Xbox One Content ID to be used in constructing game package.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.Description">
-      <summary>
-        <para>A friendly description that can be displayed to users.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.DisableKinectGpuReservation">
-      <summary>
-        <para>Disabling the kinect frees up additional GPU resources for use.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.EnablePIXSampling">
-      <summary>
-        <para>Enable sampling profiler in development builds to provide better profile markers for PIX, including Start and Update markers for script behaviors.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.EnableVariableGPU">
-      <summary>
-        <para>Turns on notifications that you are gaining/losing GPU resources.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.GameOsOverridePath">
-      <summary>
-        <para>(optional override) Location of Xbox One Game OS image file to link into ERA package being created.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEditor.PlayerSettings.XboxOne.GetCapability(System.String)">
-      <summary>
-        <para>Returns a bool indicating if the given capability is enabled or not.  Please see the XDK whitepaper titled "Xbox One Submission Validator" for valid capability names.</para>
-      </summary>
-      <param name="capability"></param>
-    </member>
-    <member name="M:UnityEditor.PlayerSettings.XboxOne.GetGameRating(System.String)">
-      <summary>
-        <para>Get the rating value that is specified in the appxmanifest.xml file for the given ratings board.</para>
-      </summary>
-      <param name="name">The name of the ratings board that you want the rating value for.</param>
-      <returns>
-        <para>The current rating level.  The meaning of the value depends on the name of the ratings board.  The value corresponds to the entries the rating board's drop down menu, top most entry being 0 and each item lower in the list being 1 higher than the previous.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.PlayerSettings.XboxOne.GetSocketDefinition(System.String,System.String&amp;,System.Int32&amp;,System.Int32[]&amp;,System.String&amp;,System.Int32&amp;,System.Int32[]&amp;)">
-      <summary>
-        <para>Get the values for the socket description with the given name.</para>
-      </summary>
-      <param name="name">The name of the socket description.</param>
-      <param name="port">The port or port range the socket can use.</param>
-      <param name="protocol">The protocol the socket uses.</param>
-      <param name="usages">The allowed usage flags for this socket description.</param>
-      <param name="templateName">The name of the device association template.</param>
-      <param name="sessionRequirment">Mutiplayer requirement setting for the device association template.</param>
-      <param name="deviceUsages">The allowed usage flags for the device association template.</param>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.IsContentPackage">
-      <summary>
-        <para>Indicates if the game is a standalone game or a content package to an existing game.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.PackageUpdateGranularity">
-      <summary>
-        <para>The update granularity the package will be built with.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.PackagingEncryption">
-      <summary>
-        <para>Xbox One optional parameter that causes the makepkg process to encrypt the package for performance testing or with final retail encryption.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.PackagingOverridePath">
-      <summary>
-        <para>Xbox One optional parameter that causes the makepkg process to use your specified layout file rather than generating one for you. Required if working with asset bundles.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.PersistentLocalStorageSize">
-      <summary>
-        <para>Sets the size of the persistent local storage.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.ProductId">
-      <summary>
-        <para>Xbox One Product ID to use when building a streaming install package.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEditor.PlayerSettings.XboxOne.RemoveAllowedProductId(System.String)">
-      <summary>
-        <para>Remove a ProductId from the list of products that can load the content package created from your project.  This setting is only available for content packages.</para>
-      </summary>
-      <param name="id"></param>
-    </member>
-    <member name="M:UnityEditor.PlayerSettings.XboxOne.RemoveSocketDefinition(System.String)">
-      <summary>
-        <para>Remove the socket description with the given name.</para>
-      </summary>
-      <param name="name"></param>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.SandboxId">
-      <summary>
-        <para>Xbox One makepkg option. Specifies the Sandbox ID to be used when building a streaming install package.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.SCID">
-      <summary>
-        <para>The service configuration ID for your title.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEditor.PlayerSettings.XboxOne.SetCapability(System.String,System.Boolean)">
-      <summary>
-        <para>Mark a specific capability as enabled or enabled in the appxmanifest.xml file.  Please see the XDK whitepaper titled "Xbox One Submission Validator" for valid capability names.</para>
-      </summary>
-      <param name="capability">The name of the capability to set.</param>
-      <param name="value">Whether or not to enable the capability.</param>
-    </member>
-    <member name="M:UnityEditor.PlayerSettings.XboxOne.SetGameRating(System.String,System.Int32)">
-      <summary>
-        <para>Set the rating value that is specified in the appxmanifest.xml file.</para>
-      </summary>
-      <param name="name">The name of the ratings board that you are setting the rating value for.</param>
-      <param name="value">The new rating level.  The meaning of the value depends on the name of the ratings board.  The value corresponds to the entries the rating board's drop down menu, top most entry being 0 and each item lower in the list being 1 higher than the previous.</param>
-    </member>
-    <member name="M:UnityEditor.PlayerSettings.XboxOne.SetSocketDefinition(System.String,System.String,System.Int32,System.Int32[],System.String,System.Int32,System.Int32[])">
-      <summary>
-        <para>Set the values for the socket description with the given name.</para>
-      </summary>
-      <param name="name">The name of the socket description.</param>
-      <param name="port">The port or port range the socket can use.</param>
-      <param name="protocol">The protocol the socket uses.</param>
-      <param name="usages">The allowed usage flags for this socket description.</param>
-      <param name="templateName">The name of the device association template.</param>
-      <param name="sessionRequirment">Mutiplayer requirement setting for the device association template.</param>
-      <param name="deviceUsages">The allowed usage flags for the device association template.</param>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.SocketNames">
-      <summary>
-        <para>Get the names of the socket descriptions for the project.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.TitleId">
-      <summary>
-        <para>The TitleID uniquely identifying your title to Xbox Live services.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEditor.PlayerSettings.XboxOne.UpdateAllowedProductId(System.Int32,System.String)">
-      <summary>
-        <para>Update the value at the given index in the list of products that can load this content package.  You can use the PlayerSettings.XboxOne.AllowedProductIds property to get the existing productIds and determine their indexes.</para>
-      </summary>
-      <param name="idx"></param>
-      <param name="id"></param>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.UpdateKey">
-      <summary>
-        <para>Xbox One makepkg.exe option. Specifies the update key required when building game updates.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.XboxOne.Version">
-      <summary>
-        <para>Xbox One Version Identifier used in the Application Manifest.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.PluginImporter">
@@ -21390,6 +21205,21 @@ Valid values are in the range [0-1], with higher values generating a tighter mes
     <member name="F:UnityEditor.TextureImporterType.Sprite">
       <summary>
         <para>Select this if you will be using your texture for Sprite graphics.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.TizenOSVersion">
+      <summary>
+        <para>Tizen OS compatibility.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.TizenOSVersion.Version23">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.TizenOSVersion.Version24">
+      <summary>
+        <para></para>
       </summary>
     </member>
     <member name="T:UnityEditor.Tool">

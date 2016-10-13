@@ -6,7 +6,7 @@ Best For You is a sample fitness UWP app focused on collecting data from a ficti
 
 The solution contains two client side projects and deveral Azure services:
 1. UWP client app designed for Xbox One, Desktop, and Mobile
-2. UWP IoT app inteded to run on an IoT device such as the Raspberry Pi 3 (it can also run on any other UWP device for demo purposes)
+2. UWP IoT app intended to run on an IoT device such as the Raspberry Pi 3 (it can also run on any other UWP device for demo purposes)
 3. Azure IoT Hub, Azure Event Hub, Azure Stream Analytics and more
 
 ![Architecture](http://i.imgur.com/a1I5wBg.png)
@@ -33,7 +33,7 @@ The simplest way is to click on the button below and follow instructions. If you
     * Launch Visual Studio, right click on the *HeartRateDevice* project and click on **Add Connected Service**
     * Choose Azure IoT Hub and click configure
     * Choose **Hardcore shared access key in application's code**
-    * Make sure you are loged in to Visual Studio with the same account associated with the Azure subscription and select the IoT Hub project you created in the previous section
+    * Make sure you are logged in to Visual Studio with the same account associated with the Azure subscription and select the IoT Hub project you created in the previous section
     * Chose a device to connect - most likely you will need to create one
     * Click OK
 

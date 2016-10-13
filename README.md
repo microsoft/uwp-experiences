@@ -5,6 +5,7 @@
 Best For You is a sample fitness UWP app focused on collecting data from a fictional IoT enabled yoga clothes and presenting it to the user in a meaningful and helpful way on all of their devices to track progress of exercise and health. 
 
 The solution contains two client side projects and several Azure services:
+
 1. UWP client app designed for Xbox One, Desktop, and Mobile
 2. UWP IoT app intended to run on an IoT device such as the Raspberry Pi 3 (it can also run on any other UWP device for demo purposes)
 3. Azure IoT Hub, Azure Event Hub, Azure Stream Analytics and more

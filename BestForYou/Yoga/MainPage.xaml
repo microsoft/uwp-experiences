@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="Yoga.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Yoga"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:Yoga.Models"
+    mc:Ignorable="d">
+    <RelativePanel Background="{StaticResource LeftSectionColor}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Narrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainFrame.(RelativePanel.AlignLeftWithPanel)" Value="True" />
+                        <Setter Target="MainFrame.(RelativePanel.AlignRightWithPanel)" Value="True" />
+                        <Setter Target="MainFrame.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                        <Setter Target="MainFrame.(RelativePanel.Below)" Value="NavigationStackPanel" />
+                        <Setter Target="NavigationStackPanel.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True" />
+                        <Setter Target="NavigationStackPanel.Orientation" Value="Horizontal" />
+                        <Setter Target="LogoGrid.Visibility" Value="Collapsed" />
+                        <Setter Target="StatsRadioButton.Style" Value="{StaticResource NavigationButtonNarrow}" />
+                        <Setter Target="TrainingRadioButton.Style" Value="{StaticResource NavigationButtonNarrow}" />
+                        <Setter Target="GearRadioButton.Style" Value="{StaticResource NavigationButtonNarrow}" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Wide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="860" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainFrame.(RelativePanel.AlignRightWithPanel)" Value="True" />
+                        <Setter Target="MainFrame.(RelativePanel.AlignBottomWithPanel)" Value="True" />
+                        <Setter Target="MainFrame.(RelativePanel.AlignTopWithPanel)" Value="True" />
+                        <Setter Target="MainFrame.(RelativePanel.RightOf)" Value="NavigationStackPanel" />
+                        <Setter Target="NavigationStackPanel.(RelativePanel.AlignLeftWithPanel)" Value="True" />
+                        <Setter Target="NavigationStackPanel.(RelativePanel.Below)" Value="LogoGrid" />
+                        <Setter Target="NavigationStackPanel.Orientation" Value="Vertical" />
+                        <Setter Target="LogoGrid.Visibility" Value="Visible" />
+                        <Setter Target="StatsRadioButton.Style" Value="{StaticResource NavigationButtonWide}" />
+                        <Setter Target="TrainingRadioButton.Style" Value="{StaticResource NavigationButtonWide}" />
+                        <Setter Target="GearRadioButton.Style" Value="{StaticResource NavigationButtonWide}" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Frame x:Name="MainFrame" />
+        
+        <Grid x:Name="LogoGrid" Height="20" Width="20" HorizontalAlignment="Left" Margin="40,20,0,40">
+            <Ellipse Fill="{StaticResource HighlightColor}" />
+            <Ellipse Fill="{StaticResource LeftSectionColor}" Margin="1" />
+            <Ellipse Fill="{StaticResource HighlightColor}" Margin="4" />
+        </Grid>
+
+        <StackPanel x:Name="NavigationStackPanel" Margin="0,20,0,0">
+            <RadioButton x:Name="StatsRadioButton" Checked="NavigationButton_Checked" GroupName="Menu" Content="STATS" Style="{StaticResource NavigationButtonNarrow}"  />
+            <RadioButton x:Name="TrainingRadioButton" Checked="NavigationButton_Checked" GroupName="Menu" Content="TRAINING" Style="{StaticResource NavigationButtonNarrow}" />
+            <RadioButton x:Name="GearRadioButton" Checked="NavigationButton_Checked" GroupName="Menu"  Content="GEAR" Style="{StaticResource NavigationButtonNarrow}" />
+        </StackPanel>
+
+    </RelativePanel>
+</Page>

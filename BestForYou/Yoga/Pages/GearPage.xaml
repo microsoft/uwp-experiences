@@ -1,0 +1,64 @@
+﻿<Page
+    x:Class="Yoga.Pages.GearPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Yoga.Pages"
+    xmlns:main="using:Yoga"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ScrollViewer ScrollViewer.HorizontalScrollMode="Disabled">
+        <Grid Background="{StaticResource LeftSectionColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="276" />
+                <RowDefinition Height="296" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <main:FocusableItemControl Grid.Row="0">
+                <Grid  Background="{StaticResource TopSectionColor}" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="YOGA SHIRT" Style="{StaticResource HeadingsTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                    <Image Source="/Assets/YogaShirt.png" Grid.Row="1" HorizontalAlignment="Center" Width="120" Height="133" VerticalAlignment="Stretch"/>
+                    <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,-20,0,0">
+                        <TextBlock Text="Tracking sensitivity" Foreground="White" Margin="0,0,0,12" />
+                        <ProgressBar Foreground="{StaticResource HighlightColor}" Value="30" HorizontalAlignment="Stretch" Margin="0,0,48,0" />
+                    </StackPanel>
+
+                </Grid>
+            </main:FocusableItemControl>
+
+            <main:FocusableItemControl Grid.Row="1">
+                <Grid Background="{StaticResource TopSectionColor}" Margin="0,12,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="YOGA PANTS" Style="{StaticResource HeadingsTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                    <Image Source="/Assets/YogaPants.png" Grid.Row="1" HorizontalAlignment="Stretch" Height="152" VerticalAlignment="Stretch"/>
+                    <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,-20,0,0">
+                        <TextBlock Text="Tracking sensitivity" Foreground="White" Margin="0,0,0,12" />
+                        <ProgressBar Foreground="{StaticResource HighlightColor}" Value="30" HorizontalAlignment="Stretch" Margin="0,0,48,0" />
+                    </StackPanel>
+
+                </Grid>
+            </main:FocusableItemControl>
+
+            <TextBlock Text="+ SET UP GEAR" Grid.Row="2" Style="{StaticResource HeadingsTextBlockStyle}" Margin="0,44,0,0" HorizontalAlignment="Center" CharacterSpacing="200" />
+
+        </Grid>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,180 @@
+﻿<Page
+    x:Class="Yoga.Pages.TrainingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Yoga.Pages"
+    xmlns:yoga="using:Yoga"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:Yoga.Models"
+    mc:Ignorable="d">
+
+    <ScrollViewer ScrollViewer.HorizontalScrollMode="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+        <Grid Background="{StaticResource LeftSectionColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition  />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Width="48" Grid.Row="0" Grid.Column="0" Background="{StaticResource CenterSectionColor}" Margin="0,0,0,12">
+                <Button Style="{StaticResource DateChangeButtons}" Click="PreviousButton_Click" Tag="Suggested">
+                    <Button.Content>
+                        <TextBlock Text="&lt;" />
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+            <Grid Width="48" Grid.Row="0" Grid.Column="2" Background="{StaticResource CenterSectionColor}" Margin="0,0,0,12">
+                <Button Style="{StaticResource DateChangeButtons}" Click="NextButton_Click" Tag="Suggested">
+                    <Button.Content>
+                        <TextBlock Text="&gt;" Margin="1,0,0,0" />
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1" Background="{StaticResource CenterSectionColor}" Padding="0,44,0,0" Margin="0,0,0,12">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Text="SUGGESTED" Style="{StaticResource HeadingsTextBlockStyle}" Margin="0,0,0,18" />
+                <Grid Grid.Row="1">
+                    <ListView x:Name="SuggestedListView" ItemsSource="{x:Bind Videos.Suggested}" ItemClick="ListView_ItemClicked" IsItemClickEnabled="True" SelectionMode="None" ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.VerticalScrollMode="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="models:TrainingVideo">
+                                <Grid Margin="10,22,10,22">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="140" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="276" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{x:Bind Source}" Grid.Row="0" Margin="0,0,0,4" />
+                                    <TextBlock Text="{x:Bind Name}" Foreground="White" Margin="0,0,0,4" Grid.Row="1"/>
+                                    <TextBlock Text="{x:Bind Length}" Margin="0,0,28,4" Foreground="White" Grid.Row="1" HorizontalAlignment="Right"/>
+                                    <TextBlock Text=" min"  Grid.Row="1" HorizontalAlignment="Right" Foreground="White" />
+                                    <ProgressBar Value="{x:Bind Progress}" Foreground="Red" Grid.Row="2" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsStackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0" Padding="0,44,0,0" Background="{StaticResource CenterSectionColor}" Margin="0,0,0,12">
+                <Button Style="{StaticResource DateChangeButtons}" Click="PreviousButton_Click" Tag="Completed">
+                    <Button.Content>
+                        <TextBlock Text="&lt;" />
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="2" Padding="0,44,0,0" Background="{StaticResource CenterSectionColor}" Margin="0,0,0,12">
+                <Button Style="{StaticResource DateChangeButtons}" Click="NextButton_Click" Tag="Completed">
+                    <Button.Content>
+                        <TextBlock Text="&gt;" Margin="1,0,0,0" />
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1" Background="{StaticResource CenterSectionColor}" Padding="0,44,0,0" Margin="0,0,0,12">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Text="COMPLETED" Style="{StaticResource HeadingsTextBlockStyle}" Margin="0,0,0,18" />
+                <ListView x:Name="CompletedListView" ItemClick="ListView_ItemClicked" IsItemClickEnabled="True" SelectionMode="None" Grid.Row="1" ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.VerticalScrollMode="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ItemsSource="{x:Bind Videos.Completed}" HorizontalAlignment="Left" Margin="-12,0,0,0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="models:TrainingVideo">
+                            <Grid Margin="10,22,10,22">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="128" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="128" />
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{x:Bind Source}" Grid.Row="0" Margin="0,0,0,4" />
+                                <TextBlock Text="{x:Bind Name}" Foreground="White" Margin="0,0,0,4" Grid.Row="1"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsStackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                </ListView>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="0" Padding="0,44,0,0" Background="{StaticResource CenterSectionColor}" Margin="0,0,0,12">
+                <Button Style="{StaticResource DateChangeButtons}" Click="PreviousButton_Click" Tag="Browse">
+                    <Button.Content>
+                        <TextBlock Text="&lt;" />
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="2" Padding="0,44,0,0" Background="{StaticResource CenterSectionColor}" Margin="0,0,0,12">
+                <Button Style="{StaticResource DateChangeButtons}" Click="NextButton_Click" Tag="Browse">
+                    <Button.Content>
+                        <TextBlock Text="&gt;" Margin="1,0,0,0" />
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="1" Background="{StaticResource CenterSectionColor}" Padding="0,44,0,0" Margin="0,0,0,12">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Text="BROWSE" Style="{StaticResource HeadingsTextBlockStyle}" Margin="0,0,0,18" />
+                <ListView x:Name="BrowseListView" Grid.Row="1" ItemClick="ListView_ItemClicked" IsItemClickEnabled="True" SelectionMode="None" ItemsSource="{x:Bind Videos.Browse}" ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.VerticalScrollMode="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalAlignment="Left" Margin="-12,0,0,0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="models:TrainingVideo">
+                            <Grid Margin="10,22,10,22">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="140" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="276" />
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{x:Bind Source}"  Grid.Row="0" Margin="0,0,0,4" />
+                                <TextBlock Text="{x:Bind Name}" Foreground="White" Margin="0,0,0,4" Grid.Row="1"/>
+                                <TextBlock Text="{x:Bind Length}" Margin="0,0,28,4" Foreground="White" Grid.Row="1" HorizontalAlignment="Right"/>
+                                <TextBlock Text=" min"  Grid.Row="1" HorizontalAlignment="Right" Foreground="White" />
+                                <ProgressBar Value="{x:Bind Progress}" Foreground="Gray" Grid.Row="2" />
+
+                                <TextBlock Text="{x:Bind Comment}"  Grid.Row="3" Foreground="White" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsStackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                </ListView>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</Page>

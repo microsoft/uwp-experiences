@@ -39,16 +39,16 @@ The simplest way is to click on the button below and follow instructions. If you
 
 2.  In the HeartRateDevice application, change the SendDeviceToCloudMessageAsync method in the *AzureIoTHub.cs* file to the following:
 
-``` csharp
-    public static async Task SendDeviceToCloudMessageAsync(double heartBeat)
-    {
-        var deviceClient = DeviceClient.CreateFromConnectionString(deviceConnectionString, TransportType.Amqp);
-        var message = new Message(Encoding.ASCII.GetBytes(heartBeat.ToString()));
-        await deviceClient.SendEventAsync(message);
-    }
-```
+   ```csharp
+   public static async Task SendDeviceToCloudMessageAsync(double heartBeat)
+   {
+      var deviceClient = DeviceClient.CreateFromConnectionString(deviceConnectionString, TransportType.Amqp);
+      var message = new Message(Encoding.ASCII.GetBytes(heartBeat.ToString()));
+      await deviceClient.SendEventAsync(message);
+   }
+   ```
 
-    That's it for the HeartRateDevice, feel free to run it on your desktop and play around with the slider to send the data to Azure IoT Hub. If you want to run it on a real IoT Device, you can run it on a Raspberry Pi 3. We used the [FEZ HAT](https://www.ghielectronics.com/catalog/product/500) to simulate heart rate by pressing one of the buttons. For more info on connecting your app to Azure IoT Hub, check out [this blog post](https://blogs.windows.com/buildingapps/2016/03/03/connect-your-windows-app-to-azure-iot-hub-with-visual-studio/)
+   That's it for the HeartRateDevice, feel free to run it on your desktop and play around with the slider to send the data to Azure IoT Hub. If you want to run it on a real IoT Device, you can run it on a Raspberry Pi 3. We used the [FEZ HAT](https://www.ghielectronics.com/catalog/product/500) to simulate heart rate by pressing one of the buttons. For more info on connecting your app to Azure IoT Hub, check out [this blog post](https://blogs.windows.com/buildingapps/2016/03/03/connect-your-windows-app-to-azure-iot-hub-with-visual-studio/) 
 
 3. Next, you will need to add the correct strings in the *Keys.cs* source file in the Yoga project so it can receive the data from the HeartRateDevice through the IoT Hub and Event Hub.
     * **EventHubCompatibleEndpoint** and **EventHubCompatibleName** are found in the Azure Portal under the Event Hub -> Messaging section

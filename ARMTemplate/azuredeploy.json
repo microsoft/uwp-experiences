@@ -41,7 +41,7 @@
     },
     "repoUrl": {
       "type": "string",
-      "defaultValue": "https://github.com/olivierbloch/AppDevXbox"
+      "defaultValue": "https://github.com/Microsoft/AppDevXbox"
     },
     "branch": {
       "type": "string",

@@ -38,6 +38,14 @@
       "metadata": {
         "description": "The Iothub Sku"
       }
+    },
+    "repoUrl": {
+      "type": "string",
+      "defaultValue": "https://github.com/olivierbloch/AppDevXbox"
+    },
+    "branch": {
+      "type": "string",
+      "defaultValue": "BestForYou_iot_app"
     }
   },
   "variables": {

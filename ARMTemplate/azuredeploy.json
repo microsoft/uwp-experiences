@@ -24,30 +24,21 @@
     "solutionName": {
       "type": "string",
       "metadata": {
-        "description": "The name of your ConnectTheDots solution (will be used to prefix the services names)"
+        "description": "The name of your solution (MUST BE LESS THAN 16 LOWER CASE CHARACTERS ONLY)"
       }
     },
-        "iotHubSku": {
+    "iotHubSku": {
       "type": "string",
       "allowedValues": [
         "F1",
         "S1",
         "S2"
       ],
-      "defaultValue": "S1",
+      "defaultValue": "F1",
       "metadata": {
         "description": "The Iothub Sku"
       }
-    },
-    "repoUrl": {
-      "type": "string",
-      "defaultValue": "https://github.com/Microsoft/AppDevXbox
-    },
-    "branch": {
-      "type": "string",
-      "defaultValue": "BestForYou_iot_app "
     }
-
   },
   "variables": {
     "location": "[parameters('region')]",

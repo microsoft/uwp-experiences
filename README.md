@@ -25,7 +25,7 @@ To deploy the Best For Me solution to your Azure subscription you will need to f
 
 The simplest way is to click on the button below and follow instructions. If you prefer command line tools, or to learn more, checkout the [ConnectTheDots project](https://github.com/Azure/connectthedots).
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/?repository=https://github.com/Microsoft/AppDevXbox/tree/BestForYou_iot_app/raw/ARMTemplate)
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/?repository=https://github.com/Microsoft/AppDevXbox/tree/BestForYou_iot_app/ARMTemplate)
 
 
 ### Client

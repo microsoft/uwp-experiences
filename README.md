@@ -1,10 +1,10 @@
 # Adventure Works (v2) (Project Rome, Maps, and Facebook/Twitter integration)
 
-[![AdventureWorks2](http://i.imgur.com/AkLMVah.jpg)]()
+[![AdventureWorks2](http://i.imgur.com/AkLMVah.jpg)](https://www.youtube.com/watch?v=mn-26W6ooBE)
 
 Adventure Works is a cross device UWP application for sharing adventures and experiences with my fictional friends. V2 of Adventure Works adds to the [original app](https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v1_camera_app) the capabilities (1) to extend the experience to other devices that the user owns through the Project “Rome” APIs, (2) to be location aware using the powerful Maps API, and (3) to integrate with 3rd party social networks.
 
-Read the [full blog post]() or visit the [App Dev on Xbox landing page](http://aka.ms/xboxappdev) for more videos and blog posts.
+Read the [full blog post](https://blogs.windows.com/buildingapps/2016/10/27/going-social-project-rome-maps-social-network-integration-app-dev-on-xbox-series) or visit the [App Dev on Xbox landing page](http://aka.ms/xboxappdev) for more videos and blog posts.
 
 ## Setup
 To get the full functionality  of the app, the Keys.cs file will need to be populated with the appropriate API keys for each service. 

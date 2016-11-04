@@ -19,7 +19,7 @@ Read the [full blog post]() or visit the [App Dev on Xbox landing page](http://a
 The app will build and run immediately. However, to get the full functionality of the app, the Keys.cs file will need to be populated with the appropriate API keys for each service. The app has been developed with the free version of each service, so you will not need to pay for any service to play with the app.
 
 1. The LUIS service requires an App Id and an Azure subscription Id. 
-    * To get an App Id, visit the [LUIS home page](https://www.luis.ai) and create a new app. Use the [LUIS\AdventureWorks.json]() file to import the Adventure Works utterances, intents and entities to the app. Go to App Settings to get the App Id.
+    * To get an App Id, visit the [LUIS home page](https://www.luis.ai) and create a new app. Use the [LUIS\AdventureWorks.json](https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v3_speech_ink/Adventure%20Works/LUIS) file to import the Adventure Works utterances, intents and entities to the app. Go to App Settings to get the App Id.
     * To get a subscription key via Azure, you will need to sign in to the Microsoft Azure Portal and create a new Cognitive Service API. Choose the free tier of the LUIS API and click on Keys. Once you have created your key, you can add it to your account via the application settings dialog, found in any application.  Read the full instructions [here](https://www.luis.ai/Help#CreatingKeys)
 
 2. The Face, Emotion, and Computer Vision APIs require you to provide your own keys which you can [generate here](https://www.microsoft.com/cognitive-services/en-us/subscriptions) for free. 

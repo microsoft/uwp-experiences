@@ -1,6 +1,6 @@
 # Adventure Works (v3) (Speech and Inking)
 
-[![AdventureWorks3](http://i.imgur.com/Og1bw7e.jpg)]()
+[![AdventureWorks3](http://i.imgur.com/Og1bw7e.jpg)](https://www.youtube.com/watch?v=Ckaw53kLp8Y)
 
 Adventure Works is a cross device UWP application for sharing adventures and experiences with my fictional friends. V3 of Adventure Works adds to [V1](https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v1_camera_app) and [V2](https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v2_rome_maps_social) support for Ink on devices that support it, and support for speech interaction where it makes sense (including both synthesis and recognition). 
 As a reminder, in the previous versions of the app we added the ability to:
@@ -13,7 +13,7 @@ As a reminder, in the previous versions of the app we added the ability to:
 
 This is the final version of the sample app that includes everything before it.
 
-Read the [full blog post]() or visit the [App Dev on Xbox landing page](http://aka.ms/xboxappdev) for more videos and blog posts.
+Read the [full blog post](https://blogs.windows.com/buildingapps/2016/11/04/getting-personal-speech-and-inking-app-dev-on-xbox-series) or visit the [App Dev on Xbox landing page](http://aka.ms/xboxappdev) for more videos and blog posts.
 
 ## Setup
 The app will build and run immediately. However, to get the full functionality of the app, the Keys.cs file will need to be populated with the appropriate API keys for each service. The app has been developed with the free version of each service, so you will not need to pay for any service to play with the app.

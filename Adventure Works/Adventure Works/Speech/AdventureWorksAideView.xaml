@@ -1,0 +1,24 @@
+﻿<UserControl
+    x:Class="Adventure_Works.AdventureWorksAideView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Adventure_Works"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    >
+
+    <Grid Height="40">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" ></ColumnDefinition>
+            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border CornerRadius="20" x:Name="BackgroundBorder" Grid.ColumnSpan="2" Background="Black" Opacity="0.7"></Border>
+
+        <TextBlock x:Name="ListeningText" Text="listening" Foreground="{StaticResource MainBackground}" FontSize="12" FocusVisualPrimaryBrush="Black" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,10,10,10"></TextBlock>
+        <TextBlock x:Name="TextTextBlock" Foreground="{StaticResource BrandColorLight}" FontSize="14" FocusVisualPrimaryBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,10,10,10"></TextBlock>
+
+        <Image x:Name="Logo" Grid.Column="1" Source="ms-appx:///Assets/Square71x71Logo.scale-125.png"></Image>
+    </Grid>
+
+</UserControl>

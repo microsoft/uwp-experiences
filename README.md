@@ -13,4 +13,5 @@ Each sample app lives on a separate branch in this repository. As more sample ap
 - **Adventure Works** - a UWP cross device app for creating and sharing adventures - this app is shared as it is built over three iterations:
   - **V1: Camera and Cognitive Services Vision APIs** - [ [code](https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v1_camera_app) | [blog](https://blogs.windows.com/buildingapps/2016/10/21/camera-apis-with-a-dash-of-cloud-intelligence-in-a-uwp-app-app-dev-on-xbox-series) ]
   - **V2: V1 + Project Rome, Maps, Social Network Integration** - [ [code](https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v2_rome_maps_social) | [blog](https://blogs.windows.com/buildingapps/2016/10/27/going-social-project-rome-maps-social-network-integration-app-dev-on-xbox-series) ]
+  - **V3: V2 + Speech (including LUIS) and Inking** - [ [code](https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v3_speech_ink) | [blog](https://blogs.windows.com/buildingapps/2016/11/04/getting-personal-speech-and-inking-app-dev-on-xbox-series) ]
 

@@ -1,0 +1,55 @@
+﻿<UserControl
+    x:Class="News.Controls.TimelineStory"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:News.Controls"
+    xmlns:composition="using:News.Helpers.Composition"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="750"
+    RequestedTheme="Dark">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="130"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Name="DateContainer" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,40,0">
+            <TextBlock FontSize="12" FontFamily="Segoe UI" FontWeight="Light" Opacity="0.8">AUG 9</TextBlock>
+            <TextBlock FontSize="12" FontFamily="Segoe UI" FontWeight="Light" CharacterSpacing="2" Opacity="0.8">1:15 PM</TextBlock>
+        </StackPanel>
+
+        <Grid Name="ImageContainer" Height="110" Width="110" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Ellipse StrokeThickness="1" Stroke="#97FFFFFF" Height="110" Width="110"/>
+            <composition:CompositionShadow x:Name="Shadow" Color="Black" OffsetX="0" OffsetY="0" ShadowOpacity="0.5" BlurRadius="30">
+                <composition:CompositionImage x:Name="Image" Source="{x:Bind Item.HeroImage}" Height="90" Width="90" Stretch="UniformToFill"></composition:CompositionImage>
+            </composition:CompositionShadow>
+        </Grid>
+
+        <Grid Margin="20,0,0,0" Name="Content" Grid.Column="2" VerticalAlignment="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Name="TopLine" BorderBrush="#19FFFFFF" BorderThickness="0,1,0,0" Margin="0,10,0,5"></Border>
+                <TextBlock Name="TitleLine" FontSize="20" FontWeight="Light" Grid.Row="1" Text="{x:Bind Item.Title}" FontFamily="Segoe UI" Foreground="#CCFFFFFF" TextTrimming="CharacterEllipsis"></TextBlock>
+                <TextBlock Name="SummaryContainer" FontSize="12" FontWeight="Light" Margin="0,10" Grid.Row="2" MaxLines="2" TextWrapping="WrapWholeWords" TextTrimming="WordEllipsis" Text="{x:Bind Item.Summary}" Foreground="#99FFFFFF"></TextBlock>
+                <StackPanel Name="LikesContainer" Grid.Row="3" Orientation="Horizontal">
+                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" VerticalAlignment="Center" ></TextBlock>
+                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" VerticalAlignment="Center" Margin="10,0,4,0"></TextBlock>
+                    <TextBlock FontSize="12" VerticalAlignment="Center" Margin="0,7,0,0" Text="{x:Bind Item.Likes}"></TextBlock>
+                </StackPanel>
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+
+</UserControl>

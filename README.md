@@ -90,16 +90,16 @@ Best For You is a fitness UWP app focused on collecting data from a fictional Io
 code | windows store
 ---|---|---
 
-camera and cognitive services vision apis: [blog post][social-blog-post-1] | video
----|---
+camera and cognitive services vision apis | **[blog post][social-blog-post-1]** | **video**
+---|---|---
 
-project rome and social integration: [blog post][social-blog-post-2] | video
----|---
+project rome and social integration | **[blog post][social-blog-post-2]** | **video**
+---|---|---
 
-speech and inking: [blog post][social-blog-post-3] | video
----|---
+speech and inking | **[blog post][social-blog-post-3]** | **video**
+---|---|---
 
-**Features:** | Camera integration | Cognitive Services Vision, Face, and Speech APIs | Project Rome | Social Network integration | Speech | Inking
+**Features:** | Camera Integration | Cognitive Services Vision, Face, and Speech APIs | Project Rome | Social Network integration | Speech | Inking
 ---|---|---|---|---|---|---
 
 Adventure Works is a cross device UWP application for sharing adventures and experiences with fictional friends. 

@@ -1,14 +1,19 @@
-# Backdrop (music app)
+<!---
+  category: Xbox | Background Audio | Single Process Model | Xamarin | tvOS | SignalR
+  language: cs
+  keywords: xbox mobile desktop xamarin background audio signalr
+-->
 
-[![Backdrop](http://imgur.com/CPWPlHE.png)](https://www.youtube.com/watch?v=Gj8IWdeYunQ)
+# The Music Experience
+
+![Backdrop](http://i.imgur.com/GjIDRqB.gif)
+
+**Features:** | Sharing code with Xamarin (UWP and tvOS) | Background Audio | SignalR
+---|---|---|---
 
 Backdrop is a sample music application that lets a group of friends collaborate on the music selection process and share their experience and music choices. A device is first chosen to be the host device where the music will be played. Then anyone is able to add and vote on tracks on their own device. Each friend can see the current playlist in real time and the progress of the current track on their own device. Each can vote on different tracks to set the order in which they will be played as well as suggest other tracks to be played. 
 
 The application has been written for the Universal Windows Platform (UWP) and tvOS by using Xamarin to share the majority of business logic, view models, playlist management, cloud and device communication. The UI, in turn, is written using the native controls and affordances of each platform. Using the shared project, additional platforms such as Android and iOS can easily be added.
-
-Read the [full blog post](https://blogs.windows.com/buildingapps/2016/09/23/background-audio-and-cross-platform-development-with-xamarin-app-dev-on-xbox-series) or visit the [App Dev on Xbox landing page](http://aka.ms/xboxappdev) for more videos and blogs.
-
-### [Get the latest build of the app here](https://1drv.ms/f/s!AjZLNGpIZBbgruphmcOvpZogOprcdQ)
 
 # Setup
 
@@ -27,3 +32,14 @@ Twitter is used to authenticate a user to the Backdrop service and use their pro
 ### 3. Soundcloud
 
 Backdrop uses Soundcloud for it's music service and the API requires a client id, client secret, and redirect url. [Register a new SoundCloud app](http://soundcloud.com/you/apps/new) and paste the required information in Keys.cs
+
+***
+
+## Next Steps ##
+<!--- ### - Download the sample from the Windows Store. --->
+
+### - Read the [blog post](https://blogs.windows.com/buildingapps/2016/09/23/background-audio-and-cross-platform-development-with-xamarin-app-dev-on-xbox-series)
+
+### - Download the source by clicking on **Clone or download** above
+
+<!--- ### - View the one minute dev video --->

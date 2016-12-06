@@ -1,0 +1,377 @@
+/*this is phone size */
+@media screen and (min-width:300px) and (max-width:799px) {
+@-ms-viewport {
+  width: 360px;
+}
+.movieListing .movieSection{
+    
+    padding: 12px 0 12px 16px;
+}
+
+/*player part */
+#page .playMovie {
+    padding: 72px 16px 12px 16px;
+    flex-wrap: wrap;
+}
+#page #videoContainer{
+    xwidth: 100%;
+}
+#page .movieText{
+    margin-left: 0px;
+}
+#page .movieText h2{
+    margin: 12px 0;
+}
+.movieTextWrapper{
+    height: 100px;
+    overflow: scroll;
+}
+#page .lowerDetailsWrapper{
+    flex-wrap: wrap;
+}
+#page .additionalDetailWrapper{
+    margin: 12px 16px;
+}
+#page .additionalDetailWrapper .detailBlock{
+    margin-bottom: 16px;
+}
+#page .additionalDetailWrapper h4{
+    margin-bottom: 12px;
+}
+#page .moviePlayer{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+#page .overArrow {
+    display: none;
+}
+#page .movieBox{
+    width: 198px;
+    height: 100px;
+    
+}
+#page .movieBoxContainer{
+    margin-top: 4px;
+
+}
+.logoBox .logo { display: none}
+.controls button {
+    width: 120px;
+    height: 32px;
+}
+#page .controls h1{
+    font-size: 24px;
+}
+#page .logoBox {
+    padding: 40px 16px;
+}
+#page .topSection{
+    height: 424px;
+    
+}
+#page .heroBox{
+    height: 296px;
+    padding: 64px 16px;
+}
+
+}
+/*end phone size */
+
+
+/*this is tablet size */
+@media screen and (min-width:800px) and (max-width:1279px) {
+@-ms-viewport {
+  width: 1024px;
+}
+.movieListing .movieSection{
+    padding-right: 126px;
+}
+
+#page .topSection{
+    height: 424px;
+    
+}
+#page .heroBox{
+    height: 296px;
+}
+#page .moviePlayer{
+    height: 260px;
+    width: 520px;
+}
+}
+/*end tablet size */
+
+
+/*this is Xbox size */
+@media screen and (min-width:1280px) and (max-width:1365px){
+@-ms-viewport {
+  width: 1280px;
+}
+.movieListing .movieSection{
+    padding-right: 0;
+}
+#page .overArrow {
+    display: none;
+}
+
+body{
+    xmargin:-400px;
+}
+}
+
+/*end Xbox size */
+
+
+
+
+
+/*this is the desktoop size */
+@media screen and (min-width:1366px) {
+@-ms-viewport {
+  width: 1366px;
+}
+.movieListing .movieSection{
+    padding-right: 146px;
+}
+}
+/*END desktoop size */
+
+
+
+
+
+
+body{
+    background-color: #1F213A;
+    color: white;
+     font-family: 'SegoeUIMonoW01-Regular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     touch-action: pan-y;
+    -ms-overflow-style: none;
+    overflow-x:hidden;
+    
+}
+
+.logoBox{
+    position: absolute;
+    width:100%;
+    padding: 64px;
+    display: flex;
+    z-index: 11;
+}
+.logoBox div{
+    margin-right: 40px;
+}
+.logoBox .logo{
+    margin-right: 68px;
+    height: 56px;
+    margin-top: -30px;
+}
+
+#page {
+    display: flex; 
+     flex-direction: column;
+     flex-wrap: nowrap ;
+     align-items: stretch;
+     align-content: space-between;
+}
+.topSection{
+    height: 564px;
+    margin-bottom:0em;
+    background: linear-gradient(to bottom, rgba(65,102,97,0) 0%,rgba(65,102,97,0) 32%,rgba(65,102,97,1) 99%,rgba(65,102,97,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.heroBox {
+    height: 436px;
+    padding: 64px;
+    opacity:.7;
+    background-image:url('http://adx.metulev.com/video/Images/Clean/Large/FeaturedImage_2x1_Image04.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+
+
+
+.movieListing{
+     display: flex;
+
+     justify-content: center;
+     flex-direction: column;
+    
+}
+.movieBoxContainer{
+    margin:16px 16px 0 0;
+    font-size: 12px;
+}
+.movieBox {
+    width: 276px;
+    height: 140px;
+    background-color:#32474F; 
+    margin-bottom: 8px;
+    flex-shrink:0;
+    background-size: cover;
+    border: 0;
+    display: block;
+    padding:0;
+}
+.movieBox:focus span, .movieBox:active span{
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/play.png');
+    background-size: cover;
+    display: inline-block;
+    background-position: center center;
+    opacity: .5;
+    margin:0;
+    padding:0;
+    
+    
+}
+.heroBox .controls{
+    width:29em;
+    margin-bottom:30px;
+}
+.controls h1{
+    margin-bottom:20px;
+    font-size: 34px;    
+}
+.controls span{
+    font-size: 1.2em;
+}
+.bottomSection{
+    flex-grow: 1;
+    xheight:100%;
+    xpadding: 40px 68px;
+}
+.movieSection{
+    overflow:hidden;
+    padding: 40px 68px;
+    position: relative;
+}
+
+.movieSection .list{
+     display: flex;
+     flex-direction: row;
+    overflow-x: scroll;
+    overflow-y:hidden;
+    xwidth:2000px;
+     justify-content: left;
+     margin-top:8px;
+}
+    .movieSection h4{
+        font-size: 15px;
+    }
+
+.movieSection:nth-of-type(2), .movieSection:nth-of-type(5) {
+  background-color:#283444;
+} 
+.movieSection:nth-of-type(4){
+  background-color:#2f404b;
+} 
+
+.movieSection:nth-of-type(2) .movieBoxContainer:first-child .movieBox, .movieSection:nth-of-type(5) .movieBoxContainer:first-child .movieBox{
+    width: 568px;
+    height: 320px;
+}
+.movieSection:nth-of-type(2) .list, .movieSection:nth-of-type(5) .list{
+    flex-direction: column;
+    max-height:450px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    
+}
+.movieBoxContainer:last-child { padding-right: 200px;}
+
+.playMovie {
+    padding-bottom: 44px;
+    padding-top: 140px;
+  padding: 140px 100px 44px 64px;
+    xheight: 25em;
+    display: flex;
+}
+
+.moviePlayer{
+    height:380px;
+    width:760px;
+    background-color: black;
+     flex-shrink:0;
+     background-size: contain;
+    
+}
+.movieText {
+   margin: 0 0 0 56px;
+   font-size: 12px;
+   
+}
+
+.movieText h2{
+    margin-bottom:24px;
+}
+
+.movieText p {
+    margin-bottom: 20px;
+    xtext-align: justify; 
+}
+.movieText .playInfo {
+    text-align: left;
+}
+.controls button{
+    
+ font-family: 'SegoeMDL2';
+}
+.controls button:focus{
+    outline: none;
+    background-color: #32474F;
+}
+
+.additionalDetailWrapper{
+    margin:40px 64px;
+  
+}
+.additionalDetailWrapper h4{
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+.additionalDetailWrapper .lowerDetailsWrapper {
+    display: flex;
+    flex-flow: row;
+    line-height: 20px;
+    font-size: 12px;
+    
+}
+.detailBlock {
+    margin-right: 84px;
+    width: 230px;
+}
+
+.overArrow{
+    position: absolute;
+    top: 48%;
+    right:24px;
+    border: 0;
+    font-size: 18px;
+}
+*webkit scroll bars  */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}

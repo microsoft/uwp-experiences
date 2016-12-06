@@ -4,7 +4,7 @@
   keywords: xbox mobile desktop unity extensions services
 -->
 
-# Atmosphere (weather app)
+# The Weather Experience
 
 [![Atmosphere](http://i.imgur.com/HlAcl4A.gif)](https://www.youtube.com/watch?v=tI6VEpIyj-A)
 
@@ -25,6 +25,7 @@ The Atmosphere app is a weather app that showcases the use of the popular Unity 
 3. Open the apps/Atomosphere.UWP/Atmosphere.sln solution in Visual Studio 2015 - Make sure the Build Configuration is set to x86 and Master build.
 4. Build and Run!
 
+***
 
 ## Next Steps ##
 <!--- ### - Download the sample from the Windows Store. --->

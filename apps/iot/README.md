@@ -1,6 +1,15 @@
-# Best For You (iot app)
+<!---
+  category: Xbox | IoT | Windows IoT Core | Azure IoT Hub | Azure Event Hub | Azure Stream Analytics
+  language: cs
+  keywords: xbox mobile desktop iot azure iot-hub azure-event-hub azure-stream-analytics
+-->
 
-[![BestForYou](http://i.imgur.com/PdDt7lR.png)](https://www.youtube.com/watch?v=85XxCtCWJ-8)
+# The IoT Experience
+
+![BestForYou](http://i.imgur.com/PdDt7lR.png)
+
+**Features:** | Windows IoT Core | Azure IoT Hub | Azure Event Hub | Azure Stream Analytics
+---|---|---|---|---
 
 Best For You is a sample fitness UWP app focused on collecting data from a fictional IoT enabled yoga clothes and presenting it to the user in a meaningful and helpful way on all of their devices to track progress of exercise and health. 
 
@@ -11,8 +20,6 @@ The solution contains two client side projects and several Azure services:
 3. Azure IoT Hub, Azure Event Hub, Azure Stream Analytics and more
 
 ![Architecture](http://i.imgur.com/a1I5wBg.png)
-
-Read the [full blog post](https://blogs.windows.com/buildingapps/2016/10/13/internet-of-things-on-the-xbox-app-dev-on-xbox-series) or visit the [App Dev on Xbox landing page](http://aka.ms/xboxappdev) for more videos and blogs.
 
 ## Setup
 
@@ -58,3 +65,14 @@ The simplest way is to click on the button below and follow instructions. If you
     The project uses the [Azure SB Lite](https://github.com/ppatierno/azuresblite) library to receive the IoT Hub data. Visit [this blog post](https://paolopatierno.wordpress.com/2015/11/02/azure-iot-hub-get-telemetry-data-using-amqp-stack-and-azure-sb-lite/) to learn more about it.
 
 4. Run
+
+***
+
+## Next Steps ##
+<!--- ### - Download the sample from the Windows Store. --->
+
+### - Read the [blog post](https://blogs.windows.com/buildingapps/2016/10/13/internet-of-things-on-the-xbox-app-dev-on-xbox-series)
+
+### - Download the source by clicking on **Clone or download** above
+
+<!--- ### - View the one minute dev video --->

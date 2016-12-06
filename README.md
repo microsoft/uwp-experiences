@@ -131,5 +131,5 @@ Adventure Works is a cross device UWP application for sharing adventures and exp
 [social-blog-post-2]: https://blogs.windows.com/buildingapps/2016/10/27/going-social-project-rome-maps-social-network-integration-app-dev-on-xbox-series
 [social-blog-post-3]: https://blogs.windows.com/buildingapps/2016/11/04/getting-personal-speech-and-inking-app-dev-on-xbox-series
 
-![Analytics](https://ga-beacon.appspot.com/UA-88615164-1/main-page)
+![Analytics](https://ga-beacon.appspot.com/UA-88615164-1/main-page?pixel)
 

@@ -1,10 +1,17 @@
-# South Ridge Video (video app)
+<!---
+  category: Xbox | Hosted Web App | tvjs | Gamepad | WebView | SMTC | Video
+  language: js
+  keywords: xbox mobile desktop hwa hosted web app tvjs gamepad webview smtc video
+-->
 
-[![SouthRidge](http://imgur.com/3lSmSJd.png)](https://www.youtube.com/watch?v=6kv3qyCdc1E)
+# The Video Experience
+
+![SouthRidge](http://i.imgur.com/JFdnwvz.gif)
+
+**Features:** | Hosted Web App | Controller support | Media Transport Controls Integration
+---|---|---|---|---
 
 South Ridge Video, an open source video app developed as a hosted web application built with React.js, and hosted on a web server. South Ridge can easily be converted to a UWP application that takes advantage of native platform capabilities and can be distributed through the Windows Store as any other UWP app. 
-
-Read the [full blog post](https://blogs.windows.com/buildingapps/2016/09/30/uwp-hosted-web-app-on-xbox-one-app-dev-on-xbox-series) or visit the [App Dev on Xbox landing page](http://aka.ms/xboxappdev) for more videos and blogs.
 
 ## Setup
 
@@ -31,3 +38,14 @@ The app is hosted at [http://southridge.azurewebsites.net](http://southridge.azu
 5. Click the *Go* button to upload the loose files and install the app. Once this is complete, you will be able to find and launch the app on your Xbox
 
 6. Enjoy!
+
+***
+
+## Next Steps ##
+<!--- ### - Download the sample from the Windows Store. --->
+
+### - Read the [blog post](https://blogs.windows.com/buildingapps/2016/09/30/uwp-hosted-web-app-on-xbox-one-app-dev-on-xbox-series)
+
+### - Download the source by clicking on **Clone or download** above
+
+<!--- ### - View the one minute dev video --->

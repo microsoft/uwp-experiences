@@ -1,0 +1,264 @@
+﻿{
+  "Poses": [
+    {
+      "Name": "The Twisty",
+      "Score": 5,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-05.png",
+      "Comment": "You're going to hurt youself"
+    },
+    {
+      "Name": "Dancer's",
+      "Score": 40,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-16.png",
+      "Comment": "Practice makes perfect"
+    },
+    {
+      "Name": "Warrior III",
+      "Score": 80,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-17.png",
+      "Comment": "Great job!"
+    },
+    {
+      "Name": "Warrior I",
+      "Score": 100,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-30.png",
+      "Comment": "Very Impressed"
+    },{
+      "Name": "Cobra",
+      "Score": 5,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-31.png",
+      "Comment": "You're going to hurt youself"
+    },
+    {
+      "Name": "Mermaid",
+      "Score": 40,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-59.png",
+      "Comment": "Practice makes perfect"
+    },
+    {
+      "Name": "Firefly",
+      "Score": 80,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-48.png",
+      "Comment": "Great job!"
+    },
+    {
+      "Name": "Warrior I",
+      "Score": 100,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-30.png",
+      "Comment": "Very Impressed"
+    },{
+      "Name": "Downward Dog",
+      "Score": 5,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-61.png",
+      "Comment": "You're going to hurt youself"
+    },
+    {
+      "Name": "Crescent Lunge",
+      "Score": 40,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-12.png",
+      "Comment": "Practice makes perfect"
+    },
+    {
+      "Name": "Warrior III",
+      "Score": 80,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-17.png",
+      "Comment": "Great job!"
+    },
+    {
+      "Name": "Warrior I",
+      "Score": 100,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-30.png",
+      "Comment": "Very Impressed"
+    },{
+      "Name": "Namaste",
+      "Score": 5,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-99.png",
+      "Comment": "You're going to hurt youself"
+    },
+    {
+      "Name": "Dancer's",
+      "Score": 40,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-16.png",
+      "Comment": "Practice makes perfect"
+    },
+    {
+      "Name": "Warrior III",
+      "Score": 80,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-17.png",
+      "Comment": "Great job!"
+    },
+    {
+      "Name": "Warrior I",
+      "Score": 100,
+      "Position": "ms-appx:///Assets/Poses/Yoga_poses-30.png",
+      "Comment": "Very Impressed"
+    }
+  ],
+  "Videos": [
+    {
+      "Suggested": [
+        {
+          "Name": "Warrior I",
+          "Length": 10,
+          "Progress": 20,
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Warrior II",
+          "Length": 15,
+          "Progress": 40,
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Warrior III",
+          "Length": 20,
+          "Progress": 80,
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        }
+      ],
+      "Completed": [
+        {
+          "Name": "Crescent",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Cobra",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Downward Dog",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Upward Dog",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Mountain",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Mermaid",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Pigeon",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Lunge",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Firefly",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Lotus",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Bridge",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Extended Child",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Locust",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Half Bow",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Plank",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Plow",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Shoulder Stand",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Rejuvenation",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Front Splits",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        }
+      ],
+      "Browse": [
+        {
+          "Name": "Bound Angle",
+          "Length": 10,
+          "Progress": 20,
+          "Comment": "Seated",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Forward Bend",
+          "Length": 15,
+          "Progress": 40,
+          "Comment": "Standing",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Warrior II",
+          "Length": 20,
+          "Progress": 80,
+          "Comment": "Standing / Balancing",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Mountain",
+          "Length": 10,
+          "Progress": 20,
+          "Comment": "Standing / Backbend",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Head to Knee",
+          "Length": 15,
+          "Progress": 40,
+          "Comment": "Standing",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Staff",
+          "Length": 20,
+          "Progress": 80,
+          "Comment": "Seated",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Front Corpse",
+          "Length": 10,
+          "Progress": 20,
+          "Comment": "Prone",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Downward Dog",
+          "Length": 15,
+          "Progress": 40,
+          "Comment": "Arm and Leg",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        },
+        {
+          "Name": "Table",
+          "Length": 20,
+          "Progress": 80,
+          "Comment": "Arm and Leg",
+          "Source": "ms-appx:///Assets/videoImage.PNG"
+        }
+      ]
+    }
+  ]
+}

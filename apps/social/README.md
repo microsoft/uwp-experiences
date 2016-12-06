@@ -43,7 +43,10 @@ The app will build and run immediately. However, to get the full functionality o
 ## Next Steps ##
 <!--- ### - Download the sample from the Windows Store. --->
 
-### - Read the [blog post](https://blogs.windows.com/buildingapps/2016/11/04/getting-personal-speech-and-inking-app-dev-on-xbox-series)
+### - Read 
+* [blog post (camera and cognitive services face and vision apis)](https://blogs.windows.com/buildingapps/2016/10/21/camera-apis-with-a-dash-of-cloud-intelligence-in-a-uwp-app-app-dev-on-xbox-series) 
+* [blog post (project rome, social networks, maps)](https://blogs.windows.com/buildingapps/2016/10/27/going-social-project-rome-maps-social-network-integration-app-dev-on-xbox-series) 
+* [blog post (speech and inking)](https://blogs.windows.com/buildingapps/2016/11/04/getting-personal-speech-and-inking-app-dev-on-xbox-series)
 
 ### - Download the source by clicking on **Clone or download** above
 

@@ -17,9 +17,11 @@ All samples are located in the *apps* folder. However, we realize that you might
 
 ![Fourth Coffee][news-image]
 
-( code | [blog post][news-blog-post] | video | windows store )
+code | [blog post][news-blog-post] | video | windows store
+---|---|---|---
 
-| **Unity and XAML interop** | **App Services** | **App Extensions** |
+**Features:** | Per device tailored UI | Gamepad | Focus | TV Layout
+---|---|---|---|---
 
 Fourth Coffee is a news app that works across the desktop, phone, and Xbox One and offers a premium experience that takes advantage of each device’s strengths.
 
@@ -29,7 +31,11 @@ Fourth Coffee is a news app that works across the desktop, phone, and Xbox One a
 
 ![Atmosphere][weather-image]
 
-( code | [blog post][news-blog-post] | video | windows store )
+code | [blog post][news-blog-post] | video | windows store
+---|---|---|---
+
+**Features:** | Unity and XAML interop | App Services | App Extensions
+---|---|---|---
 
 Atmosphere is a weather app that showcases the use of the popular Unity Engine to build beautiful UWP apps.In addition, the app implements UWP app extensions to enable other developers to extend certain areas of the app and it exposes an app service that enables other apps to use that weather information, as illustrated by Fourth Coffee.
 
@@ -39,7 +45,11 @@ Atmosphere is a weather app that showcases the use of the popular Unity Engine t
 
 ![Backdrop][music-image]
 
-( code | [blog post][music-blog-post] | video | windows store )
+code | [blog post][music-blog-post] | video | windows store
+---|---|---|---
+
+**Features:** | Sharing code with Xamarin (UWP and tvOS) | Background Audio | SignalR
+---|---|---|---
 
 Backdrop is a cross platform music app sharing code between UWP and tvOS using Xamarin. It supports background audio on UWP devices and cross platform device collaboration using SignalR.
 
@@ -49,7 +59,11 @@ Backdrop is a cross platform music app sharing code between UWP and tvOS using X
 
 ![South Ridge Video][video-image]
 
-( code | [blog post][video-blog-post] | video | windows store )
+code | [blog post][video-blog-post] | video | windows store
+---|---|---|---
+
+**Features:** | Hosted Web App | Controller support | Media Transport Controls Integration
+---|---|---|---|---
 
 South Ridge Video is a hosted web application built with React.js, and hosted on a web server. The app can easily be converted to a UWP application that takes advantage of native platform capabilities and can be distributed through the Windows Store as any other UWP app.
 
@@ -59,7 +73,11 @@ South Ridge Video is a hosted web application built with React.js, and hosted on
 
 ![Best For You][iot-image]
 
-( code | [blog post][iot-blog-post] | video | windows store )
+code | [blog post][iot-blog-post] | video | windows store
+---|---|---|---
+
+**Features:** | Windows IoT Core | Azure IoT Hub | Azure Event Hub | Azure Stream Analytics
+---|---|---|---|---
 
 Best For You is a fitness UWP app focused on collecting data from a fictional IoT enabled yoga clothes and uses Windows IoT Core, Azure IoT Hub, Azure Event Hub and Azure Stream Analytics for processing.
 
@@ -69,11 +87,14 @@ Best For You is a fitness UWP app focused on collecting data from a fictional Io
 
 ![Adventure Works][social-image]
 
-( code | windows store ) 
+code | windows store
+---|---|---
+camera and cognitive services vision apis: [blog post][social-blog-post-1] | video
+project rome and social integration: [blog post][social-blog-post-2] | video
+speech and inking: [blog post][social-blog-post-3] | video
 
-  ( camera and cognitive services vision apis: [blog post][social-blog-post-1] | video )
-  ( project rome and social integration: [blog post][social-blog-post-2] | video )
-  ( speech and inking: [blog post][social-blog-post-3] | video )
+**Features:** | Camera integration | Cognitive Services Vision, Face, and Speech APIs | Project Rome | Social Network integration | Speech | Inking
+---|---|---|---|---|---|---
 
 Adventure Works is a cross device UWP application for sharing adventures and experiences with fictional friends. 
 

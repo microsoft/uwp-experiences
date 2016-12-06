@@ -1,0 +1,63 @@
+{
+  "Locations": [
+    "Seattle, WA",
+    "Portland, OR",
+    "New York, NY",
+    "Istanbul, TK",
+    "Stockholm, SE"
+  ],
+  "Today": [
+    {
+      "TimeOfDay": "MORNING",
+      "Temperature": 24,
+      "Weather": "Sunny"
+    },
+    {
+      "TimeOfDay": "MIDDAY",
+      "Temperature": 27,
+      "Weather": "CloudyWithSun"
+    },
+    {
+      "TimeOfDay": "AFTERNOON",
+      "Temperature": 22,
+      "Weather": "Cloudy"
+    },
+    {
+      "TimeOfDay": "EVENING",
+      "Temperature": 18,
+      "Weather": "HeavyRain"
+    }
+  ],
+  "WeekDay": [
+    {
+      "Day": "TUE",
+      "Temperature": 24,
+      "Low": 18,
+      "Weather": "CloudyWithSun"
+    },
+    {
+      "Day": "WED",
+      "Temperature": 27,
+      "Low": 19,
+      "Weather": "Rain"
+    },
+    {
+      "Day": "THR",
+      "Temperature": 22,
+      "Low": 14,
+      "Weather": "Sunny"
+    },
+    {
+      "Day": "FRI",
+      "Temperature": 19,
+      "Low": 11,
+      "Weather": "Thunder"
+    },
+    {
+      "Day": "SAT",
+      "Temperature": 18,
+      "Low": 8,
+      "Weather": "Cloudy"
+    }
+  ]
+}

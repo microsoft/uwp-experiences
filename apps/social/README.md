@@ -1,6 +1,16 @@
-# Adventure Works (v3) (Speech and Inking)
+<!---
+  category: Xbox | Camera | Microphone | Cognitive Services | Emotion | LUIS | Speech | Speech Recognition | Speech Synthesis | Inking | Project Rome | Social Networks | Maps | UWP Comunity Toolkit
+  language: cs
+  keywords: xbox mobile desktop camera microphone cognitive services emotion face speech luic recognition synthesis inking rome facebook twitter maps toolkit
+-->
 
-[![AdventureWorks3](http://i.imgur.com/Og1bw7e.jpg)](https://www.youtube.com/watch?v=Ckaw53kLp8Y)
+# The Social Experience
+## Adventure Works (v3) (Speech and Inking)
+
+![AdventureWorks3](http://i.imgur.com/Og1bw7e.jpg)
+
+**Features:** | Camera Integration | Cognitive Services Vision, Face, and Speech APIs | Project Rome | Social Network integration | Speech | Inking
+---|---|---|---|---|---|---
 
 Adventure Works is a cross device UWP application for sharing adventures and experiences with my fictional friends. V3 of Adventure Works adds to [V1](https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v1_camera_app) and [V2](https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v2_rome_maps_social) support for Ink on devices that support it, and support for speech interaction where it makes sense (including both synthesis and recognition). 
 As a reminder, in the previous versions of the app we added the ability to:
@@ -13,13 +23,11 @@ As a reminder, in the previous versions of the app we added the ability to:
 
 This is the final version of the sample app that includes everything before it.
 
-Read the [full blog post](https://blogs.windows.com/buildingapps/2016/11/04/getting-personal-speech-and-inking-app-dev-on-xbox-series) or visit the [App Dev on Xbox landing page](http://aka.ms/xboxappdev) for more videos and blog posts.
-
 ## Setup
 The app will build and run immediately. However, to get the full functionality of the app, the Keys.cs file will need to be populated with the appropriate API keys for each service. The app has been developed with the free version of each service, so you will not need to pay for any service to play with the app.
 
 1. The LUIS service requires an App Id and an Azure subscription Id. 
-    * To get an App Id, visit the [LUIS home page](https://www.luis.ai) and create a new app. Use the [LUIS\AdventureWorks.json](https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v3_speech_ink/Adventure%20Works/LUIS) file to import the Adventure Works utterances, intents and entities to the app. Go to App Settings to get the App Id.
+    * To get an App Id, visit the [LUIS home page](https://www.luis.ai) and create a new app. Use the [LUIS\AdventureWorks.json](https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v3_speech_ink/Adventure%20Works/LUIS) file to import the Adventure Works utterances, intents and entities to the app. Finally, publish the model in the LUIS portal. Go to App Settings to get the App Id.
     * To get a subscription key via Azure, you will need to sign in to the Microsoft Azure Portal and create a new Cognitive Service API. Choose the free tier of the LUIS API and click on Keys. Once you have created your key, you can add it to your account via the application settings dialog, found in any application.  Read the full instructions [here](https://www.luis.ai/Help#CreatingKeys)
 
 2. The Face, Emotion, and Computer Vision APIs require you to provide your own keys which you can [generate here](https://www.microsoft.com/cognitive-services/en-us/subscriptions) for free. 
@@ -30,3 +38,13 @@ The app will build and run immediately. However, to get the full functionality o
 
 5. Twitter integration requires a *Twitter Consumer Key*, *Twitter Consumer Secret* and a *Callback Uri* that can be setup by [following the instructions here](http://uwpcommunitytoolkit.readthedocs.io/en/master/services/Twitter/)
 
+***
+
+## Next Steps ##
+<!--- ### - Download the sample from the Windows Store. --->
+
+### - Read the [blog post](https://blogs.windows.com/buildingapps/2016/11/04/getting-personal-speech-and-inking-app-dev-on-xbox-series)
+
+### - Download the source by clicking on **Clone or download** above
+
+<!--- ### - View the one minute dev video --->

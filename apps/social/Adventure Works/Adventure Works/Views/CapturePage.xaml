@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="Adventure_Works.CapturePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Adventure_Works"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource DarkBackground}">
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="WideState">
+                    <VisualState.Setters>
+                        <Setter Target="CameraControls.Margin" Value="40" />
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="501"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.Setters>
+                        <Setter Target="CameraControls.Margin" Value="10" />
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <CaptureElement Name="PreviewControl" Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center"></CaptureElement>
+
+        <Grid x:Name="CameraControls" Margin="40">
+            <Button Name="CameraControlsCaptureButton" VerticalAlignment="Bottom" HorizontalAlignment="Center" IsTabStop="False" Template="{StaticResource CaptureButtonTemplate}" Click="CapturePhoto_Click" UseSystemFocusVisuals="False">
+                <SymbolIcon Symbol="Camera"></SymbolIcon>
+            </Button>
+
+            <Border x:Name="CameraButtons" Padding="5" Background="#60000000" CornerRadius="20" VerticalAlignment="Center" HorizontalAlignment="Right" >
+                <StackPanel Orientation="Vertical" >
+                    <Button Name="CameraControlsCaptureWhenSmilingButton" IsTabStop="False" Template="{StaticResource CameraButtonTemplate}" Click="CaptureWhenSmiling_Click"  UseSystemFocusVisuals="False">
+                        <TextBlock FontFamily="Segoe MDL2 Assets">&#xED54;</TextBlock>
+                    </Button>
+
+                    <TextBlock x:Name="CameraControlsSmileText" Text="smile" FontSize="6" Opacity="0" TextAlignment="Center" Foreground="{StaticResource BrandColor}" FontWeight="Light" Margin="0,0,0,10"></TextBlock>
+
+                    <Button Name="CameraControlsChangeCameraButton" IsTabStop="False" Visibility="Collapsed" Template="{StaticResource CameraButtonTemplate}" Click="ChangeCamera_Click"  UseSystemFocusVisuals="False">
+                        <TextBlock FontFamily="Segoe MDL2 Assets">&#xE89E;</TextBlock>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <local:PhotoPreviewView x:Name="PhotoPreviewView"></local:PhotoPreviewView>
+        
+    </Grid>
+</Page>

@@ -1,0 +1,165 @@
+﻿<UserControl
+    x:Class="Adventure_Works.PhotoPreviewView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Adventure_Works"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:win2d="using:Microsoft.Graphics.Canvas.UI.Xaml"
+    xmlns:oxford="using:Adventure_Works.CognitiveServices"
+    mc:Ignorable="d"
+    d:DesignHeight="500"
+    d:DesignWidth="500"
+    RequestedTheme="Dark">
+
+    <Grid>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Mobile">
+                    <VisualState.StateTriggers>
+                        <local:DeviceFamilyTrigger DeviceFamily="Mobile"></local:DeviceFamilyTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainCommandBar.VerticalAlignment" Value="Bottom"></Setter>
+                        <Setter Target="EffectsView.Margin" Value="0,0,0,50"></Setter>
+                        <Setter Target="MetadataGrid.Margin" Value="10,0,10,50"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="Xbox">
+                    <VisualState.StateTriggers>
+                        <local:DeviceFamilyTrigger DeviceFamily="Xbox"></local:DeviceFamilyTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainCommandBar.Padding" Value="48,27,48,0"></Setter>
+                        <Setter Target="EffectsView.Padding" Value="48,0,48,0"></Setter>
+                        <Setter Target="EffectsView.Margin" Value="0,0,0,27"></Setter>
+                        <Setter Target="InkerToolbar.Margin" Value="0,60,20,0"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid x:Name="Root" Visibility="Collapsed" Opacity="0" Background="{StaticResource DarkBackground}">
+            <Grid Margin="20">
+                <Viewbox x:Name="ImageRoot" Stretch="Uniform">
+                    <Grid>
+                        <win2d:CanvasControl x:Name="ImageCanvas" Draw="ImageCanvas_Draw"></win2d:CanvasControl>
+                        <InkCanvas x:Name="Inker"></InkCanvas>
+                    </Grid>
+                </Viewbox>
+
+                <Canvas x:Name="FaceCanvas" HorizontalAlignment="Center" VerticalAlignment="Center"></Canvas>
+
+                <InkToolbar x:Name="InkerToolbar" TargetInkCanvas="{x:Bind Inker}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10,35" Visibility="Collapsed" RequiresPointer="WhenEngaged" IsFocusEngagementEnabled="True"></InkToolbar>
+            </Grid>
+            
+            <Grid Name="MetadataGrid" x:DeferLoadStrategy="Lazy" Visibility="Collapsed" Margin="48,27" Padding="8" Background="#90000000" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.RowSpan="2">
+                    <TextBlock x:Name="MetadataProgress" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{ThemeResource CaptionTextBlockStyle}">...analyzing...</TextBlock>
+                </Grid>
+                
+                <TextBlock Name="Description" Style="{ThemeResource SubtitleTextBlockStyle}" TextAlignment="Center" TextWrapping="WrapWholeWords" Grid.Row="0" FontSize="18"></TextBlock>
+
+                <ItemsControl ItemsSource="{x:Bind _tags}" Margin="5,15,5,0" HorizontalAlignment="Center" Grid.Row="1" IsTabStop="False">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="x:String">
+                            <Border Padding="5,3,5,5" Background="{StaticResource BrandColor}" Margin="0,0,4,4" CornerRadius="10">
+                                <TextBlock Text="{x:Bind}" FontSize="11"></TextBlock>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <local:WrapPanel HorizontalAlignment="Center"></local:WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+
+                <ItemsControl ItemsSource="{x:Bind _knownFaces}" Margin="5,0" Grid.Row="2" HorizontalAlignment="Center" GotFocus="FaceItemsControl_GotFocus" LostFocus="FaceItemsControl_LostFocus" IsTabStop="False">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="oxford:PhotoFace">
+                            <local:FocusableItem Padding="3" PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited" RightTapped="FocusableItem_RightTapped" Margin="0,8,8,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="16" FontFamily="Segoe MDL2 Assets" Margin="0,0,3,0" Foreground="{StaticResource BrandColor}">&#xE77B;</TextBlock>
+                                    
+                                    <TextBlock Text="{x:Bind Name}" VerticalAlignment="Bottom" FontWeight="SemiBold" FontSize="14"></TextBlock>
+                                </StackPanel>
+                            </local:FocusableItem>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <local:WrapPanel HorizontalAlignment="Center"></local:WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </Grid>
+
+            <GridView Name="EffectsView" Margin="0" Visibility="Collapsed" x:DeferLoadStrategy="Lazy" ItemsSource="{x:Bind _effects}" ContainerContentChanging="Collection_ContainerContentChanging" VerticalAlignment="Bottom" SelectionChanged="Collection_SelectionChanged" Style="{StaticResource EffectsGridViewStyle}">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="80" Width="80">
+                            <Image Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="White"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid MaximumRowsOrColumns="1" Orientation="Vertical"></ItemsWrapGrid>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+            </GridView>
+
+            <Border x:Name="MainCommandBar" Background="#60101010" VerticalAlignment="Top">
+                <CommandBar Background="Transparent">
+                    <AppBarButton x:Name="ShareButton" Label="Share">
+                        <AppBarButton.Icon>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72D;"></FontIcon>
+                        </AppBarButton.Icon>
+                        <AppBarButton.Flyout>
+                            <Flyout x:Name="ShareFlyout" Closed="ShareFlyout_Closed">
+                                <Grid>
+                                    <StackPanel x:Name="ShareButtons" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Button Click="FacebookShareClicked" Template="{StaticResource SlideshowButtonStyle}" Margin="10,0,10,10">
+                                            <Image Height="50" Source="ms-appx:///Assets/fb_logo.png" ></Image>
+                                        </Button>
+                                        <Button Click="TwitterShareClicked" Template="{StaticResource SlideshowButtonStyle}" Margin="10,0">
+                                            <Image Height="50" Source="ms-appx:///Assets/twitter_logo.png" ></Image>
+                                        </Button>
+                                    </StackPanel>
+                                    <ProgressRing x:Name="ShareProgress" IsActive="False" Visibility="Collapsed"></ProgressRing>
+                                </Grid>
+                            </Flyout>
+                        </AppBarButton.Flyout>
+                    </AppBarButton>
+                    <AppBarToggleButton x:Name="FiltersButton" Checked="FiltersChecked" Unchecked="FiltersUnchecked" IsChecked="False" Label="Filters">
+                        <TextBlock TextAlignment="Center" FontSize="18" FontFamily="Segoe MDL2 Assets">&#xE790;</TextBlock>
+                    </AppBarToggleButton>
+                    <AppBarToggleButton x:Name="DetailsButton" Checked="DetailsChecked" Unchecked="DetailsUnchecked" Label="Details">
+                        <TextBlock TextAlignment="Center" FontSize="18" FontFamily="Segoe MDL2 Assets">&#xE8D4;</TextBlock>
+                    </AppBarToggleButton>
+                    <AppBarToggleButton x:Name="InkButton" Checked="InkButton_Checked" Unchecked="InkButton_Unchecked" Label="Ink">
+                        <AppBarToggleButton.Icon>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE76D;"></FontIcon>
+                        </AppBarToggleButton.Icon>
+                    </AppBarToggleButton>
+                </CommandBar>
+            </Border>
+
+            <Border x:Name="LoadingScreen" Background="{StaticResource DarkBackground}">
+                <ProgressRing x:Name="ProgressRing" IsActive="False" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Width="60"></ProgressRing>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

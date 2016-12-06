@@ -1,0 +1,203 @@
+{
+  "luis_schema_version": "1.3.0",
+  "name": "Adventure Works",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "None"
+    },
+    {
+      "name": "showmap"
+    },
+    {
+      "name": "showuser"
+    },
+    {
+      "name": "whoisclosest"
+    }
+  ],
+  "entities": [
+    {
+      "name": "username"
+    }
+  ],
+  "composites": [],
+  "bing_entities": [
+    "geography"
+  ],
+  "actions": [
+    {
+      "actionName": "showmap",
+      "intentName": "showmap",
+      "actionParameters": [
+        {
+          "parameterName": "geography",
+          "entityName": "geography",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "what adventures are in europe",
+      "intent": "showmap",
+      "entities": []
+    },
+    {
+      "text": "show my friends in north america",
+      "intent": "showmap",
+      "entities": []
+    },
+    {
+      "text": "how are you today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "something",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what edventures are in europe?",
+      "intent": "showmap",
+      "entities": []
+    },
+    {
+      "text": "show my friends in asia",
+      "intent": "showmap",
+      "entities": []
+    },
+    {
+      "text": "show my friends in australia",
+      "intent": "showmap",
+      "entities": []
+    },
+    {
+      "text": "show my friends in africa",
+      "intent": "showmap",
+      "entities": []
+    },
+    {
+      "text": "show my friends in europe",
+      "intent": "showmap",
+      "entities": []
+    },
+    {
+      "text": "show my friends in new york",
+      "intent": "showmap",
+      "entities": []
+    },
+    {
+      "text": "what does ventures are in europe",
+      "intent": "showmap",
+      "entities": []
+    },
+    {
+      "text": "go to nikola's adventure",
+      "intent": "showuser",
+      "entities": [
+        {
+          "entity": "username",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "show me david's adventure",
+      "intent": "showuser",
+      "entities": [
+        {
+          "entity": "username",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "see photos from shen",
+      "intent": "showuser",
+      "entities": [
+        {
+          "entity": "username",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show me jeff's adventure",
+      "intent": "showuser",
+      "entities": [
+        {
+          "entity": "username",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "show nicholas adventure",
+      "intent": "showuser",
+      "entities": [
+        {
+          "entity": "username",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "go to pete's adventure",
+      "intent": "showuser",
+      "entities": [
+        {
+          "entity": "username",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "show me jeffs adventure",
+      "intent": "showuser",
+      "entities": [
+        {
+          "entity": "username",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is closest to me right now?",
+      "intent": "whoisclosest",
+      "entities": []
+    },
+    {
+      "text": "who is closest to me",
+      "intent": "whoisclosest",
+      "entities": []
+    },
+    {
+      "text": "who is near by",
+      "intent": "whoisclosest",
+      "entities": []
+    },
+    {
+      "text": "who is nearby",
+      "intent": "whoisclosest",
+      "entities": []
+    }
+  ]
+}

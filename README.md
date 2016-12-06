@@ -11,7 +11,6 @@ All samples are located in the *apps* folder. However, we realize that you might
 
 
 ## Experiences ##
-***
 
 ### The News Experience ###
 

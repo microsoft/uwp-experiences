@@ -1,5 +1,5 @@
 <!---
-  category: Xbox | Camera | Microphone | Cognitive Services | Emotion | LUIS | Speech | Speech Recognition | Speech Synthesis | Inking | Project Rome | Social Networks | Maps | UWP Comunity Toolkit
+  category: AudioVideoAndCamera ControlsLayoutAndText CustomUserInteractions DeepLinksAndAppToAppCommunication Inking MapsAndLocation SpeechAndCortana 
   language: cs
   keywords: xbox mobile desktop camera microphone cognitive services emotion face speech luic recognition synthesis inking rome facebook twitter maps toolkit
 -->

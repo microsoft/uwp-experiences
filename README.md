@@ -16,7 +16,7 @@ All samples are located in the *apps* folder. However, we realize that you might
 
 ![Fourth Coffee][news-image]
 
-code | [blog post][news-blog-post] | video | windows store
+[code][news-source] | [blog post][news-blog-post] | video | windows store
 ---|---|---|---
 
 **Features:** | Per device tailored UI | Gamepad | Focus | TV Layout
@@ -30,7 +30,7 @@ Fourth Coffee is a news app that works across the desktop, phone, and Xbox One a
 
 ![Atmosphere][weather-image]
 
-code | [blog post][news-blog-post] | video | windows store
+[code][weather-source] | [blog post][news-blog-post] | video | windows store
 ---|---|---|---
 
 **Features:** | Unity and XAML interop | App Services | App Extensions
@@ -44,7 +44,7 @@ Atmosphere is a weather app that showcases the use of the popular Unity Engine t
 
 ![Backdrop][music-image]
 
-code | [blog post][music-blog-post] | video | windows store
+[code][music-source] | [blog post][music-blog-post] | video | windows store
 ---|---|---|---
 
 **Features:** | Sharing code with Xamarin (UWP and tvOS) | Background Audio | SignalR
@@ -58,7 +58,7 @@ Backdrop is a cross platform music app sharing code between UWP and tvOS using X
 
 ![South Ridge Video][video-image]
 
-code | [blog post][video-blog-post] | video | windows store
+[code][video-source] | [blog post][video-blog-post] | video | windows store
 ---|---|---|---
 
 **Features:** | Hosted Web App | Controller support | Media Transport Controls Integration
@@ -72,7 +72,7 @@ South Ridge Video is a hosted web application built with React.js, and hosted on
 
 ![Best For You][iot-image]
 
-code | [blog post][iot-blog-post] | video | windows store
+[code][iot-source] | [blog post][iot-blog-post] | video | windows store
 ---|---|---|---
 
 **Features:** | Windows IoT Core | Azure IoT Hub | Azure Event Hub | Azure Stream Analytics
@@ -86,17 +86,8 @@ Best For You is a fitness UWP app focused on collecting data from a fictional Io
 
 ![Adventure Works][social-image]
 
-code | windows store
----|---|---
-
-camera and cognitive services vision apis | **[blog post][social-blog-post-1]** | **video**
----|---|---
-
-project rome and social integration | **[blog post][social-blog-post-2]** | **video**
----|---|---
-
-speech and inking | **[blog post][social-blog-post-3]** | **video**
----|---|---
+[code][social-source] | [blog post 1][social-blog-post-1] | video 1 | [blog post 2][social-blog-post-2] | video 2 | [blog post 3][social-blog-post-3] | video 3 | windows store
+---|---|---|---|---|---|---|---
 
 **Features:** | Camera Integration | Cognitive Services Vision, Face, and Speech APIs | Project Rome | Social Network integration | Speech | Inking
 ---|---|---|---|---|---|---
@@ -106,27 +97,27 @@ Adventure Works is a cross device UWP application for sharing adventures and exp
 
 
 [news-image]: http://i.imgur.com/nJAlk3k.gif
-[news-source]: https://github.com/Microsoft/AppDevXbox/tree/news
+[news-source]: https://github.com/Microsoft/uwp-experiences/tree/master/apps/News
 [news-blog-post]: https://blogs.windows.com/buildingapps/2016/09/09/tailoring-your-app-for-xbox-and-the-tv-app-dev-on-xbox-series
 
 [weather-image]: http://i.imgur.com/HlAcl4A.gif
-[weather-source]: https://github.com/Microsoft/AppDevXbox/tree/Atmosphere
+[weather-source]: https://github.com/Microsoft/uwp-experiences/tree/master/apps/weather
 [weather-blog-post]: https://blogs.windows.com/buildingapps/2016/09/15/unity-interop-and-app-extensibility-app-dev-on-xbox-series
 
 [music-image]: http://i.imgur.com/GjIDRqB.gif
-[music-source]: https://github.com/Microsoft/AppDevXbox/tree/Backdrop_music_app
+[music-source]: https://github.com/Microsoft/uwp-experiences/tree/master/apps/music
 [music-blog-post]: https://blogs.windows.com/buildingapps/2016/09/23/background-audio-and-cross-platform-development-with-xamarin-app-dev-on-xbox-series
 
 [video-image]: http://i.imgur.com/zJRYBby.gif
-[video-source]: https://github.com/Microsoft/AppDevXbox/tree/SouthRidge_video_app
+[video-source]: https://github.com/Microsoft/uwp-experiences/tree/master/apps/video
 [video-blog-post]: https://blogs.windows.com/buildingapps/2016/09/30/uwp-hosted-web-app-on-xbox-one-app-dev-on-xbox-series
 
 [iot-image]: http://i.imgur.com/v3gVx0K.gif
-[iot-source]: https://github.com/Microsoft/AppDevXbox/tree/BestForYou_iot_app
+[iot-source]: https://github.com/Microsoft/uwp-experiences/tree/master/apps/iot
 [iot-blog-post]: https://blogs.windows.com/buildingapps/2016/10/13/internet-of-things-on-the-xbox-app-dev-on-xbox-series
 
 [social-image]: http://i.imgur.com/OEdPlSc.gif
-[social-source]: https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v3_speech_ink
+[social-source]: https://github.com/Microsoft/uwp-experiences/tree/master/apps/social
 [social-blog-post-1]: https://blogs.windows.com/buildingapps/2016/10/21/camera-apis-with-a-dash-of-cloud-intelligence-in-a-uwp-app-app-dev-on-xbox-series
 [social-blog-post-2]: https://blogs.windows.com/buildingapps/2016/10/27/going-social-project-rome-maps-social-network-integration-app-dev-on-xbox-series
 [social-blog-post-3]: https://blogs.windows.com/buildingapps/2016/11/04/getting-personal-speech-and-inking-app-dev-on-xbox-series

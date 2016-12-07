@@ -6,12 +6,12 @@
 
 # The Video Experience
 
+South Ridge Video is an open source video app developed as a hosted web application built with React.js, and hosted on a web server. South Ridge can easily be converted to a UWP application that takes advantage of native platform capabilities and can be distributed through the Windows Store as any other UWP app. 
+
 ![SouthRidge](http://i.imgur.com/zJRYBby.gif)
 
 **Features:** | Hosted Web App | Controller support | Media Transport Controls Integration
 ---|---|---|---|---
-
-South Ridge Video, an open source video app developed as a hosted web application built with React.js, and hosted on a web server. South Ridge can easily be converted to a UWP application that takes advantage of native platform capabilities and can be distributed through the Windows Store as any other UWP app. 
 
 ## Setup
 
@@ -42,10 +42,10 @@ The app is hosted at [http://southridge.azurewebsites.net](http://southridge.azu
 ***
 
 ## Next Steps ##
-<!--- ### - Download the sample from the Windows Store. --->
+<!--- #### - Download the sample from the Windows Store. --->
 
-### - Read the [blog post](https://blogs.windows.com/buildingapps/2016/09/30/uwp-hosted-web-app-on-xbox-one-app-dev-on-xbox-series)
+#### - Read the [blog post](https://blogs.windows.com/buildingapps/2016/09/30/uwp-hosted-web-app-on-xbox-one-app-dev-on-xbox-series)
 
-### - Download the source by clicking on **Clone or download** above
+#### - Download the source by clicking on **Clone or download** above
 
-<!--- ### - View the one minute dev video --->
+<!--- #### - View the one minute dev video --->

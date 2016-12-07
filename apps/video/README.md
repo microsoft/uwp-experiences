@@ -1,5 +1,5 @@
 <!---
-  category: Xbox | Hosted Web App | tvjs | Gamepad | WebView | SMTC | Video
+  category: ControlsLayoutAndText PlatformArchitecture
   language: js
   keywords: xbox mobile desktop hwa hosted web app tvjs gamepad webview smtc video
 -->

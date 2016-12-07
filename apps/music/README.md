@@ -1,5 +1,5 @@
 <!---
-  category: Xbox | Background Audio | Single Process Model | Xamarin | tvOS | SignalR
+  category: ControlsLayoutAndText NetworkingAndWebServices
   language: cs
   keywords: xbox mobile desktop xamarin background audio signalr
 -->

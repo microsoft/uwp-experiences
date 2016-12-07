@@ -6,12 +6,12 @@
 
 # The News Experience
 
+Fourth Coffee is a sample news app that works across the desktop, phone, and Xbox One and offers a premium experience that takes advantage of each device’s strengths. 
+
 ![Fourth Coffee](http://imgur.com/sfnTBSJ.png)
 
 **Features:** | Per device tailored UI | Gamepad | Focus | TV Layout
 ---|---|---|---|---
-
-Fourth Coffee is a sample news application that works across the desktop, phone, and Xbox One and offers a premium experience that takes advantage of each device’s strengths. 
 
 ***
 

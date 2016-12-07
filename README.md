@@ -1,3 +1,5 @@
+## **Note:** latest code for this sample can be found in the [master](https://github.com/Microsoft/uwp-experiences) or [weather](https://github.com/Microsoft/uwp-experiences/tree/weather/apps/weather) branch. This branch is deprecated.
+
 # Atmosphere (weather app)
 
 [![Atmosphere](http://imgur.com/QniEml6.png)](https://www.youtube.com/watch?v=tI6VEpIyj-A)

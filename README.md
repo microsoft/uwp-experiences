@@ -1,3 +1,5 @@
+## **Note:** latest code for this sample can be found in the [master](https://github.com/Microsoft/uwp-experiences) or [music](https://github.com/Microsoft/uwp-experiences/tree/music/apps/music) branch. This branch is deprecated.
+
 # Backdrop (music app)
 
 [![Backdrop](http://imgur.com/CPWPlHE.png)](https://www.youtube.com/watch?v=Gj8IWdeYunQ)

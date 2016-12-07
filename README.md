@@ -3,7 +3,7 @@
 The UWP App Experiences are beautiful, cross device, feature rich and functional app samples built to demonstrate realistic app scenarios on the UWP platform across desktop, Xbox, mobile, and more. Besides being open source on GitHub, each sample is published to the Windows Store for easier access for developers and each is accompanied with at least one blog post and short overview video. 
 
 ## About the samples ##
-While these samples were initially created for the App Dev on Xbox live event and blog series, they have been built and designed for multiple UWP devices and scenarios in mind from the start. Any developer can take advantage of these samples regardless of the device type or features they are targeting, and we are looking forward to hearing about your experience.
+While these samples were initially created for the App Dev on Xbox live event and blog series, they have been built and designed for multiple UWP devices and scenarios in mind from the start. In fact, all samples have been developer to work on Desktop, Mobile, and Xbox One. Any developer can take advantage of these samples regardless of the device type or features they are targeting, and we are looking forward to hearing about your experience.
 
 
 ## Downloading individual samples ##
@@ -117,9 +117,9 @@ Adventure Works is a cross device UWP application for sharing adventures and exp
 [music-source]: https://github.com/Microsoft/AppDevXbox/tree/Backdrop_music_app
 [music-blog-post]: https://blogs.windows.com/buildingapps/2016/09/23/background-audio-and-cross-platform-development-with-xamarin-app-dev-on-xbox-series
 
-[video-image]: http://i.imgur.com/JFdnwvz.gif
+[video-image]: http://i.imgur.com/zJRYBby.gif
 [video-source]: https://github.com/Microsoft/AppDevXbox/tree/SouthRidge_video_app
-[video-blog-post]: (https://blogs.windows.com/buildingapps/2016/09/30/uwp-hosted-web-app-on-xbox-one-app-dev-on-xbox-series)
+[video-blog-post]: https://blogs.windows.com/buildingapps/2016/09/30/uwp-hosted-web-app-on-xbox-one-app-dev-on-xbox-series
 
 [iot-image]: http://i.imgur.com/v3gVx0K.gif
 [iot-source]: https://github.com/Microsoft/AppDevXbox/tree/BestForYou_iot_app

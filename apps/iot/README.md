@@ -6,12 +6,12 @@
 
 # The IoT Experience
 
+Best For You is a sample fitness UWP app that uses Windows IoT Core and Azure Iot Hub to collect data from a fictional IoT enabled yoga clothes and presenting it to the user in a meaningful and helpful way on all of their devices to track progress of exercise and health. 
+
 ![BestForYou](http://i.imgur.com/PdDt7lR.png)
 
 **Features:** | Windows IoT Core | Azure IoT Hub | Azure Event Hub | Azure Stream Analytics
 ---|---|---|---|---
-
-Best For You is a sample fitness UWP app focused on collecting data from a fictional IoT enabled yoga clothes and presenting it to the user in a meaningful and helpful way on all of their devices to track progress of exercise and health. 
 
 The solution contains two client side projects and several Azure services:
 
@@ -69,10 +69,10 @@ The simplest way is to click on the button below and follow instructions. If you
 ***
 
 ## Next Steps ##
-<!--- ### - Download the sample from the Windows Store. --->
+<!--- #### - Download the sample from the Windows Store. --->
 
-### - Read the [blog post](https://blogs.windows.com/buildingapps/2016/10/13/internet-of-things-on-the-xbox-app-dev-on-xbox-series)
+#### - Read the [blog post](https://blogs.windows.com/buildingapps/2016/10/13/internet-of-things-on-the-xbox-app-dev-on-xbox-series)
 
-### - Download the source by clicking on **Clone or download** above
+#### - Download the source by clicking on **Clone or download** above
 
-<!--- ### - View the one minute dev video --->
+<!--- #### - View the one minute dev video --->

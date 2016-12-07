@@ -14,7 +14,7 @@ All samples are located in the *apps* folder. However, we realize that you might
 
 ### The News Experience ###
 
-![Fourth Coffee][news-image]
+[![Fourth Coffee][news-image]][news-source]
 
 [code][news-source] | [blog post][news-blog-post] | video | windows store
 ---|---|---|---
@@ -28,7 +28,7 @@ Fourth Coffee is a news app that works across the desktop, phone, and Xbox One a
 
 ### The Weather Experience ###
 
-![Atmosphere][weather-image]
+[![Atmosphere][weather-image]][weather-source]
 
 [code][weather-source] | [blog post][news-blog-post] | video | windows store
 ---|---|---|---
@@ -42,7 +42,7 @@ Atmosphere is a weather app that showcases the use of the popular Unity Engine t
 
 ### The Music Experience ###
 
-![Backdrop][music-image]
+[![Backdrop][music-image]][music-source]
 
 [code][music-source] | [blog post][music-blog-post] | video | windows store
 ---|---|---|---
@@ -56,7 +56,7 @@ Backdrop is a cross platform music app sharing code between UWP and tvOS using X
 
 ### The Video Experience ###
 
-![South Ridge Video][video-image]
+[![South Ridge Video][video-image]][video-source]
 
 [code][video-source] | [blog post][video-blog-post] | video | windows store
 ---|---|---|---
@@ -70,7 +70,7 @@ South Ridge Video is a hosted web application built with React.js, and hosted on
 
 ### The IoT Experience ###
 
-![Best For You][iot-image]
+[![Best For You][iot-image]][iot-source]
 
 [code][iot-source] | [blog post][iot-blog-post] | video | windows store
 ---|---|---|---
@@ -84,7 +84,7 @@ Best For You is a fitness UWP app focused on collecting data from a fictional Io
 
 ### The Social Experience ###
 
-![Adventure Works][social-image]
+[![Adventure Works][social-image]][social-source]
 
 [code][social-source] | [blog post 1][social-blog-post-1] | video 1 | [blog post 2][social-blog-post-2] | video 2 | [blog post 3][social-blog-post-3] | video 3 | windows store
 ---|---|---|---|---|---|---|---

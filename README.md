@@ -1,3 +1,5 @@
+## **Note:** latest code for this sample can be found in the [master](https://github.com/Microsoft/uwp-experiences) or [video](https://github.com/Microsoft/uwp-experiences/tree/video/apps/video) branch. This branch is deprecated.
+
 # South Ridge Video (video app)
 
 [![SouthRidge](http://imgur.com/3lSmSJd.png)](https://www.youtube.com/watch?v=6kv3qyCdc1E)

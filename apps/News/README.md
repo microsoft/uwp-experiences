@@ -1,5 +1,5 @@
 <!---
-  category: Xbox | Gamepad | Focus | TV Layout
+  category: ControlsLayoutAndText DeepLinksAndAppToAppCommunication GraphicsAndAnimation
   language: cs
   keywords: xbox mobile desktop focus controller gamepad tv
 -->

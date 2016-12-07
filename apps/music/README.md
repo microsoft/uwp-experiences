@@ -1,5 +1,5 @@
 <!---
-  category: ControlsLayoutAndText NetworkingAndWebServices
+  category: ControlsLayoutAndText NetworkingAndWebServices LaunchingAndBackgroundTasks
   language: cs
   keywords: xbox mobile desktop xamarin background audio signalr
 -->

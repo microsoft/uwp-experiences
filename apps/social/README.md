@@ -5,23 +5,13 @@
 -->
 
 # The Social Experience
-## Adventure Works (v3) (Speech and Inking)
+
+Adventure Works is a cross device UWP app for sharing adventures and experiences with fictional friends by using APIs for Camera, Inking, Speech, Project Rome and more. Azure Cognitive Services provides the required inteligence.
 
 ![AdventureWorks3](http://i.imgur.com/Og1bw7e.jpg)
 
 **Features:** | Camera Integration | Cognitive Services Vision, Face, and Speech APIs | Project Rome | Social Network integration | Speech | Inking
 ---|---|---|---|---|---|---
-
-Adventure Works is a cross device UWP application for sharing adventures and experiences with my fictional friends. V3 of Adventure Works adds to [V1](https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v1_camera_app) and [V2](https://github.com/Microsoft/AppDevXbox/tree/AdventureWorks_v2_rome_maps_social) support for Ink on devices that support it, and support for speech interaction where it makes sense (including both synthesis and recognition). 
-As a reminder, in the previous versions of the app we added the ability to:
-* capture, edit, and store photos for a specific trip
-* auto analyze images and tag friends using Cognitive Services vision APIs
-* view albums from friends on an interactive map
-* share albums on social networks like Facebook and Twitter
-* Use one device to remote control slideshows running on another device using Project Rome
-* and more
-
-This is the final version of the sample app that includes everything before it.
 
 ## Setup
 The app will build and run immediately. However, to get the full functionality of the app, the Keys.cs file will need to be populated with the appropriate API keys for each service. The app has been developed with the free version of each service, so you will not need to pay for any service to play with the app.
@@ -41,13 +31,13 @@ The app will build and run immediately. However, to get the full functionality o
 ***
 
 ## Next Steps ##
-<!--- ### - Download the sample from the Windows Store. --->
+<!--- #### - Download the sample from the Windows Store. --->
 
-### - Read 
+#### - Read 
 * [blog post (camera and cognitive services face and vision apis)](https://blogs.windows.com/buildingapps/2016/10/21/camera-apis-with-a-dash-of-cloud-intelligence-in-a-uwp-app-app-dev-on-xbox-series) 
 * [blog post (project rome, social networks, maps)](https://blogs.windows.com/buildingapps/2016/10/27/going-social-project-rome-maps-social-network-integration-app-dev-on-xbox-series) 
 * [blog post (speech and inking)](https://blogs.windows.com/buildingapps/2016/11/04/getting-personal-speech-and-inking-app-dev-on-xbox-series)
 
-### - Download the source by clicking on **Clone or download** above
+#### - Download the source by clicking on **Clone or download** above
 
-<!--- ### - View the one minute dev video --->
+<!--- #### - View the one minute dev video --->

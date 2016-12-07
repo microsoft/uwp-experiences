@@ -1,5 +1,5 @@
 <!---
-  category: Xbox | IoT | Windows IoT Core | Azure IoT Hub | Azure Event Hub | Azure Stream Analytics
+  category: ControlsLayoutAndText NetworkingAndWebServices
   language: cs
   keywords: xbox mobile desktop iot azure iot-hub azure-event-hub azure-stream-analytics
 -->

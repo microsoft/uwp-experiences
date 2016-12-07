@@ -1,3 +1,5 @@
+## **Note:** latest code for this sample can be found in the [master](https://github.com/Microsoft/uwp-experiences) or [iot](https://github.com/Microsoft/uwp-experiences/tree/iot/apps/iot) branch. This branch is deprecated.
+
 # Best For You (iot app)
 
 [![BestForYou](http://i.imgur.com/PdDt7lR.png)](https://www.youtube.com/watch?v=85XxCtCWJ-8)

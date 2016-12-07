@@ -6,7 +6,7 @@
 
 # The Video Experience
 
-![SouthRidge](http://i.imgur.com/JFdnwvz.gif)
+![SouthRidge](http://i.imgur.com/zJRYBby.gif)
 
 **Features:** | Hosted Web App | Controller support | Media Transport Controls Integration
 ---|---|---|---|---

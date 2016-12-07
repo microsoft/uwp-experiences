@@ -1,3 +1,5 @@
+## **Note:** latest code for this sample can be found in the [master](https://github.com/Microsoft/uwp-experiences) or [social](https://github.com/Microsoft/uwp-experiences/tree/social/apps/social) branch. This branch is deprecated.
+
 # Adventure Works (v1) (camera app)
 
 [![AdventureWorks1](http://i.imgur.com/m5eUmaL.jpg)](https://www.youtube.com/watch?v=xCPMvXh3c70)

@@ -1,0 +1,134 @@
+new President()
+            {
+                FirstName="James K.",
+                LastName="Polk",
+                NickName="Young Hickory",
+                PresidentNumber="11th president",
+                YearsInOffice="1845-1849 (1 term)",
+                Party="Democrat",
+                State="Tennessee",
+                VP="George M. Dallas",
+                Summary="James Knox Polk was the only president to have served as house speaker, and fulfilled all of his policies set during his campaign.
+                He lead the sweeping victory in the Mexican-American war, seizing what is now the American Southwest.",
+                Image=new Uri("ms-appx:///Assets/JamesKPolk.jpg"),
+            },
+
+new President()
+            {
+                FirstName="Zachary",
+                LastName="Taylor",
+                NickName="Old Rough and Ready",
+                PresidentNumber="12th president",
+                YearsInOffice="1849-1850 (<1 term)",
+                Party="Whig",
+                State="Tennessee",
+                VP="Millard Fillmore",
+                Summary="Zachary Taylor won the presidency despite his lack of interest in politics, it's believed that his status as a national war hero in the Mexican-American war won him his election.
+                He died 17 months into his election, due to an "unknown digestive ailment".",
+                Image=new Uri("ms-appx:///Assets/Zachary_Taylor.png"),
+            },
+
+new President()
+            {
+                FirstName="Millard",
+                LastName="Fillmore",
+                NickName="None",
+                PresidentNumber="13th president",
+                YearsInOffice="1850-1853 (1 term)",
+                Party="Whig",
+                State="New York",
+                VP="None",
+                Summary="Millard Fillmore was the last "Whig" president, meaning he was not associated with either the Republican or Democrat party.
+                When the Whig party broke up in 1854-1856 (after his term), Millard refused to join any party.",
+                Image=new Uri("ms-appx:///Assets/Millard_Fillmore_by_Brady_Studio.jpg"),
+            },
+
+new President()
+            {
+                FirstName="Franklin",
+                LastName="Pierce",
+                NickName="None",
+                PresidentNumber="14th president",
+                YearsInOffice="1853-1857 (1 term)",
+                Party="Democrat",
+                State="New Hampshire",
+                VP="William R. King (1853), None (1853-1857)",
+                Summary="Franklin Pierce disliked the abolitionist movement (the movement to end slavery in America) and in signing the Kansas-Nebraska Act set the stage for the
+                attempted Southern secession. He was seen as a "compromise" candidate by the Democrats, and was not elected for a second term.",
+                Image=new Uri("ms-appx:///Assets/Franklin_Pierce_MathewBrady.jpg"),
+            },
+
+new President()
+            {
+                FirstName="James",
+                LastName="Buchanan",
+                NickName="Doughface",
+                PresidentNumber="15th president",
+                YearsInOffice="1857-1861 (1 term)",
+                Party="Democrat",
+                State="Pennsylvania",
+                VP="John C. Breckinridge",
+                Summary="James Buchanan Jr. served as president immediately before the Civil War. It is believed that his efforts to maintain peace between the North and South resulted
+                in only alienating both sides even more. He desired to be ranked in history among George Washington were unfulfilled due to his inability to find peace between the North and South.",
+                Image=new Uri("ms-appx:///Assets/James_Buchanan.jpg"),
+            },
+
+new President()
+            {
+                FirstName="Abraham",
+                LastName="Lincoln",
+                NickName="Honest Abe",
+                PresidentNumber="16th president",
+                YearsInOffice="1861-1865 (1 term)",
+                Party="Republican",
+                State="Illinois",
+                VP="Hannibal Hamlin (1861-1865), Andrew Johnson (1865)",
+                Summary="Abraham Lincoln served only 1 term before his infamous assassination on April, 1865. He led the country through the Civil War and managed to preserve the Union and abolish slavery during that time.
+                He was mainly self-educated and was originally a member of the Whig party, before becoming Republican in 1854.",
+                Image=new Uri("ms-appx:///Assets/Abraham_Lincoln.jpg"),
+            },
+
+new President()
+            {
+                FirstName="Andrew",
+                LastName="Johnson",
+                NickName="None",
+                PresidentNumber="17th president",
+                YearsInOffice="1865-1869 (1 term)",
+                Party="Democrat",
+                State="Tennessee",
+                VP="None",
+                Summary="Andrew Johnson became president through the face that he was vice president at the time of Abraham Lincoln's assassination.
+                He came into conflict with the largely Republican dominated Congress, and was the first president to be impeached after 1 term.",
+                Image=new Uri("ms-appx:///Assets/Andrew_Johnson.jpg"),
+            },
+
+new President()
+            {
+                FirstName="Ulysses S.",
+                LastName="Grant",
+                NickName="Sam",
+                PresidentNumber="18th president",
+                YearsInOffice="1869-1877 (2 term)",
+                Party="Republican",
+                State="Ohio",
+                VP="Schuyler Colfax (1869-1873), Henry Wilson (1873-1875), None (1875-1877)",
+                Summary="Ulysses S. Grant worked closly with former president Abraham Lincoln during the Civil War to help him lead the Union Army to victory over the Confederacy.
+                He struggled financially in civilian life and has been criticized for corruption and leading the nation into a severe economic depression during his second term.",
+                Image=new Uri("ms-appx:///Assets/Ulysses_Grant.jpg"),
+            },
+
+new President()
+            {
+                FirstName="Rutherford B.",
+                LastName="Hayes",
+                NickName="None",
+                PresidentNumber="19th president",
+                YearsInOffice="1877-1881 (1 term)",
+                Party="Republican",
+                State="Ohio",
+                VP="William Wheeler",
+                Summary="Rutherford B. Hayes had strong beliefs in meritocratic government, equal treatment without regard to race, and improvement through education. During his presidency
+                he oversaw the end of the Reconstruction (started by Ulysses Grant), and began to lead the nation to civil service reform. He was also left (and attempted) to reconcile the divisions left over from the Civil War.",
+                Image=new Uri("ms-appx:///Assets/Rutherford_Hayes_MathewBrady.jpg"),
+            },

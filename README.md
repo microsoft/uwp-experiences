@@ -1,3 +1,5 @@
+## **Note:** latest code for this sample can be found in the [master](https://github.com/Microsoft/uwp-experiences) or [social](https://github.com/Microsoft/uwp-experiences/tree/social/apps/social) branch. This branch is deprecated.
+
 # Adventure Works (v2) (Project Rome, Maps, and Facebook/Twitter integration)
 
 [![AdventureWorks2](http://i.imgur.com/AkLMVah.jpg)](https://www.youtube.com/watch?v=mn-26W6ooBE)

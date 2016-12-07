@@ -1,6 +1,6 @@
 <!---
-  category: Xbox | Unity | App Services | App Extensions
-  language: cs
+  category: ControlsLayoutAndText DeepLinksAndAppToAppCommunication GraphicsAndAnimation
+  language: cs 
   keywords: xbox mobile desktop unity extensions services
 -->
 

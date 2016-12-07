@@ -1,3 +1,5 @@
+## **Note:** latest code for this sample can be found in the [master](https://github.com/Microsoft/uwp-experiences) or [social](https://github.com/Microsoft/uwp-experiences/tree/social/apps/social) branch. This branch is deprecated.
+
 # Adventure Works (v3) (Speech and Inking)
 
 [![AdventureWorks3](http://i.imgur.com/Og1bw7e.jpg)](https://www.youtube.com/watch?v=Ckaw53kLp8Y)

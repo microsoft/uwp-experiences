@@ -36,4 +36,4 @@ The app renders a 3D layer below a 2D XAML layer. The 3D world renders the weath
 
 #### - Download the source by clicking on **Clone or download** above
 
-<!--- #### - View the one minute dev video --->
+#### - View the [one minute dev video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Creating-UWP-Apps-for-Xbox-with-Unity)

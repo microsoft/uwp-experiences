@@ -44,4 +44,4 @@ Backdrop uses Soundcloud for it's music service and the API requires a client id
 
 #### - Download the source by clicking on **Clone or download** above
 
-<!--- #### - View the one minute dev video --->
+#### - View the [one minute dev video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Background-Audio-in-a-UWP-App-for-Xbox)

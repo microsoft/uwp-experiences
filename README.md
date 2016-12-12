@@ -30,7 +30,7 @@ Fourth Coffee is a news app that works across the desktop, phone, and Xbox One a
 
 [![Atmosphere][weather-image]][weather-source]
 
-[code][weather-source] | [blog post][news-blog-post] | video | windows store
+[code][weather-source] | [blog post][weather-blog-post] | video 
 ---|---|---|---
 
 **Features:** | Unity and XAML interop | App Services | App Extensions
@@ -44,7 +44,7 @@ Atmosphere is a weather app that showcases the use of the popular Unity Engine t
 
 [![Backdrop][music-image]][music-source]
 
-[code][music-source] | [blog post][music-blog-post] | video | windows store
+[code][music-source] | [blog post][music-blog-post] | video 
 ---|---|---|---
 
 **Features:** | Sharing code with Xamarin (UWP and tvOS) | Background Audio | SignalR
@@ -58,7 +58,7 @@ Backdrop is a cross platform music app sharing code between UWP and tvOS using X
 
 [![South Ridge Video][video-image]][video-source]
 
-[code][video-source] | [blog post][video-blog-post] | video | windows store
+[code][video-source] | [blog post][video-blog-post] | video 
 ---|---|---|---
 
 **Features:** | Hosted Web App | Controller support | Media Transport Controls Integration
@@ -72,7 +72,7 @@ South Ridge Video is a hosted web application built with React.js, and hosted on
 
 [![Best For You][iot-image]][iot-source]
 
-[code][iot-source] | [blog post][iot-blog-post] | video | windows store
+[code][iot-source] | [blog post][iot-blog-post] | video 
 ---|---|---|---
 
 **Features:** | Windows IoT Core | Azure IoT Hub | Azure Event Hub | Azure Stream Analytics
@@ -86,7 +86,7 @@ Best For You is a fitness UWP app focused on collecting data from a fictional Io
 
 [![Adventure Works][social-image]][social-source]
 
-[code][social-source] | [blog post 1][social-blog-post-1] | video 1 | [blog post 2][social-blog-post-2] | video 2 | [blog post 3][social-blog-post-3] | video 3 | windows store
+[code][social-source] | [blog post 1][social-blog-post-1] | video 1 | [blog post 2][social-blog-post-2] | video 2 | [blog post 3][social-blog-post-3] | video 3 
 ---|---|---|---|---|---|---|---
 
 **Features:** | Camera Integration | Cognitive Services Vision, Face, and Speech APIs | Project Rome | Social Network integration | Speech | Inking

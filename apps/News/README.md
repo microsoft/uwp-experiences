@@ -22,4 +22,4 @@ Fourth Coffee is a sample news app that works across the desktop, phone, and Xbo
 
 #### - Download the source by clicking on **Clone or download** above
 
-<!--- ### - View the one minute dev video --->
+#### - View the [one minute dev video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Tailoring-your-UWP-app-for-Xbox)

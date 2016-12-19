@@ -3,11 +3,11 @@
 The UWP App Experiences are beautiful, cross device, feature rich and functional app samples built to demonstrate realistic app scenarios on the UWP platform across desktop, Xbox, mobile, and more. Besides being open source on GitHub, each sample is published to the Windows Store for easier access for developers and each is accompanied with at least one blog post and short overview video. 
 
 ## About the samples ##
-While these samples were initially created for the App Dev on Xbox live event and blog series, they have been built and designed for multiple UWP devices and scenarios in mind from the start. In fact, all samples have been developer to work on Desktop, Mobile, and Xbox One. Any developer can take advantage of these samples regardless of the device type or features they are targeting, and we are looking forward to hearing about your experience.
+While these samples were initially created for the App Dev on Xbox live event and blog series, they have been built and designed for multiple UWP devices and scenarios in mind from the start. In fact, all samples have been developed to work on Desktop, Mobile, and Xbox One. Any developer can take advantage of these samples regardless of the device type or features they are targeting, and we are looking forward to hearing about your experience.
 
 
 ## Downloading individual samples ##
-All samples are located in the *apps* folder. However, we realize that you might want to only download a single sample to try it out so there is also a seperate branch for each sample that only contains relevant files. Switch to appropriate branch in the uper left corner and then click on **Clone or download** in the uper right corner to download the sample.
+All samples are located in the *apps* folder. However, we realize that you might want to only download a single sample to try it out so there is also a seperate branch for each sample that only contains relevant files. Switch to appropriate branch in the uper left corner and then click on **Clone or download** in the upper right corner to download the sample.
 
 
 ## Experiences ##

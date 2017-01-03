@@ -5,11 +5,11 @@
     "Microsoft.ProjectOxford.Emotion": "1.0.331.1",
     "Microsoft.ProjectOxford.Face": "1.2.1.2",
     "Microsoft.ProjectOxford.Vision": "1.0.370",
-    "Microsoft.Toolkit.Uwp": "1.1.0",
-    "Microsoft.Toolkit.Uwp.Services": "1.1.0",
-    "Microsoft.Toolkit.Uwp.UI.Animations": "1.1.0",
-    "Microsoft.Toolkit.Uwp.UI.Controls": "1.1.0",
-    "Win2D.uwp": "1.19.0"
+    "Microsoft.Toolkit.Uwp": "1.2.0",
+    "Microsoft.Toolkit.Uwp.Services": "1.2.0",
+    "Microsoft.Toolkit.Uwp.UI.Animations": "1.2.0",
+    "Microsoft.Toolkit.Uwp.UI.Controls": "1.2.0",
+    "Win2D.uwp": "1.20.0"
   },
   "frameworks": {
     "uap10.0": {}

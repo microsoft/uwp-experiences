@@ -105,14 +105,14 @@ namespace Adventure_Works
         /// <param name="filePath">Path to the file that will contain the object</param>
         /// <param name="value">Object to save</param>
         /// <returns>Waiting task until completion</returns>
-        public async Task SaveFileAsync<T>(string filePath, T value)
+        public async Task<StorageFile> SaveFileAsync<T>(string filePath, T value)
         {
             if (Folder == null)
             {
                 Folder = await GetDataSaveFolder();
             }
 
-            await StorageFileHelper.WriteTextToFileAsync(Folder, JsonConvert.SerializeObject(value), filePath, CreationCollisionOption.ReplaceExisting);
+            return await StorageFileHelper.WriteTextToFileAsync(Folder, JsonConvert.SerializeObject(value), filePath, CreationCollisionOption.ReplaceExisting);
         }
 
         public static async Task<StorageFolder> GetDataSaveFolder()
@@ -121,7 +121,8 @@ namespace Adventure_Works
 
             try
             {
-                var pictureLibraryFolder = (await StorageLibrary.GetLibraryAsync(KnownLibraryId.Pictures)).SaveFolder;
+                var picturefolder = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Pictures).AsTask().ConfigureAwait(false);
+                var pictureLibraryFolder = picturefolder.SaveFolder;
 
                 try
                 {
@@ -139,6 +140,5 @@ namespace Adventure_Works
 
             return folder;
         }
-
     }
 }

@@ -14,7 +14,7 @@ There are more showcase apps on our [GitHub repository](https://github.com/Micro
 
 Thank you,
 
-Developer World team
+**Developer World team**
 
 [news-image]: http://i.imgur.com/nJAlk3k.gif
 [news-source]: https://github.com/Microsoft/uwp-experiences/tree/master/apps/News

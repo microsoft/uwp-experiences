@@ -1,0 +1,1380 @@
+﻿<Page
+    x:Class="SpacecraftExplorer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:SpacecraftExplorer"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:surfaceDial="using:SurfaceDialControls"
+    Background="#FFFFFF"
+    IsTabStop="false"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Storyboard x:Name="ShowTooltipGrid">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TooltipControl" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseIn" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="HideTooltipGrid">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TooltipControl" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+
+    <SwapChainPanel x:Name="DXSwapChainPanel">
+        <Grid x:Name="ExtendedSplashGrid" Background="#FFFFFF">
+            <Image
+                x:Name="ExtendedSplashImage"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Source="Assets/SplashScreen.png" />
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid
+                x:Name="HeaderGrid"
+                Grid.ColumnSpan="2"
+                Margin="12">
+                <TextBlock
+                    FontFamily="{StaticResource Exo2-Thin}"
+                    FontSize="32"
+                    Foreground="{StaticResource Blue-Brush-05}"
+                    Text="SHUTTLE LAUNCH SIMULATOR" />
+            </Grid>
+
+            <Grid
+                x:Name="StatusGrid"
+                Grid.Row="1"
+                Width="284"
+                Margin="12,12,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <RadioButton
+                    x:Name="SimulateRadioButton"
+                    Margin="0,0,6,0"
+                    HorizontalAlignment="Stretch"
+                    Checked="SimulateRadioButton_Checked"
+                    Content="SIMULATE"
+                    IsChecked="True"
+                    Style="{StaticResource TechRadioButton}" />
+                <RadioButton
+                    x:Name="ExploreRadioButton"
+                    Grid.Column="1"
+                    Margin="6,0,0,0"
+                    HorizontalAlignment="Stretch"
+                    Checked="ExploreRadioButton_Checked"
+                    Content="INSPECT"
+                    Style="{StaticResource TechRadioButton}" />
+                <Grid
+                    x:Name="TimeGrid"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Margin="0,12,0,0"
+                    Background="{StaticResource Trans-Blue-Brush-05}"
+                    BorderBrush="{StaticResource Trans-White-Brush}"
+                    BorderThickness="1">
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="-1,-1,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="-1,-1,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="-1,0,0,-1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="-1,0,0,-1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="0,-1,-1,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="0,-1,-1,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="0,0,-1,-1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="0,0,-1,-1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <StackPanel>
+                        <TextBlock
+                            x:Name="textBlock"
+                            Style="{StaticResource SectionTitle}"
+                            Text="MISSION TIME"
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            x:Name="TimeText"
+                            Margin="0,0,8,0"
+                            HorizontalAlignment="Right"
+                            Style="{StaticResource LargeCounterText}"
+                            Text="00:08:42"
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+                </Grid>
+                <Grid
+                    x:Name="StageGrid"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Margin="0,12,0,0"
+                    Background="{StaticResource Trans-Blue-Brush-05}"
+                    BorderBrush="{StaticResource Trans-White-Brush}"
+                    BorderThickness="1">
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="-1,-1,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="-1,-1,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="-1,0,0,-1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="-1,0,0,-1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="0,-1,-1,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="0,-1,-1,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="0,0,-1,-1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="0,0,-1,-1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <StackPanel>
+                        <TextBlock
+                            x:Name="textBlock1"
+                            Style="{StaticResource SectionTitle}"
+                            Text="MISSION STAGE"
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            x:Name="MissionStageText"
+                            Margin="0,0,8,0"
+                            HorizontalAlignment="Right"
+                            Style="{StaticResource LargeCounterText}"
+                            Text="MECO"
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+                </Grid>
+                <Grid
+                    x:Name="SimulateGrid"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid
+                        x:Name="SpeedGrid"
+                        Margin="0,12,6,0"
+                        Background="{StaticResource Trans-Blue-Brush-05}"
+                        BorderBrush="{StaticResource Trans-White-Brush}"
+                        BorderThickness="1">
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <StackPanel>
+                            <TextBlock
+                                Style="{StaticResource SectionTitle}"
+                                Text="SPEED (km/h)"
+                                TextWrapping="Wrap" />
+                            <TextBlock
+                                x:Name="TimeText2"
+                                Margin="0,0,8,8"
+                                HorizontalAlignment="Right"
+                                FontFamily="{StaticResource Exo2-Thin}"
+                                FontSize="44"
+                                Text="10888"
+                                TextWrapping="Wrap" />
+                            <Slider
+                                x:Name="SpeedSlider"
+                                Height="200"
+                                Margin="12,0,12,12"
+                                Background="{StaticResource Trans-Blue-Brush-04}"
+                                Foreground="{StaticResource Trans-White-Brush}"
+                                IsHitTestVisible="False"
+                                Maximum="11000"
+                                Orientation="Vertical"
+                                Style="{StaticResource SpeedSlider}"
+                                Value="50" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid
+                        x:Name="AltitudeGrid"
+                        Grid.Column="1"
+                        Margin="6,12,0,0"
+                        Background="{StaticResource Trans-Blue-Brush-05}"
+                        BorderBrush="{StaticResource Trans-White-Brush}"
+                        BorderThickness="1">
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <StackPanel>
+                            <TextBlock
+                                x:Name="textBlock3"
+                                Style="{StaticResource SectionTitle}"
+                                Text="ALTITUDE (km)"
+                                TextWrapping="Wrap" />
+                            <TextBlock
+                                x:Name="TimeText3"
+                                Margin="0,0,8,8"
+                                HorizontalAlignment="Right"
+                                FontFamily="{StaticResource Exo2-Thin}"
+                                FontSize="44"
+                                Text="226"
+                                TextWrapping="Wrap" />
+                            <Slider
+                                x:Name="AltitudeSlider"
+                                Height="200"
+                                Margin="12,0,12,12"
+                                Background="{StaticResource Trans-Blue-Brush-04}"
+                                Foreground="{StaticResource Trans-White-Brush}"
+                                IsHitTestVisible="False"
+                                Maximum="225"
+                                Orientation="Vertical"
+                                Style="{StaticResource SpeedSlider}"
+                                Value="50" />
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+                <Grid
+                    x:Name="ExploreGrid"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Margin="0,12,0,0"
+                    Visibility="Collapsed">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid
+                        x:Name="RotationButtonGrid"
+                        Margin="0,0,0,12"
+                        Background="{StaticResource Trans-Blue-Brush-05}"
+                        BorderBrush="{StaticResource Trans-White-Brush}"
+                        BorderThickness="1">
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <TextBlock
+                            Margin="12"
+                            HorizontalAlignment="Center"
+                            Text="[ROT]" />
+                    </Grid>
+                    <Grid
+                        x:Name="RotationXButtonGrid"
+                        Grid.Column="1"
+                        Margin="12,0,0,12"
+                        Background="{StaticResource Trans-Blue-Brush-05}"
+                        BorderBrush="{StaticResource Trans-White-Brush}"
+                        BorderThickness="1">
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <!--<surfaceDial:StepTextBox x:Name="XRotTextBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="0" StepValue="2"/>-->
+                        <TextBox
+                            x:Name="XRotTextBox"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            local:SurfaceDialStepTextboxHelper.StepValue="5"
+                            Text="0" />
+                    </Grid>
+                    <Grid
+                        x:Name="RotationYButtonGrid"
+                        Grid.Column="2"
+                        Margin="12,0,0,12"
+                        Background="{StaticResource Trans-Blue-Brush-05}"
+                        BorderBrush="{StaticResource Trans-White-Brush}"
+                        BorderThickness="1">
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <!--<surfaceDial:StepTextBox x:Name="YRotTextBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="0" StepValue="2"/>-->
+                        <TextBox
+                            x:Name="YRotTextBox"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            local:SurfaceDialStepTextboxHelper.StepValue="5"
+                            Text="0" />
+                    </Grid>
+                    <Grid
+                        x:Name="RotationZButtonGrid"
+                        Grid.Column="3"
+                        Margin="12,0,0,12"
+                        Background="{StaticResource Trans-Blue-Brush-05}"
+                        BorderBrush="{StaticResource Trans-White-Brush}"
+                        BorderThickness="1">
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <!--<surfaceDial:StepTextBox x:Name="ZRotTextBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="0" StepValue="2"/>-->
+                        <TextBox
+                            x:Name="ZRotTextBox"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            local:SurfaceDialStepTextboxHelper.StepValue="5"
+                            Text="0" />
+                    </Grid>
+
+                    <Grid
+                        x:Name="ZoomButtonGrid"
+                        Grid.Row="1"
+                        Margin="0,0,0,12"
+                        Background="{StaticResource Trans-Blue-Brush-05}"
+                        BorderBrush="{StaticResource Trans-White-Brush}"
+                        BorderThickness="1">
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Text="[ZOOM]" />
+                    </Grid>
+                    <Grid
+                        x:Name="ZoomValueGrid"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="3"
+                        Margin="12,0,0,12"
+                        Background="{StaticResource Trans-Blue-Brush-05}"
+                        BorderBrush="{StaticResource Trans-White-Brush}"
+                        BorderThickness="1">
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <!--<surfaceDial:StepTextBox x:Name="ZoomText" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="65"/>-->
+                        <TextBox
+                            x:Name="ZoomText"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            local:SurfaceDialStepTextboxHelper.EnableMinMaxValue="True"
+                            local:SurfaceDialStepTextboxHelper.StepValue="2"
+                            Text="65" />
+                    </Grid>
+
+                    <Grid
+                        x:Name="ItemButtonGrid"
+                        Grid.Row="2"
+                        Background="{StaticResource Trans-Blue-Brush-05}"
+                        BorderBrush="{StaticResource Trans-White-Brush}"
+                        BorderThickness="1">
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <TextBlock
+                            Margin="12"
+                            HorizontalAlignment="Center"
+                            Text="[INFO]" />
+                    </Grid>
+                    <Grid
+                        x:Name="ItemValueGrid"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="3"
+                        Margin="12,0,0,0"
+                        Background="{StaticResource Trans-Blue-Brush-05}"
+                        BorderBrush="{StaticResource Trans-White-Brush}"
+                        BorderThickness="1">
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,-1,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="-1,0,0,-1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,-1,-1,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="8"
+                            Height="1"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <Rectangle
+                            Width="1"
+                            Height="8"
+                            Margin="0,0,-1,-1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Fill="{StaticResource White-Brush}" />
+                        <TextBlock
+                            x:Name="SelectionInfoTextBox"
+                            Margin="12"
+                            HorizontalAlignment="Center"
+                            Text="SOLID ROCKET BOOSTER"
+                            TextWrapping="WrapWholeWords" />
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid
+                x:Name="DetailGrid"
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="284"
+                Margin="0,12,12,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top">
+                <Grid
+                    x:Name="ExplanationGrid"
+                    Background="{StaticResource Trans-Blue-Brush-05}"
+                    BorderBrush="{StaticResource Trans-White-Brush}"
+                    BorderThickness="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="-1,-1,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="-1,-1,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Grid.Row="1"
+                        Width="8"
+                        Height="1"
+                        Margin="-1,0,0,-1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Grid.Row="1"
+                        Width="1"
+                        Height="8"
+                        Margin="-1,0,0,-1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="0,-1,-1,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="0,-1,-1,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Grid.Row="1"
+                        Width="8"
+                        Height="1"
+                        Margin="0,0,-1,-1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Grid.Row="1"
+                        Width="1"
+                        Height="8"
+                        Margin="0,0,-1,-1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <TextBlock
+                        x:Name="textBlock5"
+                        Margin="8,4,10,8"
+                        Style="{StaticResource SectionTitle}"
+                        Text="MISSION OVERVIEW"
+                        TextWrapping="Wrap"
+                        d:LayoutOverrides="Height, TopMargin, BottomMargin" />
+                    <ScrollViewer Grid.Row="1">
+                        <StackPanel>
+                            <TextBlock
+                                x:Name="MissionAndComponentText"
+                                Margin="8,0,8,12"
+                                LineHeight="21.333"
+                                Text="Ut tempor et erat eget dictum. Suspendisse suscipit consectetur mi, ut luctus ligula porta vel. Etiam quis dolor justo. Nam ligula nisl, dictum sed ultricies vel, congue vitae neque. Curabitur eu est fringilla, porttitor sem nec, sodales metus. Sed nisi tortor, interdum vel mauris posuere, molestie scelerisque mauris. Vestibulum accumsan malesuada urna auctor luctus. Ut auctor libero id porttitor consequat. Aenean vitae sem sem."
+                                TextWrapping="WrapWholeWords" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+            <Grid
+                x:Name="TimelineGrid"
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Margin="12"
+                Background="{StaticResource Trans-Blue-Brush-05}"
+                BorderBrush="{StaticResource Trans-White-Brush}"
+                BorderThickness="1">
+
+                <Grid>
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="-1,-1,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="-1,-1,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="-1,0,0,-1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="-1,0,0,-1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="0,-1,-1,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="0,-1,-1,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="8"
+                        Height="1"
+                        Margin="0,0,-1,-1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                    <Rectangle
+                        Width="1"
+                        Height="8"
+                        Margin="0,0,-1,-1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Fill="{StaticResource White-Brush}" />
+                </Grid>
+                <Grid Padding="12">
+                    <Grid.ColumnDefinitions>
+                        <!--<ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />-->
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        Grid.ColumnSpan="12"
+                        Margin="0,0,0,12"
+                        Style="{StaticResource SectionTitle}"
+                        Text="MISSION TIMELINE"
+                        TextWrapping="Wrap" />
+
+                    <Ellipse
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Width="6"
+                        Height="6"
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Fill="{StaticResource White-Brush}" />
+                    <Ellipse
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Width="6"
+                        Height="6"
+                        Margin="-3,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Fill="{StaticResource White-Brush}" />
+                    <Ellipse
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Width="6"
+                        Height="6"
+                        Margin="-3,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Fill="{StaticResource White-Brush}" />
+                    <Ellipse
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        Width="6"
+                        Height="6"
+                        Margin="-3,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Fill="{StaticResource White-Brush}" />
+                    <Ellipse
+                        Grid.Row="2"
+                        Grid.Column="4"
+                        Width="6"
+                        Height="6"
+                        Margin="-3,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Fill="{StaticResource White-Brush}" />
+                    <Ellipse
+                        Grid.Row="2"
+                        Grid.Column="5"
+                        Width="6"
+                        Height="6"
+                        Margin="-3,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Fill="{StaticResource White-Brush}" />
+                    <Ellipse
+                        Grid.Row="2"
+                        Grid.Column="6"
+                        Width="6"
+                        Height="6"
+                        Margin="-3,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Fill="{StaticResource White-Brush}" />
+                    <Ellipse
+                        Grid.Row="2"
+                        Grid.Column="7"
+                        Width="6"
+                        Height="6"
+                        Margin="-3,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Fill="{StaticResource White-Brush}" />
+                    <Ellipse
+                        Grid.Row="2"
+                        Grid.Column="8"
+                        Width="6"
+                        Height="6"
+                        Margin="-3,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Fill="{StaticResource White-Brush}" />
+                    <!--<Ellipse Grid.Row="2" Grid.Column="9" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-3,-5,0,0" Height="6" Width="6" Fill="{StaticResource Trans-White-Brush}"/>
+                    <Ellipse Grid.Row="2" Grid.Column="10" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-3,-5,0,0" Height="6" Width="6" Fill="{StaticResource Trans-White-Brush}"/>
+                    <Ellipse Grid.Row="2" Grid.Column="11" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,-5,9,0" Height="6" Width="6" Fill="{StaticResource Trans-White-Brush}"/>-->
+
+
+                    <Slider
+                        x:Name="TimelineSlider"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="12"
+                        VerticalAlignment="Center"
+                        Background="{StaticResource Blue-Brush-04}"
+                        Foreground="{StaticResource Orange-Brush}"
+                        Maximum="1"
+                        Minimum="0"
+                        StepFrequency="0.01"
+                        Style="{StaticResource TimelineSlider}" />
+
+                    <!--<TextBlock x:Name="TextStage0" Grid.ColumnSpan="2" Text="ENGINE CHILL" Grid.Column="0" Grid.Row="1" Margin="12,0,0,0"/>
+                    <TextBlock x:Name="TextStage1" Grid.ColumnSpan="2" Text="INTERNAL POWER" Grid.Column="1" Grid.Row="3"/>
+                    <TextBlock x:Name="TextStage2" Grid.ColumnSpan="2" Text="STRONGBACK" Grid.Column="2" Grid.Row="1" />-->
+                    <TextBlock
+                        x:Name="TextStage3"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Text="STARTUP" />
+                    <TextBlock
+                        x:Name="TextStage4"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Text="LIFTOFF" />
+                    <TextBlock
+                        x:Name="TextStage5"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        Grid.ColumnSpan="2"
+                        Text="MAX Q" />
+                    <TextBlock
+                        x:Name="TextStage6"
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        Grid.ColumnSpan="2"
+                        Text="SRB SEPARATION" />
+                    <TextBlock
+                        x:Name="TextStage7"
+                        Grid.Row="3"
+                        Grid.Column="4"
+                        Grid.ColumnSpan="2"
+                        Text="SRB IMPACT" />
+                    <TextBlock
+                        x:Name="TextStage8"
+                        Grid.Row="1"
+                        Grid.Column="5"
+                        Grid.ColumnSpan="2"
+                        Text="MECO" />
+                    <TextBlock
+                        x:Name="TextStage9"
+                        Grid.Row="3"
+                        Grid.Column="6"
+                        Grid.ColumnSpan="2"
+                        Text="ET SEPARATION" />
+                    <TextBlock
+                        x:Name="TextStage10"
+                        Grid.Row="1"
+                        Grid.Column="7"
+                        Grid.ColumnSpan="2"
+                        Text="OMS BURN" />
+                    <TextBlock
+                        x:Name="TextStage11"
+                        Grid.Row="3"
+                        Grid.Column="8"
+                        Grid.ColumnSpan="2"
+                        Text="IN ORBIT" />
+
+                </Grid>
+            </Grid>
+
+        </Grid>
+        <Canvas x:Name="RadialMenuCanvas">
+            <local:RadialOnscreenMenu x:Name="OnScreenRadialMenuControl" Visibility="Collapsed" />
+            <local:TooltipControl x:Name="TooltipControl" />
+        </Canvas>
+    </SwapChainPanel>
+</Page>

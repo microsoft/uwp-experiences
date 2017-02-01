@@ -1,0 +1,86 @@
+﻿<UserControl
+    x:Class="SpacecraftExplorer.TooltipControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:SpacecraftExplorer"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    mc:Ignorable="d">
+
+
+    <Grid MaxWidth="400" MaxHeight="300">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                Name="TitleText"
+                Grid.ColumnSpan="3"
+                Margin="12"
+                Text="Title"
+                TextAlignment="Center"
+                TextWrapping="WrapWholeWords" />
+
+            <Image
+                Grid.Row="1"
+                Grid.Column="0"
+                Width="100"
+                Margin="12"
+                Source="Assets/DialIcons/Dark-Rotate-CCW.png" />
+            <Image
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="100"
+                Margin="12"
+                Source="Assets/DialIcons/Dark-Press.png" />
+            <Image
+                Grid.Row="1"
+                Grid.Column="2"
+                Width="100"
+                Margin="12"
+                Source="Assets/DialIcons/Dark-Rotate-CW.png" />
+
+            <!--  Swap out the images above for the following depending upon the RequestedTheme  -->
+            <!--
+            <Image Grid.Row="1" Grid.Column="0" Source="Assets/DialIcons/Light-Rotate-CCW.png" Width="100" Margin="12"/>
+            <Image Grid.Row="1" Grid.Column="1" Source="Assets/DialIcons/Light-Press.png" Width="100" Margin="12"/>
+            <Image Grid.Row="1" Grid.Column="2" Source="Assets/DialIcons/Light-Rotate-CW.png" Width="100" Margin="12"/>
+            -->
+
+            <TextBlock
+                Name="RotateLeftText"
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="12,0"
+                Text="Text"
+                TextAlignment="Center"
+                TextWrapping="WrapWholeWords" />
+            <TextBlock
+                Name="ClickText"
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="12,0"
+                Text="Text"
+                TextAlignment="Center"
+                TextWrapping="WrapWholeWords" />
+            <TextBlock
+                Name="RotateRightText"
+                Grid.Row="2"
+                Grid.Column="2"
+                Margin="12,0"
+                Text="Text"
+                TextAlignment="Center"
+                TextWrapping="WrapWholeWords" />
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="..\UnityCommon.props" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{13A45C13-3265-47B8-BC48-A553B569DF55}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpacecraftExplorer</RootNamespace>
+    <AssemblyName>SpacecraftExplorer</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>SpacecraftExplorer_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxPackageSigningEnabled>true</AppxPackageSigningEnabled>
+    <PlatformShortName>$(Platform)</PlatformShortName>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>CD18801007F970B0A73F0A2CC6B8BDD2EC82515F</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;UNITY_METRO;UNITY_WSA;UNITY_UWP;UNITY_WSA_10_0</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>False</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;UNITY_METRO;UNITY_WSA;UNITY_UWP;UNITY_WSA_10_0</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>False</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Master|ARM'">
+    <OutputPath>bin\ARM\Master\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;UNITY_METRO;UNITY_WSA;UNITY_UWP;UNITY_WSA_10_0</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>True</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;UNITY_METRO;UNITY_WSA;UNITY_UWP;UNITY_WSA_10_0</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>False</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;UNITY_METRO;UNITY_WSA;UNITY_UWP;UNITY_WSA_10_0</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>False</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Master|x64'">
+    <OutputPath>bin\x64\Master\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;UNITY_METRO;UNITY_WSA;UNITY_UWP;UNITY_WSA_10_0</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>True</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;UNITY_METRO;UNITY_WSA;UNITY_UWP;UNITY_WSA_10_0</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>False</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;UNITY_METRO;UNITY_WSA;UNITY_UWP;UNITY_WSA_10_0</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>False</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Master|x86'">
+    <OutputPath>bin\x86\Master\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;UNITY_METRO;UNITY_WSA;UNITY_UWP;UNITY_WSA_10_0</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>True</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)' == 'x64'">
+    <UnityBits>64</UnityBits>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)' != 'x64'">
+    <UnityBits>32</UnityBits>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Assets\DialIcons\Dark-Press.png" />
+    <Content Include="Assets\DialIcons\Dark-Rotate-CCW.png" />
+    <Content Include="Assets\DialIcons\Dark-Rotate-CW.png" />
+    <Content Include="Assets\DialIcons\Light-Press.png" />
+    <Content Include="Assets\DialIcons\Light-Rotate-CCW.png" />
+    <Content Include="Assets\DialIcons\Light-Rotate-CW.png" />
+    <Content Include="Assets\Fonts\Exo2-Black.otf" />
+    <Content Include="Assets\Fonts\Exo2-BlackItalic.otf" />
+    <Content Include="Assets\Fonts\Exo2-Bold.otf" />
+    <Content Include="Assets\Fonts\Exo2-BoldItalic.otf" />
+    <Content Include="Assets\Fonts\Exo2-ExtraBold.otf" />
+    <Content Include="Assets\Fonts\Exo2-ExtraBoldItalic.otf" />
+    <Content Include="Assets\Fonts\Exo2-ExtraLight.otf" />
+    <Content Include="Assets\Fonts\Exo2-ExtraLightItalic.otf" />
+    <Content Include="Assets\Fonts\Exo2-Italic.otf" />
+    <Content Include="Assets\Fonts\Exo2-Light.otf" />
+    <Content Include="Assets\Fonts\Exo2-LightItalic.otf" />
+    <Content Include="Assets\Fonts\Exo2-Medium.otf" />
+    <Content Include="Assets\Fonts\Exo2-MediumItalic.otf" />
+    <Content Include="Assets\Fonts\Exo2-Regular.otf" />
+    <Content Include="Assets\Fonts\Exo2-SemiBold.otf" />
+    <Content Include="Assets\Fonts\Exo2-SemiBoldItalic.otf" />
+    <Content Include="Assets\Fonts\Exo2-Thin.otf" />
+    <Content Include="Assets\Fonts\Exo2-ThinItalic.otf" />
+    <None Include="project.json" />
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
+    <SDKReference Include="WindowsMobile, Version=10.0.14393.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RadialOnscreenMenu.xaml.cs">
+      <DependentUpon>RadialOnscreenMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShuttleHelper.cs" />
+    <Compile Include="SurfaceDialStepTextboxHelper.cs" />
+    <Compile Include="TooltipControl.xaml.cs">
+      <DependentUpon>TooltipControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Content Include="Assets\Fonts\SIL Open Font License.txt" />
+    <Content Include="Assets\Icons\3d-rotate-32x32.png" />
+    <Content Include="Assets\Icons\3d-rotate-64x64.png" />
+    <Content Include="Assets\Icons\3d-rotate-96x96.png" />
+    <Content Include="Assets\Icons\Inspector-32x32.png" />
+    <Content Include="Assets\Icons\Inspector-64x64.png" />
+    <Content Include="Assets\Icons\Inspector-96x96.png" />
+    <Content Include="Assets\Icons\Timeline-32x32.png" />
+    <Content Include="Assets\Icons\Timeline-64x64.png" />
+    <Content Include="Assets\Icons\Timeline-96x96.png" />
+    <Content Include="Assets\RadialMenu.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png">
+    </Content>
+    <Content Include="Assets\Square150x150Logo.scale-200.png">
+    </Content>
+    <Content Include="Assets\Square44x44Logo.scale-200.png">
+    </Content>
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    </Content>
+    <Content Include="Assets\StoreLogo.png">
+    </Content>
+    <Content Include="Assets\Tiles\ShutteExplorerMedTile.scale-100.png" />
+    <Content Include="Assets\Tiles\ShutteExplorerMedTile.scale-125.png" />
+    <Content Include="Assets\Tiles\ShutteExplorerMedTile.scale-150.png" />
+    <Content Include="Assets\Tiles\ShutteExplorerMedTile.scale-200.png" />
+    <Content Include="Assets\Tiles\ShutteExplorerMedTile.scale-400.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerAppList.scale-100.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerAppList.scale-125.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerAppList.scale-150.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerAppList.scale-200.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerAppList.scale-400.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerAppList.targetsize-16.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerAppList.targetsize-24.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerAppList.targetsize-256.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerAppList.targetsize-32.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerAppList.targetsize-48.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerMedTile.scale-100.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerMedTile.scale-125.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerMedTile.scale-150.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerMedTile.scale-200.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerMedTile.scale-400.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerSmallTile.scale-100.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerSmallTile.scale-125.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerSmallTile.scale-150.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerSmallTile.scale-200.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerSmallTile.scale-400.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerStore.scale-100.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerStore.scale-125.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerStore.scale-150.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerStore.scale-200.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerStore.scale-400.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerWideTile.scale-100.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerWideTile.scale-125.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerWideTile.scale-150.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerWideTile.scale-200.png" />
+    <Content Include="Assets\Tiles\ShuttleExplorerWideTile.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png">
+    </Content>
+    <Compile Include="Properties\AssemblyInfo.cs">
+    </Compile>
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Properties\Default.rd.xml">
+    </Content>
+    <Page Include="RadialOnscreenMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TooltipControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>.\Unprocessed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>.\Unprocessed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="WinRTLegacy">
+      <HintPath>.\Unprocessed\WinRTLegacy.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>.\Unprocessed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>.\Unprocessed\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Content Include="Data\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="SpacecraftExplorer_StoreKey.pfx" />
+    <None Include="WSATestCertificate.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityPlayer">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Players\UAP\$(PlatformTarget)\$(Configuration)\UnityPlayer.winmd</HintPath>
+    </Reference>
+    <Reference Include="WinRTBridge">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Players\UAP\$(PlatformTarget)\$(Configuration)\WinRTBridge.winmd</HintPath>
+    </Reference>
+    <Reference Include="BridgeInterface">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Players\UAP\$(PlatformTarget)\$(Configuration)\BridgeInterface.winmd</HintPath>
+    </Reference>
+    <Reference Include="UnityEngineDelegates">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Players\UAP\$(PlatformTarget)\$(Configuration)\UnityEngineDelegates.winmd</HintPath>
+    </Reference>
+    <Reference Include="UnityEngineProxy">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Players\UAP\$(PlatformTarget)\$(Configuration)\UnityEngineProxy.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <ItemGroup>
+    <UnprocessedFile Include="$(ProjectDir)Unprocessed\*" />
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+
+  -->
+  <PropertyGroup>
+    <_GenerateAppxManifestDependsOn>
+    ModifyAppXPackage;
+    $(_GenerateAppxManifestDependsOn)
+   </_GenerateAppxManifestDependsOn>
+  </PropertyGroup>
+  <Target Name="ModifyAppXPackage" Condition="'$(BuildingProject)' == 'true'">
+    <Message Importance="high" Text="UnityInstallationDir &quot;$(UnityInstallationDir)&quot;." />
+    <Message Importance="high" Text="UnityWSAPlayerDir &quot;$(UnityWSAPlayerDir)&quot;." />
+    <Message Importance="high" Text="UnityProjectDir &quot;$(UnityProjectDir)&quot;." />
+    <Message Importance="high" Text="Copying unprocessed assemblies..." />
+    <Copy SourceFiles="@(UnprocessedFile)" DestinationFolder="$(ProjectDir)" />
+    <PropertyGroup Condition=" '$(Configuration)' == 'Master' ">
+      <RemoveDebuggableAttribute>True</RemoveDebuggableAttribute>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' != 'Master' ">
+      <RemoveDebuggableAttribute>False</RemoveDebuggableAttribute>
+    </PropertyGroup>
+    <Message Importance="high" Text="Running AssemblyConverter..." />
+    <Exec Command="&quot;$(UnityWSAToolsDir)\AssemblyConverter.exe&quot; -platform=uap -lock=&quot;$(ProjectDir)project.lock.json&quot; -bits=$(UnityBits) -configuration=$(Configuration) -removeDebuggableAttribute=$(RemoveDebuggableAttribute) -path=&quot;.&quot; -path=&quot;..\Players\UAP\$(PlatformTarget)\$(Configuration)&quot; &quot;$(ProjectDir)Assembly-CSharp.dll&quot; &quot;$(ProjectDir)UnityEngine.dll&quot; &quot;$(ProjectDir)UnityEngine.UI.dll&quot; &quot;$(ProjectDir)UnityEngine.Networking.dll&quot;" />
+    <Message Importance="high" Text="AssemblyConverter done." />
+    <Message Importance="high" Text="Modifying AppxPackagePayload" />
+    <ItemGroup>
+      <AppxPackagePayload Remove="@(AppxPackagePayload)" Condition="'%(TargetPath)' == 'Assembly-CSharp.dll'" />
+      <AppxPackagePayload Remove="@(AppxPackagePayload)" Condition="'%(TargetPath)' == 'UnityEngine.dll'" />
+      <AppxPackagePayload Remove="@(AppxPackagePayload)" Condition="'%(TargetPath)' == 'UnityEngine.UI.dll'" />
+      <AppxPackagePayload Remove="@(AppxPackagePayload)" Condition="'%(TargetPath)' == 'UnityEngine.Networking.dll'" />
+    </ItemGroup>
+    <ItemGroup>
+      <AppxPackagePayload Include="$(ProjectDir)Assembly-CSharp.dll">
+        <TargetPath>Assembly-CSharp.dll</TargetPath>
+      </AppxPackagePayload>
+      <AppxPackagePayload Include="$(ProjectDir)UnityEngine.dll">
+        <TargetPath>UnityEngine.dll</TargetPath>
+      </AppxPackagePayload>
+      <AppxPackagePayload Include="$(ProjectDir)UnityEngine.UI.dll">
+        <TargetPath>UnityEngine.UI.dll</TargetPath>
+      </AppxPackagePayload>
+      <AppxPackagePayload Include="$(ProjectDir)UnityEngine.Networking.dll">
+        <TargetPath>UnityEngine.Networking.dll</TargetPath>
+      </AppxPackagePayload>
+    </ItemGroup>
+  </Target>
+</Project>

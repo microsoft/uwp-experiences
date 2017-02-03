@@ -10,7 +10,7 @@ The source code is available for everyone on our [GitHub repository][source] - w
 
 Use the [blog post][blog-post] and [short One Dev Minute video][video] to learn even more about this showcase app.
 
-There are more showcase apps on our [GitHub repository](https://github.com/Microsoft/uwp-experiences) and [store account](ms-windows-store://publisher/?name=Developer%20World), we hope you find them useful.
+There are more showcase apps on our [GitHub repository](https://github.com/Microsoft/uwp-experiences) and [store account](#ms-windows-store://publisher/?name=Developer%20World), we hope you find them useful.
 
 Thank you,
 

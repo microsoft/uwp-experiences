@@ -1,0 +1,23 @@
+﻿{
+  "dependencies": {
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+    "Microsoft.Toolkit.Uwp.Notifications": "1.2.0",
+    "Microsoft.Toolkit.Uwp.Services": "1.2.0",
+    "Microsoft.Toolkit.Uwp.UI.Controls": "1.2.0",
+    "Newtonsoft.Json": "9.0.1",
+    "System.Reactive": "3.1.1",
+    "System.Reactive.Core": "3.1.1",
+    "Win2D.uwp": "1.20.0"
+  },
+  "frameworks": {
+    "uap10.0": {}
+  },
+  "runtimes": {
+    "win10-arm": {},
+    "win10-arm-aot": {},
+    "win10-x86": {},
+    "win10-x86-aot": {},
+    "win10-x64": {},
+    "win10-x64-aot": {}
+  }
+}

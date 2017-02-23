@@ -179,7 +179,7 @@ namespace NorthwindPhoto
                 PhotoCollection.Add(new Photo
                 {
                     Path =
-                        $"http://adx.metulev.com/video/Images/Clean/Large/FeaturedImage_2x1_Image{i.ToString("00")}.jpg"
+                        $"http://adx.metulev.com/video/Images/Watermark/Large/FeaturedImage_2x1_Image{i.ToString("00")}.jpg"
                 });
         }
     }

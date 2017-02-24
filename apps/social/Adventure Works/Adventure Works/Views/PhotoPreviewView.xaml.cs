@@ -140,8 +140,6 @@ namespace Adventure_Works
             AnalyzeFaces();
         }
 
-        
-
         public async Task<PhotoData> ShowAndWaitAsync(PhotoData photo)
         {
             await ShowAsync(photo);
@@ -536,7 +534,7 @@ namespace Adventure_Works
 
             if (sender.Text != person.Name)
             {
-                var stream = await _file.OpenReadAsync();
+                var stream = await GetCropedImageStream();
                 PhotoFace newPerson = new PhotoFace();
                 newPerson.Name = sender.Text;
                 newPerson.Rect = person.Rect;
@@ -549,7 +547,6 @@ namespace Adventure_Works
                 }
 
                 await FaceAPI.Instance.AddImageForPerson(newPerson, stream);
-
 
                 var newList = _photo.People.ToList();
                 newList.Remove(person);

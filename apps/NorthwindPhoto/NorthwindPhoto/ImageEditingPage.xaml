@@ -1,0 +1,90 @@
+﻿<Page
+    x:Class="NorthwindPhoto.ImageEditingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NorthwindPhoto"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:win2d="using:Microsoft.Graphics.Canvas.UI.Xaml"
+    xmlns:uwpct="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style TargetType="Ellipse" x:Key="OuterRing">
+            <Setter Property="Fill" Value="Black" />
+            <Setter Property="Opacity" Value="0.25" />
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="200" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="Ellipse" x:Key="InnerRing">
+            <Setter Property="Opacity" Value="0.5" />
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="200" />
+            <Setter Property="Fill" Value="Black" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBlock" x:Key="ButtonText">
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+    </Page.Resources>
+
+    <RelativePanel x:Name="LayoutRoot" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <win2d:CanvasControl x:Name="CanvasControl"
+                             Draw="CanvasControl_Draw"
+                             CreateResources="CanvasControl_CreateResources"
+                             SizeChanged="CanvasControl_SizeChanged"
+                             RelativePanel.AlignTopWithPanel="True"
+                             RelativePanel.AlignLeftWithPanel="True"
+                             RelativePanel.AlignRightWithPanel="True"
+                             RelativePanel.AlignBottomWithPanel="True" />
+
+        <Grid x:Name="EditingGrid" MinHeight="200" RelativePanel.AlignBottomWithPanel="True"
+              RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Margin="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="{Binding ElementName=EditingGrid, Path=MinHeight}" />
+                <ColumnDefinition MinWidth="{Binding ElementName=EditingGrid, Path=MinHeight}" />
+                <ColumnDefinition MinWidth="{Binding ElementName=EditingGrid, Path=MinHeight}" />
+                <ColumnDefinition MinWidth="{Binding ElementName=EditingGrid, Path=MinHeight}" />
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="ContrastGrid" Grid.Column="0" PointerPressed="ContrastChanged" Tag="Contrast"
+                  PointerEntered="RingGrid_PointerEntered" PointerExited="RingGrid_PointerExited">
+                <Ellipse Style="{StaticResource InnerRing}" />
+                <Ellipse x:Name="ContrastOuterRing" Style="{StaticResource OuterRing}" />
+                <TextBlock Text="C O N T R A S T" Style="{StaticResource ButtonText}" />
+            </Grid>
+            <Grid x:Name="ExposureGrid" Grid.Column="1" PointerPressed="ExposureChanged" Tag="Exposure"
+                  PointerEntered="RingGrid_PointerEntered" PointerExited="RingGrid_PointerExited">
+                <Ellipse Style="{StaticResource InnerRing}" />
+                <Ellipse x:Name="ExposureOuterRing" Style="{StaticResource OuterRing}" />
+                <TextBlock Text="E X P O S U R E" Style="{StaticResource ButtonText}" />
+            </Grid>
+            <Grid x:Name="SaturationGrid" Grid.Column="2" PointerPressed="SaturationChanged" Tag="Saturation"
+                  PointerEntered="RingGrid_PointerEntered" PointerExited="RingGrid_PointerExited">
+                <Ellipse Style="{StaticResource InnerRing}" />
+                <Ellipse x:Name="SaturationOuterRing" Style="{StaticResource OuterRing}" />
+                <TextBlock Text="S A T U R A T I O N" Style="{StaticResource ButtonText}" />
+            </Grid>
+            <Grid x:Name="BlurGrid" Grid.Column="3" PointerPressed="BlurChanged" Tag="Blur"
+                  PointerEntered="RingGrid_PointerEntered" PointerExited="RingGrid_PointerExited">
+                <Ellipse Style="{StaticResource InnerRing}" />
+                <Ellipse x:Name="BlurOuterRing" Style="{StaticResource OuterRing}" />
+                <TextBlock Text="B L U R" Style="{StaticResource ButtonText}" />
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="TwitterLogo" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True"
+              Margin="20" Width="55" Height="55">
+            <Ellipse Fill="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Image Source="ms-appx:///Assets/Twitter_Logo_Blue.png" HorizontalAlignment="Center" Margin="5"
+                   VerticalAlignment="Center" PointerPressed="Twitter_Clicked" />
+        </Grid>
+    </RelativePanel>
+</Page>

@@ -157,8 +157,8 @@ namespace Adventure_Works
                 await SetPreviewRotationAsync();
 
                 var definition = new FaceDetectionEffectDefinition();
-                definition.SynchronousDetectionEnabled = false;
-                definition.DetectionMode = FaceDetectionMode.HighPerformance;
+               // definition.SynchronousDetectionEnabled = false;
+               // definition.DetectionMode = FaceDetectionMode.HighPerformance;
 
                 _faceDetectionEffect = (await _mediaCapture.AddVideoEffectAsync(definition, MediaStreamType.VideoPreview)) as FaceDetectionEffect;
                 _faceDetectionEffect.FaceDetected += FaceDetectionEffect_FaceDetected;
@@ -294,6 +294,10 @@ namespace Adventure_Works
             if (_faceDetectionEffect != null)
             {
                 _faceDetectionEffect.FaceDetected -= FaceDetectionEffect_FaceDetected;
+                _faceDetectionEffect.Enabled = false;
+
+                await _mediaCapture?.RemoveEffectAsync(_faceDetectionEffect);
+
                 _faceDetectionEffect = null;
             }
 
@@ -318,6 +322,7 @@ namespace Adventure_Works
                 {
                    await _mediaCapture.StopPreviewAsync();
                 }
+
                 _mediaCapture.Dispose();
                 _mediaCapture = null;
             }

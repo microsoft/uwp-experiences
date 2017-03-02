@@ -29,6 +29,7 @@ using Microsoft.Graphics.Canvas.Effects;
 using Microsoft.Graphics.Canvas.UI;
 using Microsoft.Graphics.Canvas.UI.Xaml;
 using NorthwindPhoto.Model;
+using Windows.System;
 
 namespace NorthwindPhoto
 {
@@ -52,10 +53,39 @@ namespace NorthwindPhoto
 
         private RadialController _radialController;
         private string _selectedControl;
+        private float incrementDirection = 1.0f;
 
         public ImageEditingPage()
         {
             InitializeComponent();
+            Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
+            Window.Current.CoreWindow.KeyUp += CoreWindow_KeyUp;
+        }
+
+        private void CoreWindow_KeyUp(Windows.UI.Core.CoreWindow sender, Windows.UI.Core.KeyEventArgs args)
+        {
+            var key = args.VirtualKey;
+            if (key == VirtualKey.Control)
+            {
+                incrementDirection = 1.0f;
+            }
+        }
+
+        private void CoreWindow_KeyDown(Windows.UI.Core.CoreWindow sender, Windows.UI.Core.KeyEventArgs args)
+        {
+            var key = args.VirtualKey;
+            if (key == VirtualKey.Add)
+            {
+                IncrementValue(0.1f);
+            }
+            else if (key == VirtualKey.Subtract)
+            {
+                IncrementValue(-0.1f);
+            }
+            else if (key == VirtualKey.Control)
+            {
+                incrementDirection = -1.0f;
+            }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -75,13 +105,16 @@ namespace NorthwindPhoto
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            _radialConfiguration.IsMenuSuppressed = false;
+            if (RadialController.IsSupported())
+            {
+                _radialConfiguration.IsMenuSuppressed = false;
 
-            _radialController.RotationChanged -= RadialController_RotationChanged;
-            _radialController.ScreenContactStarted -= RadialController_ScreenContactStarted;
-            _radialController.ScreenContactEnded -= RadialController_ScreenContactEnded;
-            _radialController.ButtonPressed -= RadialController_ButtonPressed;
-            _radialController.ButtonReleased -= RadialController_ButtonReleased;
+                _radialController.RotationChanged -= RadialController_RotationChanged;
+                _radialController.ScreenContactStarted -= RadialController_ScreenContactStarted;
+                _radialController.ScreenContactEnded -= RadialController_ScreenContactEnded;
+                _radialController.ButtonPressed -= RadialController_ButtonPressed;
+                _radialController.ButtonReleased -= RadialController_ButtonReleased;
+            }
 
             _effect.Dispose();
             _canvasBitmap.Dispose();
@@ -93,21 +126,24 @@ namespace NorthwindPhoto
         /// </summary>
         private void SetupDialControl()
         {
-            // Singleton instance for the app using RadialController.CreateForCurrentView();
-            _radialController = App.RadialController;
+            if (RadialController.IsSupported())
+            {
+                // Singleton instance for the app using RadialController.CreateForCurrentView();
+                _radialController = App.RadialController;
 
-            // Suppress the current menu from the dial
-            _radialConfiguration = RadialControllerConfiguration.GetForCurrentView();
-            _radialConfiguration.ActiveControllerWhenMenuIsSuppressed = App.RadialController;
-            _radialConfiguration.IsMenuSuppressed = true;
+                // Suppress the current menu from the dial
+                _radialConfiguration = RadialControllerConfiguration.GetForCurrentView();
+                _radialConfiguration.ActiveControllerWhenMenuIsSuppressed = App.RadialController;
+                _radialConfiguration.IsMenuSuppressed = true;
 
-            _radialController.RotationResolutionInDegrees = _normalMovement;
-            _radialController.ButtonHolding += RadialController_ButtonHolding;
-            _radialController.RotationChanged += RadialController_RotationChanged;
-            _radialController.ScreenContactStarted += RadialController_ScreenContactStarted;
-            _radialController.ScreenContactEnded += RadialController_ScreenContactEnded;
-            _radialController.ButtonPressed += RadialController_ButtonPressed;
-            _radialController.ButtonReleased += RadialController_ButtonReleased;
+                _radialController.RotationResolutionInDegrees = _normalMovement;
+                _radialController.ButtonHolding += RadialController_ButtonHolding;
+                _radialController.RotationChanged += RadialController_RotationChanged;
+                _radialController.ScreenContactStarted += RadialController_ScreenContactStarted;
+                _radialController.ScreenContactEnded += RadialController_ScreenContactEnded;
+                _radialController.ButtonPressed += RadialController_ButtonPressed;
+                _radialController.ButtonReleased += RadialController_ButtonReleased;
+            }
         }
 
         /// <summary>
@@ -169,25 +205,28 @@ namespace NorthwindPhoto
             {
                 // Check to see if the dial is pressed during rotation.
                 var increment = CalculateIncrements(args);
-
-                switch (_selectedControl)
-                {
-                    case "Contrast":
-                        Contrast = +increment;
-                        break;
-                    case "Saturation":
-                        Saturation = +increment;
-                        break;
-                    case "Exposure":
-                        Exposure = +increment;
-                        break;
-                    case "Blur":
-                        Blur = +increment * 10;
-                        break;
-                }
-
-                CreateEffects();
+                IncrementValue(increment);
             }
+        }
+
+        private void IncrementValue(float increment)
+        {
+            switch (_selectedControl)
+            {
+                case "Contrast":
+                    Contrast = +increment;
+                    break;
+                case "Saturation":
+                    Saturation = +increment;
+                    break;
+                case "Exposure":
+                    Exposure = +increment;
+                    break;
+                case "Blur":
+                    Blur = +increment * 10;
+                    break;
+            }
+            CreateEffects();
         }
 
         /// <summary>
@@ -232,7 +271,7 @@ namespace NorthwindPhoto
             get { return _contrast; }
             set
             {
-                var newValue = _contrast + value;
+                var newValue = _contrast + (value * incrementDirection);
                 if (newValue < 0)
                     newValue = 0;
                 else if (newValue > 1)
@@ -247,7 +286,7 @@ namespace NorthwindPhoto
             get { return _saturation; }
             set
             {
-                var newValue = _saturation + value;
+                var newValue = _saturation + (value * incrementDirection);
                 if (newValue < 0)
                     newValue = 0;
                 else if (newValue > 1)
@@ -263,7 +302,7 @@ namespace NorthwindPhoto
             get { return _blur; }
             set
             {
-                var newValue = _blur + value;
+                var newValue = _blur + (value * incrementDirection);
                 if (newValue < 0)
                     newValue = 0;
                 else if (newValue > 100)
@@ -280,7 +319,7 @@ namespace NorthwindPhoto
             get { return _exposure; }
             set
             {
-                var newValue = _exposure + value;
+                var newValue = _exposure + (value * incrementDirection);
                 if (newValue < 0)
                     newValue = 0;
                 else if (newValue > 1)
@@ -483,7 +522,15 @@ namespace NorthwindPhoto
         {
             if (CanvasControl.ReadyToDraw)
             {
-                Contrast = 0.1f;
+                var properties = e.GetCurrentPoint(this).Properties;
+                if (properties.IsLeftButtonPressed)
+                {
+                    Contrast = 0.1f;
+                }
+                else if (properties.IsRightButtonPressed)
+                {
+                    Contrast = -0.1f;
+                }
                 CreateEffects();
             }
         }
@@ -492,7 +539,15 @@ namespace NorthwindPhoto
         {
             if (CanvasControl.ReadyToDraw)
             {
-                Exposure = 0.1f;
+                var properties = e.GetCurrentPoint(this).Properties;
+                if (properties.IsLeftButtonPressed)
+                {
+                    Exposure = 0.1f;
+                }
+                else if (properties.IsRightButtonPressed)
+                {
+                    Exposure = -0.1f;
+                }
                 CreateEffects();
             }
         }
@@ -513,7 +568,15 @@ namespace NorthwindPhoto
         {
             if (CanvasControl.ReadyToDraw)
             {
-                Saturation = -0.1f;
+                var properties = e.GetCurrentPoint(this).Properties;
+                if (properties.IsLeftButtonPressed)
+                {
+                    Saturation = -0.1f;
+                }
+                else if (properties.IsRightButtonPressed)
+                {
+                    Saturation = +0.1f;
+                }
                 CreateEffects();
             }
         }
@@ -522,7 +585,15 @@ namespace NorthwindPhoto
         {
             if (CanvasControl.ReadyToDraw)
             {
-                Blur = 10;
+                var properties = e.GetCurrentPoint(this).Properties;
+                if (properties.IsLeftButtonPressed)
+                {
+                    Blur = 10;
+                }
+                else if (properties.IsRightButtonPressed)
+                {
+                    Blur = -10;
+                }
                 CreateEffects();
             }
         }

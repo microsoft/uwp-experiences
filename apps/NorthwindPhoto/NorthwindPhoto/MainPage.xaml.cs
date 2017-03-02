@@ -36,6 +36,18 @@ namespace NorthwindPhoto
         public MainPage()
         {
             InitializeComponent();
+            Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
+        }
+
+        private void CoreWindow_KeyDown(CoreWindow sender, KeyEventArgs args)
+        {
+            var key = args.VirtualKey;
+            if ((key == VirtualKey.Home) ||
+                (key == VirtualKey.Back))
+            {
+                if (MainFrame.CanGoBack)
+                    MainFrame.GoBack();
+            }
         }
 
         /// <summary>

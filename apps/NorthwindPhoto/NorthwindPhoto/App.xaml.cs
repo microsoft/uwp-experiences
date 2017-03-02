@@ -68,7 +68,12 @@ namespace NorthwindPhoto
             get
             {
                 if (_radialController == null)
-                    _radialController = RadialController.CreateForCurrentView();
+                {
+                    if (RadialController.IsSupported())
+                    {
+                        _radialController = RadialController.CreateForCurrentView();
+                    }
+                }
 
                 return _radialController;
             }

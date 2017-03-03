@@ -67,12 +67,15 @@ namespace NorthwindPhoto
             _inkPresenter.InputProcessingConfiguration.RightDragAction = InkInputRightDragAction.LeaveUnprocessed;
 
             // Radial controller used for recognition
-            App.RadialController.ButtonPressed += RadialController_ButtonPressed;
+            if (RadialController.IsSupported())
+            {
+                App.RadialController.ButtonPressed += RadialController_ButtonPressed;
 
-            // Supress menu of controller
-            _radialConfiguration = RadialControllerConfiguration.GetForCurrentView();
-            _radialConfiguration.ActiveControllerWhenMenuIsSuppressed = App.RadialController;
-            _radialConfiguration.IsMenuSuppressed = true;
+                // Supress menu of controller
+                _radialConfiguration = RadialControllerConfiguration.GetForCurrentView();
+                _radialConfiguration.ActiveControllerWhenMenuIsSuppressed = App.RadialController;
+                _radialConfiguration.IsMenuSuppressed = true;
+            }
 
             // When using Cortana perform app protocol recognition
             App.ProtocolSubject.Subscribe(dataEventArgs => App_Protocol(dataEventArgs));

@@ -6,7 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:xaml="using:Windows.UI.Xaml"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    x:Name="galleryPage"
+    >
 
     <Page.Resources>
         <Style TargetType="GridViewItem">
@@ -24,7 +26,11 @@
         <GridView x:Name="PhotoCollectionViewer" ItemsSource="{x:Bind Photos}" IsItemClickEnabled="True"
                   ItemClick="PhotoCollectionViewer_ItemClick"
                   ChoosingItemContainer="PhotoCollectionViewer_ChoosingItemContainer"
-                  HorizontalContentAlignment="Center" HorizontalAlignment="Center">
+                  ContainerContentChanging="PhotoCollectionViewer_ContainerContentChanging"
+                  HorizontalContentAlignment="Center" HorizontalAlignment="Center"
+                  Margin="0,10,0,0"
+                  PointerExited="PhotoCollectionViewer_PointerExited" 
+                  >
             <GridView.ItemContainerTransitions>
                 <TransitionCollection />
             </GridView.ItemContainerTransitions>
@@ -32,10 +38,34 @@
             <GridView.ItemTemplate>
                 <xaml:DataTemplate x:DataType="models:Photo">
                     <Grid x:Name="GalleryItem" PointerEntered="GalleryItem_PointerEntered"
-                          PointerExited="GalleryItem_PointerExited">
-                        <Border x:Name="Shadow" />
-                        <Image x:Name="Image" Source="{x:Bind Path}" Height="200" Width="200" Margin="10"
-                               Stretch="UniformToFill" />
+                          PointerExited="GalleryItem_PointerExited" Height="220" Width="220" Margin="10">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="DefaultStates">
+                                <VisualState x:Name="Idle">
+                                    <VisualState.Setters>
+                                        <Setter Target="Image.(FrameworkElement.Margin)">
+                                            <Setter.Value>
+                                                <Thickness>6</Thickness>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Active">
+                                    <VisualState.Setters>
+                                        <Setter Target="Image.(FrameworkElement.Margin)">
+                                            <Setter.Value>
+                                                <Thickness>16</Thickness>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Shadow" BorderBrush="White" BorderThickness="0"/>
+                        <Rectangle x:Name="Stroke" Fill="White" />
+                        <Image x:Name="Image2" Source="{x:Bind Path}" Margin="0" Stretch="UniformToFill" Opacity="0.3" />
+                        <Rectangle Stroke="Black" StrokeThickness="1" Opacity="0.1"/>
+                        <Image x:Name="Image" Source="{x:Bind Path}" Margin="8" Stretch="UniformToFill" />
                     </Grid>
                 </xaml:DataTemplate>
             </GridView.ItemTemplate>

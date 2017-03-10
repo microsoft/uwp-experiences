@@ -11,7 +11,7 @@
 
     <Page.Resources>
         <Style TargetType="Ellipse" x:Key="OuterRing">
-            <Setter Property="Fill" Value="Black" />
+            <Setter Property="Fill" Value="Gainsboro" />
             <Setter Property="Opacity" Value="0.25" />
             <Setter Property="Width" Value="200" />
             <Setter Property="Height" Value="200" />
@@ -19,10 +19,14 @@
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
         <Style TargetType="Ellipse" x:Key="InnerRing">
-            <Setter Property="Opacity" Value="0.5" />
+            <Setter Property="Opacity" Value="1.0" />
             <Setter Property="Width" Value="200" />
             <Setter Property="Height" Value="200" />
-            <Setter Property="Fill" Value="Black" />
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <local:BackdropTintBlurBrush/>
+                </Setter.Value>
+            </Setter>
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
@@ -43,7 +47,18 @@
                              RelativePanel.AlignTopWithPanel="True"
                              RelativePanel.AlignLeftWithPanel="True"
                              RelativePanel.AlignRightWithPanel="True"
-                             RelativePanel.AlignBottomWithPanel="True" />
+                             RelativePanel.AlignBottomWithPanel="True"
+                             x:DeferLoadStrategy="Lazy"
+                             Opacity="0"
+                             />
+
+        <Image x:Name="animationTarget"
+               Stretch="UniformToFill"
+               RelativePanel.AlignTopWithPanel="True"
+                             RelativePanel.AlignLeftWithPanel="True"
+                             RelativePanel.AlignRightWithPanel="True"
+                             RelativePanel.AlignBottomWithPanel="True"
+               ></Image>
 
         <Grid x:Name="EditingGrid" MinHeight="200" RelativePanel.AlignBottomWithPanel="True"
               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Margin="50">

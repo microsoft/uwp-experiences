@@ -6,7 +6,7 @@ Thank you for checking out this sample app - we hope you find it as useful as we
 
 Spacecraft Explorer is a Surface Dial showcase app that shows you how to implement a Surface Dial to any UWP app by:
 - Using the Surface Dial as an input method to control the app
-- Implementing custom menu items to naviagte between the different app modes, instead of using the buttons
+- Implementing custom menu items to navigate between the different app modes, instead of using the buttons
 - Supporting a custom On-Screen menu that will be rendered below the Surface Dial when placed in screen.
 
 The source code is available for everyone on our [GitHub repository][spacecraft-source] - we encourage you to play with the app and the source code and use it in your app as needed.

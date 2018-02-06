@@ -5,8 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Music.PCL.Models;
 using System.Diagnostics;
-using System.ServiceModel;
-using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
 
 namespace Music.PCL.Services

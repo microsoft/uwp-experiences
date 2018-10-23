@@ -1,0 +1,11 @@
+### YamlMime:Sample
+sample:
+- name: UWP Experiences - The IoT Experience
+  description: Best For You is a sample fitness UWP app that uses Windows IoT Core and Azure Iot Hub to collect data from a fictional IoT enabled yoga clothes and presenting it to the user in a meaningful and helpful way on all of their devices to track progress of exercise and health.
+  generateZip: true
+  author: nmetulev
+  languages:
+  - csharp
+  technologies:
+  - windows
+  vssolution: BestForYou\Yoga.sln

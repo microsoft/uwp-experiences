@@ -1,0 +1,11 @@
+### YamlMime:Sample
+sample:
+- name: UWP Experiences - The Social Experience
+  description: Adventure Works is a cross device UWP app for sharing adventures and experiences with fictional friends by using APIs for Camera, Inking, Speech, Project Rome and more. Azure Cognitive Services provides the required inteligence.
+  generateZip: true
+  author: nmetulev
+  languages:
+  - csharp
+  technologies:
+  - windows
+  vssolution: "Adventure Works\Adventure Works.sln"

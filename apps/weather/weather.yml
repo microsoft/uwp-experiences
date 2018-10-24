@@ -1,0 +1,11 @@
+### YamlMime:Sample
+sample:
+- name: UWP Experiences - The Weather Experience
+  description: Atmosphere is is a sample weather app that showcases the use of the popular Unity Engine in a normal Universal Windows Platform (UWP) application.
+  generateZip: true
+  author: nmetulev
+  languages:
+  - csharp
+  technologies:
+  - windows
+  vssolution: Atmosphere\Atmosphere.sln

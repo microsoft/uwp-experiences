@@ -1,3 +1,12 @@
+---
+topic: sample
+languages:
+- csharp
+products:
+- windows
+- uwp
+---
+
 <!---
   category: ControlsLayoutAndText CustomUserInteractions GraphicsAndAnimation Inking Touch TilesToastAndNotifications
   language: cs

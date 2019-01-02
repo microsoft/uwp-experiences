@@ -1,3 +1,12 @@
+---
+topic: sample
+languages:
+- csharp
+products:
+- windows
+- uwp
+---
+
 <!---
   category: AudioVideoAndCamera ControlsLayoutAndText CustomUserInteractions DeepLinksAndAppToAppCommunication Inking MapsAndLocation SpeechAndCortana 
   language: cs

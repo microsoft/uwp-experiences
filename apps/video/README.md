@@ -1,3 +1,12 @@
+---
+topic: sample
+languages:
+- javascript
+products:
+- windows
+- uwp
+---
+
 <!---
   category: ControlsLayoutAndText PlatformArchitecture
   language: js

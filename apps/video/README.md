@@ -4,7 +4,7 @@ languages:
 - javascript
 products:
 - windows
-- uwp
+- windows-uwp
 ---
 
 <!---

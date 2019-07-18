@@ -3,8 +3,10 @@ page_type: sample
 languages:
 - csharp
 products:
+- dotnet
 - windows
 - windows-uwp
+description: "Adventure Works is a cross device UWP app for sharing adventures and experiences with fictional friends."
 ---
 
 <!---
